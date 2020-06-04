@@ -1,0 +1,4 @@
+Config\Conexion.class
+Modelo\Registro_Visitas.class
+Servlets\RegVisitas.class
+Querys\Reg_Visitas.class
