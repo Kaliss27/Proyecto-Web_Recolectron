@@ -47,30 +47,134 @@
         <div class="container">
             <div class="row content">
                 <div class="col-lg-10">
-                        <label id="headerRV">¡Donación Emitida por el Recolectrón!</label>
-                        <form>
-                            <div class="form-group">
-                                <label for="matricula">Mátricula UV:</label>
-                                <input type="text" class="form-control" id="matricula" placeholder="Ingresa tu mátricula">
-                            </div>
-                            <div class="form-group">
-                                <label for="nameC">Nombre:</label>
-                                <input type="text" class="form-control" id="pwd" placeholder="Ingresa tu nombre">
-                            </div>
-                            <div class="form-inline">
-                                <label for="txtPE">Selecciona tu Programa Educativo:</label>
-                                <select class="form-control" id="selectPE" name="PEs">
-                                    <option value="--">Selecciona--</option>
-                                </select>
-                                <label for="txtTV">Cantidad de componentes donados:</label>
-                                <input type="number" class="form-control" id="numCDE" placeholder="">
-                            </div>
-                            <div class="form-group">
-                                <label for="dateRgs">Fecha:</label>
-                                <input type="date" class="form-control" id="fechaRgs">
-                            </div>
-                            <button class="btn btn-success" type="submit" class="btn btn-default">Registrar</button>
-                        </form>  
+                    <label id="headerRV">¡Donación Emitida por el Recolectrón!</label>
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a data-toggle="tab" href="#DE_estudiantes">Estudiantes</a></li>
+                        <li><a data-toggle="tab" href="#DE_gral">Publico General</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="DE_estudiantes" class="tab-pane fade in active">
+                            <form id="my-students-form" action="" method="POST">
+                                <div class="form-group">
+                                    <label for="matricula">Mátricula UV:</label>
+                                    <input type="text" class="form-control" id="matricula" placeholder="Ingresa tu mátricula">
+                                </div>
+                                <div class="form-group">
+                                    <label for="nameC">Nombre:</label>
+                                    <input type="text" class="form-control" id="pwd" placeholder="Ingresa tu nombre">
+                                </div>
+                                <div class="form-inline">
+                                    <label for="txtPE">Selecciona tu Programa Educativo:</label>
+                                    <select class="form-control" id="selectPE" name="PEs">
+                                        <option value="--">Selecciona--</option>
+                                    </select>
+                                    <label for="dateRgs">Fecha:</label>
+                                    <input type="date" class="form-control" id="fechaRgs">
+                                </div><br>
+                                <div class="panel-group">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <label class="panel-title">
+                                                <a data-toggle="collapse" href="#collapse1">Agregar Articulos<span class="glyphicon glyphicon-plus"></span></a>
+                                            </label>
+                                        </div>
+                                        <div id="collapse1" class="panel-collapse collapse">
+                                            <div class="panel-body form-inline">
+                                                <form>
+                                                    <label id="art">Articulo:</label>
+                                                    <select class="form-control" id="selectArt" name="PEs">
+                                                        <option value="0">Selecciona--</option>
+                                                    </select>
+                                                    <label id="cnt">Cantidad:</label>
+                                                    <input type="number" class="form-control" id="cntN"><br>
+                                                    <button class="btn btn-primary" type="submit" class="btn btn-default">Agregar</button>
+                                                </form><br>
+                                                <div class="table-responsive">          
+                                                    <table class="table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Articulo</th>
+                                                                <th>Cantidad</th>                                     
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>-------</td>
+                                                                <td>-------</td                                                               
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="btn btn-success" type="submit" class="btn btn-default">Registrar</button>
+                            </form> 
+                        </div>
+                        <div id="DE_gral" class="tab-pane fade">
+                            <form id="my-pgral-form" action="" method="POST">
+                                <div class="form-group">
+                                    <label for="dest">Destinatario:</label>
+                                    <input type="text" class="form-control" id="destinatario">
+                                </div>
+                                <div class="form-inline">
+                                    <label for="phoneF">Teléfono de contacto:</label>
+                                    <input type="tel" class="form-control" id="phone" placeholder="Telefono">
+                                    <label for="emailF">Correo electronico:</label>
+                                    <input type="email" class="form-control" id="emailC" placeholder="Email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="causaF">Causa:</label>
+                                    <input type="text" class="form-control" id="textCausa">
+                                </div>
+                                <div class="form-group">
+                                    <label for="dateF">Fecha:</label>
+                                    <input type="date" class="form-control" id="dateT">
+                                </div>
+                                <br>
+                                <div class="panel-group">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <label class="panel-title">
+                                                <a data-toggle="collapse" href="#collapse2">Agregar Articulos<span class="glyphicon glyphicon-plus"></span></a>
+                                            </label>
+                                        </div>
+                                        <div id="collapse2" class="panel-collapse collapse">
+                                            <div class="panel-body form-inline">
+                                                <form>
+                                                    <label id="art">Articulo:</label>
+                                                    <select class="form-control" id="selectArt" name="PEs">
+                                                        <option value="0">Selecciona--</option>
+                                                    </select>
+                                                    <label id="cnt">Cantidad:</label>
+                                                    <input type="number" class="form-control" id="cntN"><br>
+                                                    <button class="btn btn-primary" type="submit" class="btn btn-default">Agregar</button>
+                                                </form>
+                                            </div><br>
+                                            <div class="table-responsive">          
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Articulo</th>
+                                                            <th>Cantidad</th>                                     
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>-------</td>
+                                                            <td>-------</td                                                               
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="btn btn-success" type="submit" class="btn btn-default">Registrar</button>
+                            </form> 
+                        </div>
+                    </div> 
                 </div>
                 <!--Imagenes alusivas de donaciones emitidas-->
                 <div class="col-lg-2 text-right">
