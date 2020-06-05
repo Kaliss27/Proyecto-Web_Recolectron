@@ -44,7 +44,7 @@
                             <ul class="dropdown-menu">
                                 <li class="active"><a href="#">Vista Rápida</a></li>
                                 <li><a href="inventarioReco.jsp">Inventario</a></li>
-                                <li><a href="#">Actividades</a></li>
+                                <li><a href="actividades.jsp">Actividades</a></li>
                             </ul>
                         </li>
                     </ul>

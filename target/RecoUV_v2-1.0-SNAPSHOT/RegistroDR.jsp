@@ -72,38 +72,72 @@
                 </div>
                 <!--Formulario Donaciones Recibidas-->
                 <div class="col-lg-10">
-                        <label id="headerRV">¡Registra tu donación al recolectrón!</label>
-                        <form>
-                            <div class="form-group">
-                                <label for="orgn">Origen:</label>
-                                <select class="form-control" id="selectOrgn" name="orgnD">
-                                    <option value="--">Selecciona--</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="nameC">Nombre:</label>
-                                <input type="text" class="form-control" id="pwd" placeholder="Ingresa tu nombre">
-                            </div>
-                            <div class="form-inline">
-                                <div class="form-group">
-                                    <label for="numberD">Número:</label>
-                                    <input type="tel" class="form-control" id="telefono" placeholder="Número de contacto">
+                    <label id="headerRV">¡Registra tu donación al recolectrón!</label>
+                    <form>
+                        <div class="form-group">
+                            <label for="orgn">Origen:</label>
+                            <select class="form-control" id="selectOrgn" name="orgnD">
+                                <option value="--">Selecciona--</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="nameC">Nombre:</label>
+                            <input type="text" class="form-control" id="pwd" placeholder="Ingresa tu nombre">
+                        </div>
+                        <div class="form-inline">
+                            <label for="numberD">Número:</label>
+                            <input type="tel" class="form-control" id="telefono" placeholder="Número de contacto">
+                            <label for="emailDR">Correo Electrónico:</label>
+                            <input type="email" class="form-control" id="emailDRid" placeholder="Ingresa tu email">
+                        </div>
+                        <div class="form-group">
+                            <label for="dateRgs">Fecha de recepción:</label>
+                            <input type="date" class="form-control" id="fechaRgs">
+                        </div>
+                        <div class="panel-group">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <label class="panel-title">
+                                        <a data-toggle="collapse" href="#collapse1">Agregar Articulos<span class="glyphicon glyphicon-plus"></span></a>
+                                    </label>
                                 </div>
-                                <div class="form-group">
-                                    <label for="emailDR">Correo Electrónico:</label>
-                                    <input type="email" class="form-control" id="emailDRid" placeholder="Ingresa tu email">
+                                <div id="collapse1" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <div class="form-inline">
+                                            <label id="REc">Residuo Electrónico:</label>
+                                            <select class="form-control" id="selectRE" name="PEs">
+                                                <option value="0">Selecciona--</option>
+                                            </select>
+                                            <label id="cnt">Cantidad:</label>
+                                            <input type="number" class="form-control" id="cntN"><br>
+                                            <label id="pxu">Peso por Unidad:</label>
+                                            <input type="text" class="form-control" id="PxUi"><br>
+                                            <button class="btn btn-primary" type="submit" class="btn btn-default">Agregar</button><br>
+                                        </div>
+                                        <div class="table-responsive">          
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Articulo</th>
+                                                        <th>Cantidad</th>
+                                                        <th>Peso(kg)</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>-------</td>
+                                                        <td>-------</td>
+                                                        <td>-------</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="descDR">Descripción de los articulos recibidos:</label><br>
-                                <textarea name="textarea" rows="5" cols="25">Escribe aqui..</textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="dateRgs">Fecha de recepción:</label>
-                                <input type="date" class="form-control" id="fechaRgs">
-                            </div>
-                            <button class="btn btn-success" type="submit" class="btn btn-default">Registrar Recepción</button>
-                        </form>  
+                        </div>
+                        <button class="btn btn-success" type="submit" class="btn btn-default">Registrar Recepción</button>
+                    </form>  
                 </div>
             </div>
         </div>

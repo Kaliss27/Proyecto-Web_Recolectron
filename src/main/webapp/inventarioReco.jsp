@@ -42,9 +42,9 @@
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Equipo RECO
                             <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Vista Rápida</a></li>
+                                <li><a href="vistaRapida.jsp">Vista Rápida</a></li>
                                 <li class="active"><a href="#">Inventario</a></li>
-                                <li><a href="#">Actividades</a></li>
+                                <li><a href="actividades.jsp">Actividades</a></li>
                             </ul>
                         </li>
                     </ul>

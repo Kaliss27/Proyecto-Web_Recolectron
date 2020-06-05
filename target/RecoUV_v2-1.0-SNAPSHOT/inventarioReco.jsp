@@ -42,9 +42,9 @@
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Equipo RECO
                             <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Vista Rápida</a></li>
+                                <li><a href="vistaRapida.jsp">Vista Rápida</a></li>
                                 <li class="active"><a href="#">Inventario</a></li>
-                                <li><a href="#">Actividades</a></li>
+                                <li><a href="actividades.jsp">Actividades</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -53,16 +53,16 @@
         </nav>
         <!--Tabla Inventario-->
         <div class="container">
-            <label id="headInv">Inventario Recolectron</label>
+            <center><label id="headInv">Inventario Recolectron</label></center><br>
             <div class="table-responsive">          
                 <table class="table">
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Descripción</th>
-                            <th>Categoría</th>
-                            <th>Notas</th>
+                            <th>Articulo</th>
+                            <th>Cantidad</th>
                             <th>Estado</th>
+                            <th>Notas</th>
                         </tr>
                     </thead>
                     <tbody>

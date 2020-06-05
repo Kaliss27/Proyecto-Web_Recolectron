@@ -55,7 +55,7 @@
                             <label for="psw">Contraseña:</label>
                             <input type="password" class="form-control" placeholder="Ingresa tu contraseña" name="psw" required>
                             <br><br>
-                            <input id="login" class="btn btn-success" type="submit" class="btn btn-default"></input>
+                            <input id="login" class="btn btn-success" type="submit" class="btn btn-default">
                         </div>
                     </form>
                     <br><br>

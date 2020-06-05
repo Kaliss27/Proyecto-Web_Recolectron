@@ -48,24 +48,21 @@
             <div class="row content">
                 <!--Espacio destinado para el formulario-->
                 <div class="col-lg-10 text left">
-                    <form>
+                    <form id="my-form" action="vistaRapida.jsp" method="POST">
                         <div class="form-group">
                             <label for="uname">Nombre de Usuario:</label>
                             <input type="text" class="form-control" placeholder="Ingresa tu nombre de usuario" name="uname" required><br>
                             <label for="psw">Contraseña:</label>
                             <input type="password" class="form-control" placeholder="Ingresa tu contraseña" name="psw" required>
                             <br><br>
-                            <button id="login" class="btn btn-success" type="submit" class="btn btn-default">Registrar Recepción</button>
-                            <label>
-                                <input type="checkbox" checked="checked" name="remember"> Recordarme 
-                            </label>
-                        </div>
-                        <br><br>
-                        <div class="form-group">
-                            <button class="btn btn-default" type="button" class="cancelbtn">Cancelar</button>
-                            <span class="psw">¿Olvidaste tu <a href="#">contraseña?</a></span>
+                            <input id="login" class="btn btn-success" type="submit" class="btn btn-default">
                         </div>
                     </form>
+                    <br><br>
+                    <div class="form-group">
+                        <button class="btn btn-default" type="button" class="cancelbtn">Cancelar</button>
+                        <span class="psw">¿Olvidaste tu <a href="#">contraseña?</a></span>
+                    </div>
                 </div>
                 <!--Espacio destinado para el carousel-->
                 <div class="col-lg-2 sidenav">
@@ -106,5 +103,6 @@
         <footer class="container-fluid text-center">
             <p>Recolectrón. Universidad Veracruzana</p>
         </footer><br><br>
+        <script src="EQLogin.js"></script>
     </body>
 </html>
