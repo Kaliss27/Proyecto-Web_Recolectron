@@ -1,6 +1,6 @@
 <%-- 
-    Document   : inventarioReco
-    Created on : 26/05/2020, 06:19:53 PM
+    Document   : vistaRapida
+    Created on : 4/06/2020, 09:57:32 PM
     Author     : karen
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -42,8 +42,8 @@
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Equipo RECO
                             <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Vista Rápida</a></li>
-                                <li class="active"><a href="#">Inventario</a></li>
+                                <li class="active"><a href="#">Vista Rápida</a></li>
+                                <li><a href="inventarioReco.jsp">Inventario</a></li>
                                 <li><a href="#">Actividades</a></li>
                             </ul>
                         </li>
@@ -51,32 +51,6 @@
                 </div>
             </div>
         </nav>
-        <!--Tabla Inventario-->
-        <div class="container">
-            <center><label id="headInv">Inventario Recolectron</label></center><br>
-            <div class="table-responsive">          
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Articulo</th>
-                            <th>Cantidad</th>
-                            <th>Estado</th>
-                            <th>Notas</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>-------</td>
-                            <td>-------</td>
-                            <td>-------</td>
-                            <td>-------</td>
-                            <td>-------</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
         <!--Footer todas las paginas-->
         <footer class="container-fluid text-center">
             <p>Recolectrón. Universidad Veracruzana</p>
