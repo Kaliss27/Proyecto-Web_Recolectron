@@ -85,8 +85,8 @@
                             <input type="text" class="form-control" id="pwd" placeholder="Ingresa tu nombre">
                         </div>
                         <div class="form-inline">
-                            <label for="numberD">Número:</label>
-                            <input type="tel" class="form-control" id="telefono" placeholder="Número de contacto">
+                            <label for="numberD">Teléfono:</label>
+                            <input type="tel" class="form-control" id="telefono" placeholder="Teléfono de contacto">
                             <label for="emailDR">Correo Electrónico:</label>
                             <input type="email" class="form-control" id="emailDRid" placeholder="Ingresa tu email">
                         </div>
@@ -103,15 +103,23 @@
                                 </div>
                                 <div id="collapse1" class="panel-collapse collapse">
                                     <div class="panel-body">
-                                        <div class="form-inline">
+                                        <div class="form-group">
+                                            <label id="Cat">Categoria:</label>
+                                            <select class="form-control" id="selectCat" name="Catres">
+                                                <option value="0">Selecciona--</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
                                             <label id="REc">Residuo Electrónico:</label>
                                             <select class="form-control" id="selectRE" name="PEs">
                                                 <option value="0">Selecciona--</option>
                                             </select>
+                                        </div>
+                                        <div class="form-inline">
                                             <label id="cnt">Cantidad:</label>
-                                            <input type="number" class="form-control" id="cntN"><br>
+                                            <input type="number" class="form-control" id="cntN">
                                             <label id="pxu">Peso por Unidad:</label>
-                                            <input type="text" class="form-control" id="PxUi"><br>
+                                            <input type="text" class="form-control" id="PxUi">
                                             <button class="btn btn-primary" type="submit" class="btn btn-default">Agregar</button><br>
                                         </div>
                                         <div class="table-responsive">          

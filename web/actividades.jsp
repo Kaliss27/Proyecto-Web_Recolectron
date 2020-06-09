@@ -51,6 +51,41 @@
                 </div>
             </div>
         </nav>
+        <div class="container">
+            <div class="panel-group">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <label class="panel-title">
+                                        <a data-toggle="collapse" href="#collapse1"><center>ACTIVIDADES RECOLECTRON</center></a>
+                                    </label>
+                                </div>
+                                <div id="collapse1" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <div class="table-responsive">          
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Descripción</th>
+                                                        <th>Fecha y Hora de Inicio</th>
+                                                        <th>Fecha y Hora de Final</th>
+                                                        <th>Estado</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>-------</td>
+                                                        <td>-------</td>
+                                                        <td>-------</td>
+                                                        <td>-------</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        </div>
         <!--Footer todas las paginas-->
         <footer class="container-fluid text-center">
             <p>Recolectrón. Universidad Veracruzana</p>
