@@ -12,7 +12,7 @@
         <title>RECOLECTRÓN</title>
         <link href="CSS/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <link href="CSS/estiloReco.css" rel="stylesheet" type="text/css"/>
-        <link href="CSS/inventarioStyle.css" rel="stylesheet" type="text/css"/>
+        <link href="CSS/actividadesS.css" rel="stylesheet" type="text/css"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="Scripts/bootstrap.min.js" type="text/javascript"></script>
         <link rel="icon" type="image/png" href="Imagenes/logo_recoUV.jpg" sizes="16x16">
@@ -86,7 +86,6 @@
                     </div>
                 </div>
             </div>
-            
                 <div class="panel-group">
                     <div class="panel panel-default">
                         <div class="panel-heading">
@@ -123,7 +122,37 @@
                         </div>
                     </div>
                 </div>   
-            
+            <div class="panel-group">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <label class="panel-title">
+                            <a data-toggle="collapse" href="#collapse3">MATERIAL EN ESPERA DE REVISIÓN</a>
+                        </label>
+                    </div>
+                    <div id="collapse3" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <div class="table-responsive">          
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Articulo</th>
+                                            <th>Cantidad</th>
+                                            <th>Peso x Unidad</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>-------</td>
+                                            <td>-------</td>
+                                            <td>-------</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <!--Footer todas las paginas-->
         <footer class="container-fluid text-center">
