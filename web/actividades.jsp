@@ -52,39 +52,78 @@
             </div>
         </nav>
         <div class="container">
+            <center><label>CONTROL ACTIVIDADES RECO</label></center>
             <div class="panel-group">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <label class="panel-title">
-                                        <a data-toggle="collapse" href="#collapse1"><center>ACTIVIDADES RECOLECTRON</center></a>
-                                    </label>
-                                </div>
-                                <div id="collapse1" class="panel-collapse collapse">
-                                    <div class="panel-body">
-                                        <div class="table-responsive">          
-                                            <table class="table">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Descripción</th>
-                                                        <th>Fecha y Hora de Inicio</th>
-                                                        <th>Fecha y Hora de Final</th>
-                                                        <th>Estado</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>-------</td>
-                                                        <td>-------</td>
-                                                        <td>-------</td>
-                                                        <td>-------</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <label class="panel-title">
+                            <a data-toggle="collapse" href="#collapse1">ACTIVIDADES RECOLECTRON</a>
+                        </label>
+                    </div>
+                    <div id="collapse1" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <div class="table-responsive">          
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Descripción</th>
+                                            <th>Fecha y Hora de Inicio</th>
+                                            <th>Fecha y Hora de Final</th>
+                                            <th>Estado</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>-------</td>
+                                            <td>-------</td>
+                                            <td>-------</td>
+                                            <td>-------</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+            
+                <div class="panel-group">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <label class="panel-title">
+                                <a data-toggle="collapse" href="#collapse2">REGISTRO DE ACTIVIDADES</a>
+                            </label>
+                        </div>
+                        <div id="collapse2" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <form method="POST">
+                                    <div class="form-group">
+                                        <label>Descripción Actividad:</label><br>
+                                        <textarea class="form-control" id="txtD" name="desc" rows="4" cols="50"></textarea><br>
+                                        <label>Seleccione material usado en la actividad:</label>
+                                        <select class="form-control" id="selectRE" name="PEs">
+                                           <option value="0">Selecciona--</option>
+                                        </select>
+                                        <div class="form-inline">
+                                           <label for="dateIn">Fecha de Inicio:</label>
+                                           <input type="date" class="form-control" id="fechaIn">
+                                           <label for="datehIn">Hora de inicio:</label>
+                                           <input type="time" class="form-control" id="hIn" name="appt">
+                                       </div><br>
+                                       <div class="form-inline">
+                                            <label for="dateTer">Fecha de Termino:</label>
+                                            <input type="date" class="form-control" id="fechaRgs">
+                                            <label for="dateTer">Hora de Termino:</label>
+                                            <input type="time" class="form-control" id="hTer" name="appt">
+                                       </div>
+                                     </div>
+                                     <button class="btn btn-success" type="submit" class="btn btn-default">Registrar Actividad</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>   
+            
         </div>
         <!--Footer todas las paginas-->
         <footer class="container-fluid text-center">
