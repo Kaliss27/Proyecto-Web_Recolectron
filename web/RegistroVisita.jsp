@@ -12,6 +12,7 @@
         <title>RECOLECTRÓN</title>
         <link href="CSS/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <link href="CSS/estiloReco.css" rel="stylesheet" type="text/css"/>
+        <link href="CSS/visitasS.css" rel="stylesheet" type="text/css"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="Scripts/bootstrap.min.js" type="text/javascript"></script>
         <link rel="icon" type="image/png" href="Imagenes/logo_recoUV.jpg" sizes="16x16">
@@ -48,7 +49,7 @@
             <div class="row content">
                 <div class="col-lg-10">
                         <label id="headerRV">¡Registra tu vistita al recolectrón!</label>
-                        <form method="POST">
+                        <form id="my-form">
                             <div class="form-group">
                                 <label for="matricula">Mátricula UV:</label>
                                 <input type="text" class="form-control" id="matricula" name="mat" placeholder="Ingresa tu mátricula">
@@ -71,8 +72,11 @@
                                 <label for="dateRgs">Fecha:</label>
                                 <input type="date" class="form-control" id="fechaRgs" name="fecha">
                             </div>
-                            <button class="btn btn-success" type="submit" class="btn btn-default" name="accion" value="Registrar visita">Registrar visita</button>
-                        </form>  
+                            <button id="btnRV" class="btn btn-success" type="submit" class="btn btn-default" name="accion" value="Registrar visita">Registrar visita</button>
+                        </form><br>
+                        <div class="alert alert-info">
+                            <strong>Visita registrada!</strong> 
+                        </div>
                 </div>
                 <!--Area de imagenes de visitas-->
                 <div class="col-lg-2 text-right">
@@ -85,6 +89,7 @@
                 </div>
             </div>
         </div>
+        <script src="Scripts/visitas.js"></script>
         <!--FOOTER todas las paginas-->
         <footer class="container-fluid text-center">
             <p>Recolectrón. Universidad Veracruzana</p>

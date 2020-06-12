@@ -1,20 +1,17 @@
 $(document).ready(function(){
-    $("#login").click(function(){
+    $("#btnRV").click(function(){
   	 $("#my-form").on('submit', function(evt){
             evt.preventDefault();  
             $.ajax(
 	        {
-		    url:'EQReco.jsp',
+		    url:'RegistroVisita.jsp',
 		    type:"POST",
 		    data:$("#my-form").serialize(),
 		    success:function(data){ 
-                        alert("Bienvenido");
-                        $(location).attr('href','vistaRapida.jsp');
+                        $(".alert").show();
                     },
 		    error:function(data){ alert("Error al iniciar sesión");}
 		});
 		});
 	});
 });
-
-

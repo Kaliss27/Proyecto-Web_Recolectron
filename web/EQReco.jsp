@@ -48,7 +48,7 @@
             <div class="row content">
                 <!--Espacio destinado para el formulario-->
                 <div class="col-lg-10 text left">
-                    <form id="my-form" action="vistaRapida.jsp" method="POST">
+                    <form id="my-form">
                         <div class="form-group">
                             <label for="uname">Nombre de Usuario:</label>
                             <input type="text" class="form-control" placeholder="Ingresa tu nombre de usuario" name="uname" required><br>
@@ -103,6 +103,6 @@
         <footer class="container-fluid text-center">
             <p>Recolectrón. Universidad Veracruzana</p>
         </footer><br><br>
-        <script src="EQLogin.js"></script>
+        <script src="Scripts/EQLogin.js"></script>
     </body>
 </html>
