@@ -12,6 +12,7 @@
         <title>RECOLECTRÓN</title>
         <link href="CSS/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <link href="CSS/estiloReco.css" rel="stylesheet" type="text/css"/>
+        <link href="CSS/DrecibidasStyle.css" rel="stylesheet" type="text/css"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="Scripts/bootstrap.min.js" type="text/javascript"></script>
         <link rel="icon" type="image/png" href="Imagenes/logo_recoUV.jpg" sizes="16x16">
@@ -73,7 +74,7 @@
                 <!--Formulario Donaciones Recibidas-->
                 <div class="col-lg-10">
                     <label id="headerRV">¡Registra tu donación al recolectrón!</label>
-                    <form>
+                    <form id="my-form1">
                         <div class="form-group">
                             <label for="orgn">Origen:</label>
                             <select class="form-control" id="selectOrgn" name="orgnD">
@@ -103,6 +104,7 @@
                                 </div>
                                 <div id="collapse1" class="panel-collapse collapse">
                                     <div class="panel-body">
+                                        <form id="my-form2">
                                         <div class="form-group">
                                             <label id="Cat">Categoria:</label>
                                             <select class="form-control" id="selectCat" name="Catres">
@@ -120,8 +122,9 @@
                                             <input type="number" class="form-control" id="cntN">
                                             <label id="pxu">Peso por Unidad:</label>
                                             <input type="text" class="form-control" id="PxUi">
-                                            <button class="btn btn-primary" type="submit" class="btn btn-default">Agregar</button><br>
+                                            <button id="btnAdd" class="btn btn-primary" type="submit" class="btn btn-default">Agregar</button><br>
                                         </div>
+                                        </form>
                                         <div class="table-responsive">          
                                             <table class="table">
                                                 <thead>
@@ -144,12 +147,16 @@
                                 </div>
                             </div>
                         </div>
-                        <button class="btn btn-success" type="submit" class="btn btn-default">Registrar Recepción</button>
-                    </form>  
+                        <button id="btnDR" class="btn btn-success" type="submit" class="btn btn-default">Registrar Recepción</button>
+                    </form><br>
+                    <div class="alert alert-info">
+                        <strong>!Donación registrada!</strong> 
+                    </div>
                 </div>
             </div>
         </div>
         <br><br>
+        <script src="Scripts/Drecibidas.js"></script>
         <!--Foter todas las paginas-->
         <footer class="container-fluid text-center">
             <p>Recolectrón. Universidad Veracruzana</p>
