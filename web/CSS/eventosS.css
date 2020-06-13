@@ -1,0 +1,29 @@
+/* 
+    Created on : 13/06/2020, 04:24:07 PM
+    Author     : karen
+*/
+#headerE{
+    background-color: #ffffff;
+    border-radius: 15px;
+}
+#title{
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    font-size: 50px;
+    color:#66cc66;
+}
+#eForm{
+    font-family: 'Oswald', sans-serif;
+    background-color: #ffffff;
+    border-style: groove;
+    border-radius: 15px;
+    border-color:#66cc66;
+    
+}
+#hForm{
+    font-weight: bold;
+    font-size: 20px;
+}
+.alert{
+    display:none; 
+}

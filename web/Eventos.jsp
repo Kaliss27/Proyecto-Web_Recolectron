@@ -12,6 +12,7 @@
         <title>RECOLECTRÓN</title>
         <link href="CSS/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <link href="CSS/estiloReco.css" rel="stylesheet" type="text/css"/>
+        <link href="CSS/eventosS.css" rel="stylesheet" type="text/css"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="Scripts/bootstrap.min.js" type="text/javascript"></script>
         <link rel="icon" type="image/png" href="Imagenes/logo_recoUV.jpg" sizes="16x16">
@@ -44,8 +45,10 @@
             </div>
         </nav>
         <!--Galeria Eventos-->
-        <div class="container">
-            <h2>EVENTOS RECO</h2>  
+        <div class="container" id="imagesE">
+            <div id="headerE" >
+                <center><label id="title">EVENTOS RECO</label></center>
+            </div><br>
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -68,32 +71,32 @@
                     <span class="sr-only">Siguiente</span>
                 </a>
             </div>
-        </div>
-        <div class="container" id="EQReco">
-            <div class="row content">
-                <div class="col-lg-10 text left">
-                    <label>Registro de Eventos</label>
-                    <form>
-                        <div class="form-group">
-                            <label>Titulo del Evento:</label>
-                            <input type="text" class="form-control" id="tEvento"><br>
-                            <label>Descripción:</label><br>
-                            <textarea class="form-control" id="txtD" name="desc" rows="4" cols="50"></textarea><br>
-                            <div class="form-inline">
-                                <label for="dateRgs">Fecha:</label>
-                                <input type="date" class="form-control" id="fechaRgs">
-                                <label for="dateRgs">Hora:</label>
-                                <input type="time" class="form-control" id="appt" name="appt">
-                            </div>
-                        </div>
-                        <button class="btn btn-success" type="submit" class="btn btn-default">Registrar Recepción</button>
-                    </form>
+        </div><br>
+        <div class="container" id="eForm">
+            <center><label id="hForm">Registro de Eventos</label></center>
+            <form id="eventF">
+                <div class="form-group">
+                    <label>Titulo del Evento:</label>
+                    <input type="text" class="form-control" id="tEvento"><br>
+                    <label>Descripción:</label><br>
+                    <textarea class="form-control" id="txtD" name="desc" rows="4" cols="50"></textarea><br>
+                    <div class="form-inline">
+                        <label for="dateRgs">Fecha:</label>
+                        <input type="date" class="form-control" id="fechaRgs">
+                        <label for="dateRgs">Hora:</label>
+                        <input type="time" class="form-control" id="appt" name="appt">
+                    </div>
                 </div>
-            </div>
-            <div class="container">
-                <br><br><br>
+                <button id="btnE" class="btn btn-success" type="submit" class="btn btn-default">Registrar Recepción</button>
+            </form><br>
+            <div class="alert alert-success">
+                <strong>Evento registrado</strong> 
             </div>
         </div>
+        <div class="container">
+                <br><br><br>
+        </div>
+        <script src="Scripts/eventos.js"></script>
         <!--FOOTER todas las paginas-->
         <footer class="container-fluid text-center">
             <p>Recolectrón. Universidad Veracruzana</p>

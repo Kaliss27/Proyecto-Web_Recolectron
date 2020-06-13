@@ -1,12 +1,12 @@
 $(document).ready(function(){
-    $("#btnRV").click(function(){
-  	 $("#my-form").on('submit', function(evt){
+    $("#btnE").click(function(){
+  	 $("#eventF").on('submit', function(evt){
             evt.preventDefault();  
             $.ajax(
 	        {
-		    url:'RegistroVisita.jsp',
+		    url:'Eventos.jsp',
 		    type:"POST",
-		    data:$("#my-form").serialize(),
+		    data:$("#eventF").serialize(),
 		    success:function(data){ 
                         $(".alert").show();
                     },
@@ -15,3 +15,5 @@ $(document).ready(function(){
 		});
 	});
 });
+
+
