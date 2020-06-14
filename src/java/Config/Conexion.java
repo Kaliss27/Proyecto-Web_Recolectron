@@ -7,9 +7,9 @@ public class Conexion {
 
     public Conexion() {
         try{
-            Class.forName("com.mysql.jdbc.Driver");
-            con=DriverManager.getConnection("jdbc:mysql://localhost:3306/db_recouv?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC","root","19021998");
-        }catch (Exception e){
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con=DriverManager.getConnection("jdbc:mysql://localhost:3306/recobd_v3?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=America/Mexico_City","root","19021998");
+        }catch (ClassNotFoundException | SQLException e){
             System.err.println("Error"+e);
         }
     }

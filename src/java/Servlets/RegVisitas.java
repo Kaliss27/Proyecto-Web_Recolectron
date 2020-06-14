@@ -1,16 +1,11 @@
 
 package Servlets;
 
+import Modelo.Catalogo_PE_Deps;
+import Modelo.Catalogo_Visitas;
 import Modelo.Registro_Visitas;
-import Querys.Reg_Visitas;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.sql.SQLException;
-import java.text.ParseException;
-import java.util.Date;
-import java.text.SimpleDateFormat;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.ArrayList;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,9 +16,6 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(name = "RegVisitas", urlPatterns = {"/RegVisitas"})
 public class RegVisitas extends HttpServlet {
-    Registro_Visitas rv = new Registro_Visitas();
-    Reg_Visitas regv = new Reg_Visitas();
-    Date fecha;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,8 +29,30 @@ public class RegVisitas extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-           
-            
+        String accion = request.getParameter("ACCION");
+        switch (accion) {
+            case "AGREGAR":
+                agregar(request, response);
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void agregar(HttpServletRequest request, HttpServletResponse response) {
+
+        try {
+            Controlador.Visitas vis = new Controlador.Visitas();
+            ArrayList<Catalogo_PE_Deps> catalogo_pe = vis.obtenerPE();
+            request.setAttribute("listaPE", catalogo_pe);
+            ArrayList<Catalogo_Visitas> visitas = vis.obtenerVisitas();
+            request.setAttribute("listavisits", visitas);
+
+            RequestDispatcher rd = request.getRequestDispatcher("./RegistroVisita.jsp");
+            rd.forward(request, response);
+        } catch (IOException | ServletException e) {
+            System.out.print(e);
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -68,27 +82,38 @@ public class RegVisitas extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
            String action = request.getParameter("accion");
-        if(action.equalsIgnoreCase("Registar visita")){
-               try {
-                   String matricula = request.getParameter("mat");
-                   String nombre = request.getParameter("nombre");
-                   try {
-                       fecha = new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("fecha_env"));
-                   } catch (ParseException ex) {
-                       Logger.getLogger(RegVisitas.class.getName()).log(Level.SEVERE, null, ex);
-                   }
-                   rv.setMatricula(matricula);
-                   rv.setNombre(nombre);
-                   rv.setFecha(fecha);
-                   regv.add(rv);
+          Registro_Visitas rv = new Registro_Visitas();
+        
+        try {
+            if (action.equalsIgnoreCase("Registrar visita")) {
+                String matricula = request.getParameter("mat");
+                String nombre = request.getParameter("nombre");
+                String apaterno = request.getParameter("appaterno");
+                String apmaterno = request.getParameter("apmaterno");
+                int pe = Integer.parseInt(request.getParameter("PEs"));
+                int mv = Integer.parseInt(request.getParameter("MVs"));
+                String fecha = request.getParameter("fecha");
                    
-               } catch (SQLException ex) {
-                   Logger.getLogger(RegVisitas.class.getName()).log(Level.SEVERE, null, ex);
-               }
-              
+                rv.setMatricula(matricula);
+                rv.setNombre(nombre);
+                rv.setApaterno(apaterno);
+                rv.setAmaterno(apmaterno);
+                rv.setPe_dependencia(pe);
+                rv.setTipo_visita(mv);
+                rv.setFecha(fecha);
+                Controlador.Visitas visits = new Controlador.Visitas();
+                visits.insertar(rv);
+            }
+        } catch (NumberFormatException e) {
+            System.out.println(e);
         }
-        RequestDispatcher vista = request.getRequestDispatcher("RegistroVisita.jsp");
-        vista.forward(request, response);
+        try {
+            Thread.sleep(3*1000);
+         } catch (InterruptedException e) {
+            System.out.println(e);
+         }
+        RequestDispatcher rd = request.getRequestDispatcher("./index.jsp");
+        rd.forward(request, response);
     }
 
     /**

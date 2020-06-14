@@ -32,11 +32,11 @@
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
-                        <li><a href="index.jsp">Inicio</a></li>
-                        <li><a href="RegistroVisita.jsp">Registra tu visita</a></li>
-                        <li class="active"><a href="RegistroDR.jsp">Donaciones Recibidas</a></li>
-                        <li><a href="RegistroDE.jsp">Donaciones Emitidas</a></li>
-                        <li><a href="Eventos.jsp">Eventos Reco</a></li>
+                        <li><a href="#" id="ini">Inicio</a></li>
+                        <li><a href="#" id="form_visita">Registra tu visita</a></li>
+                        <li class="active"><a href="#" id="form_donrec">Donaciones Recibidas</a></li>
+                        <li><a href="#" id="form_donem">Donaciones Emitidas</a></li>
+                        <li><a href="#" id="form_event">Eventos Reco</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="EQReco.jsp"><span class="glyphicon glyphicon-log-in"></span>Equipo RECO</a></li>

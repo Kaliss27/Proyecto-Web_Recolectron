@@ -4,6 +4,7 @@
     Author     : karen
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -32,11 +33,11 @@
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
-                        <li><a href="index.jsp">Inicio</a></li>
-                        <li class="active"><a href="RegistroVisita.jsp">Registra tu visita</a></li>
-                        <li><a href="RegistroDR.jsp">Donaciones Recibidas</a></li>
-                        <li><a href="RegistroDE.jsp">Donaciones Emitidas</a></li>
-                        <li><a href="Eventos.jsp">Eventos Reco</a></li>
+                        <li><a href="#" id="ini">Inicio</a></li>
+                        <li class="active"><a href="#" id="form_visita">Registra tu visita</a></li>
+                        <li><a href="#" id="form_donrec">Donaciones Recibidas</a></li>
+                        <li><a href="#" id="form_donem">Donaciones Emitidas</a></li>
+                        <li><a href="#" id="form_event">Eventos Reco</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="EQReco.jsp"><span class="glyphicon glyphicon-log-in"></span>Equipo RECO</a></li>
@@ -49,7 +50,7 @@
             <div class="row content">
                 <div class="col-lg-10">
                         <label id="headerRV">¡Registra tu vistita al recolectrón!</label>
-                        <form id="my-form">
+                        <form action="RegVisitas" method="POST" id="my-form">
                             <div class="form-group">
                                 <label for="matricula">Mátricula UV:</label>
                                 <input type="text" class="form-control" id="matricula" name="mat" placeholder="Ingresa tu mátricula">
@@ -58,21 +59,33 @@
                                 <label for="nameC">Nombre:</label>
                                 <input type="text" class="form-control" id="pwd" name="nombre" placeholder="Ingresa tu nombre">
                             </div>
+                            <div class="form-group">
+                                <label for="appat">Apellido Paterno:</label>
+                                <input type="text" class="form-control" id="pwd" name="appaterno" placeholder="Ingresa tu apellido paterno">
+                            </div>
+                            <div class="form-group">
+                                <label for="apmat">Apellido Materno:</label>
+                                <input type="text" class="form-control" id="pwd" name="apmaterno" placeholder="Ingresa tu apellido materno">
+                            </div>
                             <div class="form-inline">
                                 <label for="txtPE">Selecciona tu Programa Educativo:</label>
                                 <select class="form-control" id="selectPE" name="PEs">
-                                    <option value="--">Selecciona--</option>
+                                    <c:forEach items="${requestScope.listaPE}" var="pe">
+                                        <option value=${pe.id}>${pe.dependencia}</option>
+                                    </c:forEach>
                                 </select>
                                 <label for="txtTV">Motivo de Visita:</label>
                                 <select class="form-control" id="selectTV" name="MVs">
-                                    <option value="--">Selecciona--</option>
+                                    <c:forEach items="${requestScope.listavisits}" var="lv">
+                                        <option value=${lv.id}>${lv.tipo}</option>
+                                    </c:forEach>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="dateRgs">Fecha:</label>
                                 <input type="date" class="form-control" id="fechaRgs" name="fecha">
                             </div>
-                            <button id="btnRV" class="btn btn-success" type="submit" class="btn btn-default" name="accion" value="Registrar visita">Registrar visita</button>
+                            <input class="btn btn-success" type="submit" class="btn btn-default" name="accion" id="btnRV" value="Registrar visita">
                         </form><br>
                         <div class="alert alert-info">
                             <strong>Visita registrada!</strong> 
