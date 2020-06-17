@@ -147,7 +147,7 @@
                                 </div>
                             </div>
                         </div>
-                        <button id="btnDR" class="btn btn-success" type="submit" class="btn btn-default">Registrar Recepción</button>
+                        <button id="btnDR" class="btn btn-success" type="submit" class="btn btn-default">Registrar Recepción</button><br>
                     </form><br>
                     <div class="alert alert-info">
                         <strong>!Donación registrada!</strong> 

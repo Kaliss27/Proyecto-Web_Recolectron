@@ -1,0 +1,34 @@
+/* 
+    Created on : 17/06/2020, 04:52:45 PM
+    Author     : karen
+*/
+.col-lg-10{
+    background-color: #ffffff;
+    border-radius: 15px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    border-style: groove;
+    border-radius: 15px;
+    border-color:#66cc66;
+}
+#headerRDE{
+    font-size: 25px;
+    color:#66cc66;
+}
+.panel-default{
+    border-color:#0738aa;
+    border-radius: 2px;
+}
+.panel-group{
+    font-size: 15px;
+}
+.panel-default > .panel-heading {
+    background-color:#dce9fd;
+}
+.well{
+    background-color: #66cc66;
+    padding: 10px;
+}
+.alert{
+    display:none;
+}
