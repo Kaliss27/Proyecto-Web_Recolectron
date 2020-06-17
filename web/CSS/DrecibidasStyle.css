@@ -2,6 +2,34 @@
     Created on : 13/06/2020, 01:19:01 AM
     Author     : karen
 */
+.col-lg-10{
+    background-color: #ffffff;
+    border-radius: 15px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    border-style: groove;
+    border-radius: 15px;
+    border-color:#66cc66;
+}
+#headerRV{
+    font-size: 25px;
+    color:#66cc66;
+}
+.panel-default{
+    border-color:#0738aa;
+    border-radius: 2px;
+}
+.panel-group{
+    font-size: 15px;
+}
+.panel-default > .panel-heading {
+    background-color:#dce9fd;
+}
+#myCarousel{
+    background-color:#66cc66;
+    padding: 10px;
+    
+}
 .alert{
     display:none;
 }

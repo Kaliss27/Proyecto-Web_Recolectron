@@ -73,7 +73,7 @@
                 </div>
                 <!--Formulario Donaciones Recibidas-->
                 <div class="col-lg-10">
-                    <label id="headerRV">¡Registra tu donación al recolectrón!</label>
+                    <center><label id="headerRV">¡Registra tu donación al recolectrón!</label></center>
                     <form id="my-form1">
                         <div class="form-group">
                             <label for="orgn">Origen:</label>
@@ -90,7 +90,7 @@
                             <input type="tel" class="form-control" id="telefono" placeholder="Teléfono de contacto">
                             <label for="emailDR">Correo Electrónico:</label>
                             <input type="email" class="form-control" id="emailDRid" placeholder="Ingresa tu email">
-                        </div>
+                        </div><br>
                         <div class="form-group">
                             <label for="dateRgs">Fecha de recepción:</label>
                             <input type="date" class="form-control" id="fechaRgs">
