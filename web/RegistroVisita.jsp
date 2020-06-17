@@ -49,7 +49,10 @@
         <div class="container">
             <div class="row content">
                 <div class="col-lg-10">
-                        <label id="headerRV">¡Registra tu vistita al recolectrón!</label>
+                    <div id="headerE" >
+                        <center><label id="title">¡Registra tu visita al recolectrón!</label></center>
+                    </div><br>
+                    
                         <form action="RegVisitas" method="POST" id="my-form">
                             <div class="form-group">
                                 <label for="matricula">Mátricula UV:</label>

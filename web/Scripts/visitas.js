@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
     $("#form_visita").on('click', function () {
         RegVisitas.agregar();
