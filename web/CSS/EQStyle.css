@@ -1,0 +1,21 @@
+/* 
+    Created on : 17/06/2020, 06:13:44 PM
+    Author     : karen
+*/
+.col-lg-8{
+    background-color: #ffffff;
+    border-style: groove;
+    border-radius: 15px;
+    border-color:#66cc66;
+    font-family: 'Oswald', sans-serif;
+}
+#lhlogin{
+    font-weight: bold;
+    font-size: 20px;
+    color:#66cc66;
+}
+#myCarousel{
+    padding: 10px;
+    background-color: #66cc66;
+}
+

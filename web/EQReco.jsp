@@ -12,6 +12,7 @@
         <title>RECOLECTRÓN</title>
         <link href="CSS/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <link href="CSS/estiloReco.css" rel="stylesheet" type="text/css"/>
+        <link href="CSS/EQStyle.css" rel="stylesheet" type="text/css"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="Scripts/bootstrap.min.js" type="text/javascript"></script>
         <link rel="icon" type="image/png" href="Imagenes/logo_recoUV.jpg" sizes="16x16">
@@ -47,7 +48,8 @@
         <div class="container">
             <div class="row content">
                 <!--Espacio destinado para el formulario-->
-                <div class="col-lg-10 text left">
+                <div class="col-lg-8 text left">
+                    <center><label id="lhlogin">ACCESO</label></center>
                     <form id="my-form">
                         <div class="form-group">
                             <label for="uname">Nombre de Usuario:</label>
@@ -59,13 +61,9 @@
                         </div>
                     </form>
                     <br><br>
-                    <div class="form-group">
-                        <button class="btn btn-default" type="button" class="cancelbtn">Cancelar</button>
-                        <span class="psw">¿Olvidaste tu <a href="#">contraseña?</a></span>
-                    </div>
                 </div>
                 <!--Espacio destinado para el carousel-->
-                <div class="col-lg-2 sidenav">
+                <div class="col-lg-4 sidenav">
                     <div id="myCarousel" class="carousel slide" data-ride="carousel">
                         <ol class="carousel-indicators">
                             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
