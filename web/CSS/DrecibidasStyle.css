@@ -2,7 +2,7 @@
     Created on : 13/06/2020, 01:19:01 AM
     Author     : karen
 */
-.col-lg-10{
+.col-lg-9{
     background-color: #ffffff;
     border-radius: 15px;
     font-family: 'Oswald', sans-serif;
@@ -33,3 +33,6 @@
 .alert{
     display:none;
 }
+/*#bttn{
+    display:none;
+}*/

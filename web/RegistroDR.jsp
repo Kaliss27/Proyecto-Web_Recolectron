@@ -47,7 +47,7 @@
         <!--Carussel Imagenes de donaciones-->
         <div class="container">
             <div class="row content">
-                <div class="col-lg-2 text-right">
+                <div class="col-lg-3 sidenav">
                     <div id="myCarousel" class="carousel slide" data-ride="carousel">
                         <ol class="carousel-indicators">
                             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -69,10 +69,13 @@
                             <span class="glyphicon glyphicon-chevron-right"></span>
                             <span class="sr-only">Next</span>
                         </a>
+                    </div><br>
+                    <div class="container" id="bttn">
+                        <button id="btnReport" class="btn btn-primary" type="submit" class="btn btn-default">Generar reporte</button>
                     </div>
                 </div>
                 <!--Formulario Donaciones Recibidas-->
-                <div class="col-lg-10">
+                <div class="col-lg-9">
                     <center><label id="headerRV">¡Registra tu donación al recolectrón!</label></center>
                     <form id="my-form1">
                         <div class="form-group">
@@ -149,7 +152,7 @@
                         </div>
                         <button id="btnDR" class="btn btn-success" type="submit" class="btn btn-default">Registrar Recepción</button><br>
                     </form><br>
-                    <div class="alert alert-info">
+                    <div class="alert alert-success">
                         <strong>!Donación registrada!</strong> 
                     </div>
                 </div>
