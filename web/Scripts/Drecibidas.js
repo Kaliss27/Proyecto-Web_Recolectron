@@ -2,6 +2,9 @@ $(document).ready(function () {
     $("#form_donrec").on('click', function () {
         DonRec.agregar();
     });
+    $("#selectCat").select(function(){
+        DonRec.mostrar();
+    });
 });
 
 var DonRec = (function () {
@@ -55,9 +58,17 @@ var DonRec = (function () {
 
 
                 });
-        }            
+        },
+        
+        mostrar: function(){
+            $.get("DonRec",{
+                ACCION:"MOSTRAR"
+            });
+        }
 
     };
+    
+    
 }());
 
 

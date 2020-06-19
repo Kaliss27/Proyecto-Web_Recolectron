@@ -115,13 +115,17 @@
                                             <div class="form-group">
                                                 <label id="Cat">Categoria:</label>
                                                 <select class="form-control" id="selectCat" name="Catres">
-                                                    <option value="0">Selecciona--</option>
+                                                    <c:forEach items="${requestScope.listaCategorias}" var="cat">
+                                                        <option value=${cat.id}>${cat.categoria}</option>
+                                                    </c:forEach>
                                                 </select>
                                             </div>
                                             <div class="form-group">
                                                 <label id="REc">Residuo Electrónico:</label>
                                                 <select class="form-control" id="selectRE" name="PEs">
-                                                    <option value="0">Selecciona--</option>
+                                                    <c:forEach items="${requestScope.listaRE}" var="re">
+                                                        <option value=${re.id}>${re.descripcion}</option>
+                                                    </c:forEach>
                                                 </select>
                                             </div>
                                             <div class="form-inline">

@@ -2,6 +2,8 @@
 package Servlets;
 
 import Modelo.Catalogo_Origen;
+import Modelo.Categorias_RE;
+import Modelo.Residuos_Electronicos;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -36,6 +38,8 @@ public class DonRec extends HttpServlet {
             case "AGREGAR":
                 agregar(request, response);
                 break;
+            case "MOSTRAR":
+                
             default:
                 break;
         }
@@ -49,6 +53,11 @@ public class DonRec extends HttpServlet {
             Controlador.Donaciones donr = new Controlador.Donaciones();
             ArrayList<Catalogo_Origen> catalogo_ori = donr.obtenerOrigen();
             request.setAttribute("listaOrigen", catalogo_ori);
+            ArrayList<Categorias_RE> catalogo_cat = donr.obtenerCategoria();
+            request.setAttribute("listaCategorias", catalogo_cat);
+            ArrayList<Residuos_Electronicos> catalogo_re = donr.obtenerRE();
+            request.setAttribute("listaRE", catalogo_re);
+            
 
             RequestDispatcher rd = request.getRequestDispatcher("./RegistroDR.jsp");
             rd.forward(request, response);
@@ -56,6 +65,8 @@ public class DonRec extends HttpServlet {
             System.out.print(e);
         }
     }
+     
+     
     
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
