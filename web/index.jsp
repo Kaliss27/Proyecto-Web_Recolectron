@@ -10,6 +10,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="Scripts/bootstrap.min.js" type="text/javascript"></script>
         <script src="Scripts/visitas.js" type="text/javascript"></script>
+        <script src="Scripts/Drecibidas.js" type="text/javascript"></script>
         <link rel="icon" type="image/png" href="Imagenes/logo_recoUV.jpg" sizes="16x16">
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
     </head>
@@ -27,7 +28,7 @@
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#" id="ini">Inicio</a></li>
+                        <li class="active"><a href="index.jsp" id="ini">Inicio</a></li>
                         <li><a href="#" id="form_visita">Registra tu visita</a></li>
                         <li><a href="#" id="form_donrec">Donaciones Recibidas</a></li>
                         <li><a href="#" id="form_donem">Donaciones Emitidas</a></li>

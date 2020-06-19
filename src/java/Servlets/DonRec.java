@@ -1,8 +1,10 @@
 
 package Servlets;
 
+import Modelo.Catalogo_Origen;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -29,11 +31,31 @@ public class DonRec extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+         String accion = request.getParameter("ACCION");
+        switch (accion) {
+            case "AGREGAR":
+                agregar(request, response);
+                break;
+            default:
+                break;
+        }
    
     }
     
     
-    
+     private void agregar(HttpServletRequest request, HttpServletResponse response) {
+
+        try {
+            Controlador.Donaciones donr = new Controlador.Donaciones();
+            ArrayList<Catalogo_Origen> catalogo_ori = donr.obtenerOrigen();
+            request.setAttribute("listaOrigen", catalogo_ori);
+
+            RequestDispatcher rd = request.getRequestDispatcher("./RegistroDR.jsp");
+            rd.forward(request, response);
+        } catch (IOException | ServletException e) {
+            System.out.print(e);
+        }
+    }
     
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
