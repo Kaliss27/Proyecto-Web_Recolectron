@@ -8,6 +8,14 @@
         <servlet-name>RegVisitas</servlet-name>
         <url-pattern>/RegVisitas</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>DonRec</servlet-name>
+        <servlet-class>Servlets.DonRec</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DonRec</servlet-name>
+        <url-pattern>/DonRec</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30

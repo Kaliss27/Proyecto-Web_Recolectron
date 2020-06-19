@@ -1,23 +1,52 @@
-$(document).ready(function(){
-    $("#btnAdd").click(function(){
-       alert("Articulo"); 
+$(document).ready(function () {
+    $("#form_donrec").on('click', function () {
+        DonRec.agregar();
     });
-    
-    $("#btnDR").click(function(){
-  	 $("#my-form1").on('submit', function(evt){
-            evt.preventDefault();  
-            $.ajax(
-	        {
-		    url:'RegistroDR.jsp',
-		    type:"POST",
-		    data:$("#my-form1").serialize(),
-		    success:function(data){ 
-                        $(".alert").show();
-                    },
-		    error:function(data){ alert("Error al iniciar sesión");}
-		});
-		});
-	});
 });
+
+var DonRec = (function () {
+
+    return {
+
+        agregar: function () {
+            $.get("DonRec", {
+                ACCION: "AGREGAR"
+            }).then(function () {
+                $(document.body).html(arguments[0]);
+                $("#btnDR").on('click', function () {
+
+                    var text = "";
+                    if ($.trim($("#matricula").val()).length === 0) {
+                        text = text + "Matricula\n";
+                    }
+                    if ($.trim($("#pwd").val()).length === 0) {
+                        text = text + "Nombre o Apellidos\n";
+                    }
+                    if ($.trim($("#selectPE").val()).length === 0) {
+                        text = text + "Programa Educativo\n";
+                    }
+                    if ($.trim($("#selectTV").val()).length === 0) {
+                        text = text + "Motivo de Visita\n";
+                    }
+                    if ($.trim($("#fechaRgs").val()).length === 0) {
+                        text = text + "Fecha\n";
+                    }
+
+                    if (text.length > 0) {
+                        alert('Debe llenar todos los campos');
+                        return false;
+                    } else {
+                        $(".alert").show();
+                        return true;
+                    }
+                });
+
+
+
+                });
+        }            
+
+    };
+}());
 
 

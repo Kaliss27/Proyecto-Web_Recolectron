@@ -108,25 +108,25 @@
                                 <div id="collapse1" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         <form id="my-form2">
-                                        <div class="form-group">
-                                            <label id="Cat">Categoria:</label>
-                                            <select class="form-control" id="selectCat" name="Catres">
-                                                <option value="0">Selecciona--</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label id="REc">Residuo Electrónico:</label>
-                                            <select class="form-control" id="selectRE" name="PEs">
-                                                <option value="0">Selecciona--</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-inline">
-                                            <label id="cnt">Cantidad:</label>
-                                            <input type="number" class="form-control" id="cntN">
-                                            <label id="pxu">Peso por Unidad:</label>
-                                            <input type="text" class="form-control" id="PxUi">
-                                            <button id="btnAdd" class="btn btn-primary" type="submit" class="btn btn-default">Agregar</button><br>
-                                        </div>
+                                            <div class="form-group">
+                                                <label id="Cat">Categoria:</label>
+                                                <select class="form-control" id="selectCat" name="Catres">
+                                                    <option value="0">Selecciona--</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label id="REc">Residuo Electrónico:</label>
+                                                <select class="form-control" id="selectRE" name="PEs">
+                                                    <option value="0">Selecciona--</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-inline">
+                                                <label id="cnt">Cantidad:</label>
+                                                <input type="number" class="form-control" id="cntN">
+                                                <label id="pxu">Peso por Unidad:</label>
+                                                <input type="text" class="form-control" id="PxUi">
+                                                <input id="btnAdd" class="btn btn-primary" type="submit" class="btn btn-default"><br>
+                                            </div>
                                         </form>
                                         <div class="table-responsive">          
                                             <table class="table">
@@ -150,7 +150,7 @@
                                 </div>
                             </div>
                         </div>
-                        <button id="btnDR" class="btn btn-success" type="submit" class="btn btn-default">Registrar Recepción</button><br>
+                        <input id="btnDR" class="btn btn-success" type="submit" class="btn btn-default" value="Registrar Recepción">
                     </form><br>
                     <div class="alert alert-success">
                         <strong>!Donación registrada!</strong> 
