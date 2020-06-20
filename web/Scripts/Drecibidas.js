@@ -2,10 +2,57 @@ $(document).ready(function () {
     $("#form_donrec").on('click', function () {
         DonRec.agregar();
     });
-    $("#selectCat").select(function(){
-        DonRec.mostrar();
+
+    $("#formaux").hide();
+    $("#formaux2").hide();
+
+    
+    var elementos = new Array();
+    $("#formaux option").each(function ()
+    {
+        elementos.push($(this).text());
     });
+
+    var ids = new Array();
+    $("#formaux option").each(function ()
+    {
+        ids.push($(this).attr('value'));
+    });
+
+    var categorias = new Array();
+    $("#formaux2 option").each(function ()
+    {
+        categorias.push($(this).attr('value'));
+    });
+    
+
+    $("#selectCat").on('click',function () {
+        var cat = $('select[id=selectCat]').val();
+
+        var indices = new Array();
+        var elem = new Array();
+        for (var i = 0; i < categorias.length; i += 1) {
+            if (categorias[i] === cat) {
+                elem.push(elementos[i]);
+                indices.push(ids[i]);
+            }
+        }
+
+        $("#selectRE").empty();
+
+        for (var i = 0; i < elem.length; i += 1) {
+             $("#selectRE").append('<option value='+indices[i]+'>'+elem[i]+'</option>');
+        }
+
+        $("#selectRE").on('click',function () {
+            console.log("index:",$('select[id=selectRE]').val());
+        });
+        
+        
+    });
+   
 });
+
 
 var DonRec = (function () {
 
@@ -58,12 +105,6 @@ var DonRec = (function () {
 
 
                 });
-        },
-        
-        mostrar: function(){
-            $.get("DonRec",{
-                ACCION:"MOSTRAR"
-            });
         }
 
     };

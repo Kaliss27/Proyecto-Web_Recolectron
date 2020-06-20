@@ -5,7 +5,6 @@ import Modelo.Catalogo_Origen;
 import Modelo.Categorias_RE;
 import Modelo.Residuos_Electronicos;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -38,8 +37,6 @@ public class DonRec extends HttpServlet {
             case "AGREGAR":
                 agregar(request, response);
                 break;
-            case "MOSTRAR":
-                
             default:
                 break;
         }

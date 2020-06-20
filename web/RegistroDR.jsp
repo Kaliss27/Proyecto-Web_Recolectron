@@ -82,7 +82,7 @@
                     <form id="my-form1">
                         <div class="form-group">
                             <label for="orgn">Origen:</label>
-                            <select class="form-control" id="selectOrgn" name="orgnD">
+                            <select  class="form-control" id="selectOrgn" name="orgnD">
                                 <c:forEach items="${requestScope.listaOrigen}" var="ori">
                                     <option value=${ori.id}>${ori.origen}</option>
                                 </c:forEach>
@@ -111,21 +111,28 @@
                                 </div>
                                 <div id="collapse1" class="panel-collapse collapse">
                                     <div class="panel-body">
-                                        <form id="my-form2">
-                                            <div class="form-group">
+                                        <form id="my-form2" name="formul">
+                                            <div class="form-group" >
                                                 <label id="Cat">Categoria:</label>
                                                 <select class="form-control" id="selectCat" name="Catres">
                                                     <c:forEach items="${requestScope.listaCategorias}" var="cat">
                                                         <option value=${cat.id}>${cat.categoria}</option>
+                                                    </c:forEach>  
+                                                </select>
+                                                <select class="form-control" id="formaux" name="fomtemp">
+                                                    <c:forEach items="${requestScope.listaRE}" var="re">
+                                                            <option value=${re.id}>${re.descripcion}</option>
                                                     </c:forEach>
                                                 </select>
-                                            </div>
+                                                <select class="form-control" id="formaux2" name="fomtemp2">
+                                                    <c:forEach items="${requestScope.listaRE}" var="re">
+                                                            <option value=${re.categoria}></option>
+                                                    </c:forEach>
+                                                </select>
+                                            </div>             
                                             <div class="form-group">
                                                 <label id="REc">Residuo Electrónico:</label>
                                                 <select class="form-control" id="selectRE" name="PEs">
-                                                    <c:forEach items="${requestScope.listaRE}" var="re">
-                                                        <option value=${re.id}>${re.descripcion}</option>
-                                                    </c:forEach>
                                                 </select>
                                             </div>
                                             <div class="form-inline">
@@ -167,6 +174,7 @@
             </div>
         </div>
         <br><br>
+        
         <script src="Scripts/Drecibidas.js"></script>
         <!--Foter todas las paginas-->
         <footer class="container-fluid text-center">
