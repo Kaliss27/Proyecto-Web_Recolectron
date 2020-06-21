@@ -1,10 +1,22 @@
+.container{
+    background-color: #ffffff;
+    border-radius: 15px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    border-style: groove;
+    border-radius: 15px;
+    border-color:#66cc66;
+}
+#headerAct{
+    font-size: 25px;
+    color:#66cc66;
+}
 .panel-default{
     border-color:#0738aa;
     border-radius: 2px;
 }
 .panel-default > .panel-heading {
     background-color:#dce9fd;
-    color:#66cc66;
 }
 .panel-body { 
     background: #ffffff;

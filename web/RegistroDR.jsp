@@ -140,7 +140,7 @@
                                                 <input type="number" class="form-control" id="cntN">
                                                 <label id="pxu">Peso por Unidad:</label>
                                                 <input type="text" class="form-control" id="PxUi">
-                                                <input id="btnAdd" class="btn btn-primary" type="submit" class="btn btn-default"><br>
+                                                <input id="btnAdd" class="btn btn-primary" type="submit" class="btn btn-default">
                                             </div>
                                         </form>
                                         <div class="table-responsive">          
@@ -166,7 +166,7 @@
                             </div>
                         </div>
                         <input id="btnDR" class="btn btn-success" type="submit" class="btn btn-default" value="Registrar Recepción">
-                    </form><br>
+                    </form><br><br>
                     <div class="alert alert-success">
                         <strong>!Donación registrada!</strong> 
                     </div>
@@ -174,7 +174,6 @@
             </div>
         </div>
         <br><br>
-        
         <script src="Scripts/Drecibidas.js"></script>
         <!--Foter todas las paginas-->
         <footer class="container-fluid text-center">

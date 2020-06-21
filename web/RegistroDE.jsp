@@ -87,7 +87,7 @@
                                                         <option value="0">Selecciona--</option>
                                                     </select>
                                                     <label id="cnt">Cantidad:</label>
-                                                    <input type="number" class="form-control" id="cntN"><br>
+                                                    <input type="number" class="form-control" id="cntN">
                                                     <button class="btn btn-primary" type="submit" class="btn btn-default">Agregar</button>
                                                 </form><br>
                                                 <div class="table-responsive">          

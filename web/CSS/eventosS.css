@@ -5,6 +5,8 @@
 #headerE{
     background-color: #ffffff;
     border-radius: 15px;
+    border-style: groove;
+    border-color:#66cc66;
 }
 #title{
     font-family: 'Oswald', sans-serif;

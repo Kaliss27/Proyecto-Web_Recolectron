@@ -52,7 +52,7 @@
             </div>
         </nav>
         <div class="container">
-            <center><label>CONTROL ACTIVIDADES RECO</label></center>
+            <center><label id="headerAct">CONTROL ACTIVIDADES RECO</label></center>
             <div class="panel-group">
                 <div class="panel panel-default">
                     <div class="panel-heading">
