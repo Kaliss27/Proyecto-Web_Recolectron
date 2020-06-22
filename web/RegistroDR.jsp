@@ -47,7 +47,7 @@
             </div>
         </nav>
         <!--Carussel Imagenes de donaciones-->
-        <div class="container">
+        <div class="container" id="contenido">
             <div class="row content">
                 <div class="col-lg-3 sidenav">
                     <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -73,7 +73,7 @@
                         </a>
                     </div><br>
                     <div class="container" id="bttn">
-                        <button id="btnReport" class="btn btn-primary" type="submit" class="btn btn-default">Generar reporte</button>
+                       <button id="btnReport" class="btn btn-primary" type="submit" class="btn btn-default">Generar reporte</button>   
                     </div>
                 </div>
                 <!--Formulario Donaciones Recibidas-->
@@ -89,8 +89,8 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="nameC">Nombre:</label>
-                            <input type="text" class="form-control" id="pwd" placeholder="Ingresa tu nombre">
+                            <label for="nameC">Nombre Completo:</label>
+                            <input type="text" class="form-control" id="pwd" placeholder="Ingresa tu nombre completo">
                         </div>
                         <div class="form-inline">
                             <label for="numberD">Teléfono:</label>

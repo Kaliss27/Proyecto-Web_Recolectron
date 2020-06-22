@@ -5,7 +5,7 @@ $(document).ready(function () {
 
     $("#formaux").hide();
     $("#formaux2").hide();
-
+    
     
     var elementos = new Array();
     $("#formaux option").each(function ()

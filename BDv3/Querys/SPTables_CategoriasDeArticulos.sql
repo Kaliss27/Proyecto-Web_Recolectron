@@ -62,4 +62,5 @@ INSERT INTO residuos_electronicos(Descripcion,Categoria,Costo_Promedio_x_Unidad)
 ("Cassettes/CDs/Diskettes",8,10),
 ("Imanes",8,50),
 ("Engranes",8,30);
+
 END
