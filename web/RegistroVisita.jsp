@@ -54,22 +54,22 @@
                         <center><label id="title">¡Registra tu visita al recolectrón!</label></center>
                     </div><br>
                     
-                        <form action="RegVisitas" method="POST" id="my-form">
+                    <form method="POST" id="my-form">
                             <div class="form-group">
                                 <label for="matricula">Mátricula UV:</label>
                                 <input type="text" class="form-control" id="matricula" name="mat" placeholder="Ingresa tu mátricula">
                             </div>
                             <div class="form-group">
                                 <label for="nameC">Nombre:</label>
-                                <input type="text" class="form-control" id="pwd" name="nombre" placeholder="Ingresa tu nombre">
+                                <input type="text" class="form-control" id="nom" name="nombre" placeholder="Ingresa tu nombre">
                             </div>
                             <div class="form-group">
-                                <label for="appat">Apellido Paterno:</label>
-                                <input type="text" class="form-control" id="pwd" name="appaterno" placeholder="Ingresa tu apellido paterno">
+                                <label for="apaterno">Apellido Paterno:</label>
+                                <input type="text" class="form-control" id="appat" name="appaterno" placeholder="Ingresa tu apellido paterno">
                             </div>
                             <div class="form-group">
-                                <label for="apmat">Apellido Materno:</label>
-                                <input type="text" class="form-control" id="pwd" name="apmaterno" placeholder="Ingresa tu apellido materno">
+                                <label for="apmaterno">Apellido Materno:</label>
+                                <input type="text" class="form-control" id="apmat" name="apmaterno" placeholder="Ingresa tu apellido materno">
                             </div>
                             <div class="form-inline">
                                 <label for="txtPE">Selecciona tu Programa Educativo:</label>
@@ -89,7 +89,7 @@
                                 <label for="dateRgs">Fecha:</label>
                                 <input type="date" class="form-control" id="fechaRgs" name="fecha">
                             </div>
-                            <input class="btn btn-success" type="submit" class="btn btn-default" name="accion" id="btnRV" value="Registrar visita">
+                            <input class="btn btn-success" type="submit" class="btn btn-default" id="btnRV" value="Registrar visita">
                         </form><br>
                         <div class="alert alert-info">
                             <strong>Visita registrada!</strong> 

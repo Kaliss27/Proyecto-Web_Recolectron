@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <servlet>
+        <servlet-name>DonRec</servlet-name>
+        <servlet-class>Servlets.DonRec</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>RegVisitas</servlet-name>
         <servlet-class>Servlets.RegVisitas</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>RegVisitas</servlet-name>
-        <url-pattern>/RegVisitas</url-pattern>
-    </servlet-mapping>
-    <servlet>
-        <servlet-name>DonRec</servlet-name>
-        <servlet-class>Servlets.DonRec</servlet-class>
-    </servlet>
-    <servlet-mapping>
         <servlet-name>DonRec</servlet-name>
         <url-pattern>/DonRec</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RegVisitas</servlet-name>
+        <url-pattern>/RegVisitas</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
