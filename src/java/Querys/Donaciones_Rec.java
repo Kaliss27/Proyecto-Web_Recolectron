@@ -4,6 +4,8 @@ package Querys;
 import Config.Conexion;
 import Modelo.Catalogo_Origen;
 import Modelo.Categorias_RE;
+import Modelo.Recepcion_RE;
+import Modelo.Registro_Recepcion_Donaciones;
 import Modelo.Residuos_Electronicos;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -20,6 +22,81 @@ public class Donaciones_Rec {
     Connection con;
     PreparedStatement ps;
     ResultSet rs;
+    
+    
+ public boolean add(Registro_Recepcion_Donaciones rrd) {
+    boolean r = false;
+        try {
+            cn.getConnection().setAutoCommit(false);
+            String consulta = "insert into registro_recepcion_donaciones (Origen, Nombre, Telefono,Correo_Electronico, Fecha_Hora)\n" +
+                "values (?,?,?,?,?);";
+            ps = cn.getConnection().prepareStatement(consulta);
+            ps.setInt(1, rrd.getOrigen());
+            ps.setString(2, rrd.getNombre());
+            ps.setString(3, rrd.getTelefono());
+            ps.setString(4, rrd.getCorreo());
+            ps.setString(5, rrd.getFecha());
+
+            if (ps.executeUpdate() == 1) {
+                r = true;
+                 cn.getConnection().commit();
+            }else{
+                System.out.println("no se guardo");
+            }
+        } catch (SQLException e) {
+            System.out.println("Error" + e);
+        } finally {
+            try {
+                if (cn.getConnection() != null) {
+                    cn.getConnection().close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+
+            } catch (SQLException e) {
+                System.err.println("Error " + e);
+            }
+        }
+        return r;
+    }
+ 
+ public boolean registrar(Recepcion_RE rre) {
+    boolean r = false;
+        try {
+            cn.getConnection().setAutoCommit(false);
+            String consulta = "insert into recepcion_re (FK_Recepcion, FK_RE, Cantidad,Peso_x_Unidad)\n" +
+                "values (?,?,?,?);";
+            ps = cn.getConnection().prepareStatement(consulta);
+            ps.setInt(1, rre.getFk_recepcion());
+            ps.setInt(2, rre.getFk_re());
+            ps.setInt(3, rre.getCantidad());
+            ps.setFloat(4, rre.getPesoxunidad());
+
+            if (ps.executeUpdate() == 1) {
+                r = true;
+                 cn.getConnection().commit();
+            }else{
+                System.out.println("no se guardo");
+            }
+        } catch (SQLException e) {
+            System.out.println("Error" + e);
+        } finally {
+            try {
+                if (cn.getConnection() != null) {
+                    cn.getConnection().close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+
+            } catch (SQLException e) {
+                System.err.println("Error " + e);
+            }
+        }
+        return r;
+    }
+    
     
     public ArrayList<Catalogo_Origen> getOrigen(){
         ArrayList<Catalogo_Origen> origen = new ArrayList<>();

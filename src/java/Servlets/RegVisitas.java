@@ -53,7 +53,7 @@ public class RegVisitas extends HttpServlet {
             ArrayList<Catalogo_Visitas> visitas = vis.obtenerVisitas();
             request.setAttribute("listavisits", visitas);
 
-            RequestDispatcher rd = request.getRequestDispatcher("RegistroVisita.jsp");
+            RequestDispatcher rd = request.getRequestDispatcher("./RegistroVisita.jsp");
             rd.forward(request, response);
         } catch (IOException | ServletException e) {
             System.out.print(e);
@@ -107,6 +107,7 @@ public class RegVisitas extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+         processRequest(request, response);
 
     }
 

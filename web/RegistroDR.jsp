@@ -79,7 +79,7 @@
                 <!--Formulario Donaciones Recibidas-->
                 <div class="col-lg-9">
                     <center><label id="headerRV">¡Registra tu donación al recolectrón!</label></center>
-                    <form id="my-form1">
+                    <form method="POST" id="my-form1">
                         <div class="form-group">
                             <label for="orgn">Origen:</label>
                             <select  class="form-control" id="selectOrgn" name="orgnD">
@@ -102,6 +102,10 @@
                             <label for="dateRgs">Fecha de recepción:</label>
                             <input type="date" class="form-control" id="fechaRgs">
                         </div>
+                        <div class="form-group">
+                        <input id="regdatos" class="btn btn-success" type="submit" class="btn btn-default" value="Registrar Datos">
+                        </div>
+                    </form>
                         <div class="panel-group">
                             <div class="panel panel-default">
                                 <div class="panel-heading">
@@ -111,7 +115,7 @@
                                 </div>
                                 <div id="collapse1" class="panel-collapse collapse">
                                     <div class="panel-body">
-                                        <form id="my-form2" name="formul">
+                                        <form method="POST" id="my-form2" name="formul">
                                             <div class="form-group" >
                                                 <label id="Cat">Categoria:</label>
                                                 <select class="form-control" id="selectCat" name="Catres">
@@ -140,11 +144,12 @@
                                                 <input type="number" class="form-control" id="cntN">
                                                 <label id="pxu">Peso por Unidad:</label>
                                                 <input type="text" class="form-control" id="PxUi">
-                                                <input id="btnAdd" class="btn btn-primary" type="submit" class="btn btn-default">
+                                                <input id="btnAdd" class="btn btn-primary" type="submit" class="btn btn-default" value="Agregar">
+                                                <input id="btnDel" class="btn btn-primary" type="submit" class="btn btn-default" value="Borrar">
                                             </div>
                                         </form>
                                         <div class="table-responsive">          
-                                            <table class="table">
+                                            <table class="table" id="tbarticulos">
                                                 <thead>
                                                     <tr>
                                                         <th>Articulo</th>
@@ -153,11 +158,6 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr>
-                                                        <td>-------</td>
-                                                        <td>-------</td>
-                                                        <td>-------</td>
-                                                    </tr>
                                                 </tbody>
                                             </table>
                                         </div>
@@ -166,7 +166,7 @@
                             </div>
                         </div>
                         <input id="btnDR" class="btn btn-success" type="submit" class="btn btn-default" value="Registrar Recepción">
-                    </form><br><br>
+                   <br><br>
                     <div class="alert alert-success">
                         <strong>!Donación registrada!</strong> 
                     </div>

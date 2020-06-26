@@ -3,7 +3,11 @@ package Servlets;
 
 import Modelo.Catalogo_Origen;
 import Modelo.Categorias_RE;
+import Modelo.Recepcion_RE;
+import Modelo.Registro_Recepcion_Donaciones;
 import Modelo.Residuos_Electronicos;
+import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
 import java.io.IOException;
 import java.util.ArrayList;
 import javax.servlet.RequestDispatcher;
@@ -37,6 +41,12 @@ public class DonRec extends HttpServlet {
             case "AGREGAR":
                 agregar(request, response);
                 break;
+            case "Guardar":
+                guardar(request, response);
+                break;
+            case "Registrar":
+                registrar(request, response);
+                break;  
             default:
                 break;
         }
@@ -61,6 +71,50 @@ public class DonRec extends HttpServlet {
         } catch (IOException | ServletException e) {
             System.out.print(e);
         }
+    }
+     
+   private void guardar(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        try {
+            String objectJson = request.getParameter("DATOS");
+            System.out.println(objectJson);
+            if(objectJson==null){
+                
+            }else{
+                Gson gson = new Gson();
+                Registro_Recepcion_Donaciones datos = gson.fromJson(objectJson, Registro_Recepcion_Donaciones.class);
+                Controlador.Donaciones donacion = new Controlador.Donaciones();
+                donacion.insertar(datos);  
+                
+            }
+            
+        } catch (JsonSyntaxException e) {
+            System.out.print(e);
+
+        }
+        
+        
+    }
+   
+      private void registrar(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        try {
+            String objectJson = request.getParameter("DATOS");
+            System.out.println(objectJson);
+            if(objectJson==null){
+                
+            }else{
+                Gson gson = new Gson();
+                Recepcion_RE datos = gson.fromJson(objectJson, Recepcion_RE.class);
+                Controlador.Donaciones donacion = new Controlador.Donaciones();
+                donacion.registar_recepcion(datos);  
+                
+            }
+            
+        } catch (JsonSyntaxException e) {
+            System.out.print(e);
+
+        }
+        
+        
     }
      
      

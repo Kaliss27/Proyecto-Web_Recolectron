@@ -7,7 +7,7 @@ $(document).ready(function () {
 var RegVisitas = (function () {
 
     return {
-        
+
         agregar: function () {
             $.get("RegVisitas", {
                 ACCION: "AGREGAR"
@@ -42,23 +42,25 @@ var RegVisitas = (function () {
                         return false;
                     } else {
                         var Registro_Visitas = {
-                            "matricula": $("#matricula").val(),
-                            "nombre": $('input[name=nombre]').val(),
-                            "apaterno": $('input[name=appaterno]').val(),
-                            "amaterno": $('input[name=apmaterno]').val(),
-                            "pe_dependencia": $("#selectPE").val(),
-                            "tipo_visita": $("#selectTV").val(),
-                            "fecha": $("#fechaRgs").val()
-                        };
+                        "matricula": $("#matricula").val(),
+                        "nombre": $('input[name=nombre]').val(),
+                        "apaterno": $('input[name=appaterno]').val(),
+                        "amaterno": $('input[name=apmaterno]').val(),
+                        "pe_dependencia": $("#selectPE").val(),
+                        "tipo_visita": $("#selectTV").val(),
+                        "fecha": $("#fechaRgs").val()
+                    };
                         RegVisitas.guardadatos(Registro_Visitas, 'Guardar');
                         $(".alert").show();
-                        return true;
+                        RegVisitas.agregar();
+                        alert("Visita registrada!");
+                        return false;
                     }
                 });
 
-                });
+            });
         },
-         guardadatos: function (objeto, accion) {
+        guardadatos: function (objeto, accion) {
             $.get("RegVisitas", {
                 ACCION: accion,
                 DATOS: JSON.stringify(objeto)

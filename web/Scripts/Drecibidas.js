@@ -1,3 +1,4 @@
+var datos=new Array();
 $(document).ready(function () {
     $("#form_donrec").on('click', function () {
         DonRec.agregar();
@@ -5,8 +6,8 @@ $(document).ready(function () {
 
     $("#formaux").hide();
     $("#formaux2").hide();
-    
-    
+
+
     var elementos = new Array();
     $("#formaux option").each(function ()
     {
@@ -24,9 +25,9 @@ $(document).ready(function () {
     {
         categorias.push($(this).attr('value'));
     });
-    
 
-    $("#selectCat").on('click',function () {
+
+    $("#selectCat").on('click', function () {
         var cat = $('select[id=selectCat]').val();
 
         var indices = new Array();
@@ -41,16 +42,11 @@ $(document).ready(function () {
         $("#selectRE").empty();
 
         for (var i = 0; i < elem.length; i += 1) {
-             $("#selectRE").append('<option value='+indices[i]+'>'+elem[i]+'</option>');
+            $("#selectRE").append('<option value=' + indices[i] + '>' + elem[i] + '</option>');
         }
 
-        $("#selectRE").on('click',function () {
-            console.log("index:",$('select[id=selectRE]').val());
-        });
-        
-        
     });
-   
+
 });
 
 
@@ -84,32 +80,71 @@ var DonRec = (function () {
                     if ($.trim($("#selectCat").val()).length === 0) {
                         text = text + "Categoria\n";
                     }
-                     if ($.trim($("#selectRE").val()).length === 0) {
+                    if ($.trim($("#selectRE").val()).length === 0) {
                         text = text + "Residuo\n";
-                    }
-                     if ($.trim($("#cntN").val()).length === 0) {
-                        text = text + "Cantidad\n";
-                    }
-                     if ($.trim($("#PxUi").val()).length === 0) {
-                        text = text + "Peso\n";
                     }
 
                     if (text.length > 0) {
                         alert('Debe llenar todos los campos');
                         return false;
                     } else {
+                        datos.forEach(element => DonRec.guardadatos(element,"Registrar"));
+                        DonRec.agregar();
+                        $(".alert").show();
+                        alert("!Donación registrada!");
+                        datos.splice(0,datos.length);
                         return true;
                     }
                 });
-
-
-
+                $("#regdatos").on('click', function () {
+                    var Donaciones_Recibidas = {
+                        "origen": $("#selectOrgn").val(),
+                        "nombre": $('#pwd').val(),
+                        "telefono": $('#telefono').val(),
+                        "correo": $('#emailDRid').val(),
+                        "fecha": $("#fechaRgs").val()
+                    };
+                    DonRec.guardadatos(Donaciones_Recibidas, 'Guardar');
+                    alert("Datos Guardados");
+                    return false;
                 });
+                $("#btnAdd").on('click', function () {
+                    var Recepcion = {
+                                "fk_recepcion": "1",
+                                "fk_re": $('#selectRE').val(),
+                                "cantidad": $('#cntN').val(),
+                                "pesoxunidad": $('#PxUi').val()
+                            };
+                           datos.push(Recepcion);
+                    $("#tbarticulos tbody").append('<tr><td>' + $('select[name="PEs"] option:selected').text() + '</td>' + '<td>' + $("#cntN").val() + '</td>' + '<td>' + $("#PxUi").val() + '</td></tr>');
+                    $("#cntN").val("");
+                    $("#PxUi").val("");
+                    return false;
+                });
+                $("#btnDel").on('click', function () {
+                    var trs = $("#tbarticulos tr").length;
+                    if (trs > 1)
+                    {
+                        $("#tbarticulos tr:last").remove();
+                    }
+                    datos.pop();
+                    return false;
+                });
+
+            });
+        },
+        guardadatos: function (objeto, accion) {
+            $.get("DonRec", {
+                ACCION: accion,
+                DATOS: JSON.stringify(objeto)
+            });
+
         }
 
+
     };
-    
-    
+
+
 }());
 
 
