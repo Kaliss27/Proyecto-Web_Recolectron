@@ -1,0 +1,26 @@
+/* 
+    Created on : 27/06/2020, 05:05:27 PM
+    Author     : karen
+*/
+
+/*.row > .col-sm-3{
+    background-color: #66cc66;
+}*/
+#dUser,#imps{
+    text-align:center;
+    background-color: #66cc66;
+}
+#gicon{
+    text-align: center;
+    font-size:100px;
+    color:#ffffff;
+}
+
+.col-sm-4{
+    background-color: #66cc66;;
+}
+#giconS{
+    text-align: center;
+    font-size:100px;
+    color:#ffffff;
+}

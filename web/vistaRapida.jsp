@@ -4,6 +4,7 @@
     Author     : karen
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page import="java.io.*,java.util.*, javax.servlet.*,java.text.*" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,7 +13,7 @@
         <title>RECOLECTRÓN</title>
         <link href="CSS/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <link href="CSS/estiloReco.css" rel="stylesheet" type="text/css"/>
-        <link href="CSS/inventarioStyle.css" rel="stylesheet" type="text/css"/>
+        <link href="CSS/vistaRapidaS.css" rel="stylesheet" type="text/css"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="Scripts/bootstrap.min.js" type="text/javascript"></script>
         <link rel="icon" type="image/png" href="Imagenes/logo_recoUV.jpg" sizes="16x16">
@@ -51,6 +52,32 @@
                 </div>
             </div>
         </nav>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 sidenav">
+                    <div id="dUser">
+                        <label>Bienvenido -Nombre Personal</label><br>
+                        <label id="gicon" class="glyphicon glyphicon-user"></label><br>
+                        <label>Usuario:</label>
+                        <label id="tuser">Administrador</label><br>
+                        <label>Fecha:</label>
+                        <%
+                            Date dNow = new Date( );
+                            SimpleDateFormat ft =new SimpleDateFormat ("E dd.MM.yyyy");
+                            out.print( "<label align=\"center\">" + ft.format(dNow) + "</label>");
+                        %>
+                    </div>
+                    <br>
+                    <div id="imps">
+                        <label>Impacto Sustentable</label><br>
+                        <label id="giconS" class="glyphicon glyphicon-globe"></label>
+                    </div>
+                    <br>
+                </div>
+                <div class="col-sm-4 form-inline" id="one">
+                </div>
+            </div><br><br>
+        </div>
         <!--Footer todas las paginas-->
         <footer class="container-fluid text-center">
             <p>Recolectrón. Universidad Veracruzana</p>

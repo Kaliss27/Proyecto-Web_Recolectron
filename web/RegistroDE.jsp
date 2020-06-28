@@ -61,17 +61,25 @@
                                     <input type="text" class="form-control" id="matricula" placeholder="Ingresa tu mátricula">
                                 </div>
                                 <div class="form-group">
-                                    <label for="nameC">Nombre:</label>
+                                    <label for="nameC">Nombre(s):</label>
                                     <input type="text" class="form-control" id="pwd" placeholder="Ingresa tu nombre">
+                                    <label for="lastname1C">Apellido Paterno:</label>
+                                    <input type="text" class="form-control" id="pwd" placeholder="Ingresa tu apellido paterno">
+                                    <label for="lastname2C">Apellido Materno:</label>
+                                    <input type="text" class="form-control" id="pwd" placeholder="Ingresa tu apellido materno">
                                 </div>
                                 <div class="form-inline">
                                     <label for="txtPE">Selecciona tu Programa Educativo:</label>
                                     <select class="form-control" id="selectPE" name="PEs">
-                                        <option value="--">Selecciona--</option>
-                                    </select>
+                                    <c:forEach items="${requestScope.listaPE}" var="pe">
+                                        <option value=${pe.id}>${pe.dependencia}</option>
+                                    </c:forEach>
+                                </select>
                                     <label for="dateRgs">Fecha:</label>
                                     <input type="date" class="form-control" id="fechaRgs">
-                                </div><br>
+                                    <button class="btn btn-primary" type="submit" class="btn btn-default">Registrar datos</button>
+                                </div>
+                            </form><br>
                                 <div class="panel-group">
                                     <div class="panel panel-default">
                                         <div class="panel-heading">
@@ -100,8 +108,8 @@
                                                         </thead>
                                                         <tbody>
                                                             <tr>
-                                                                <td>-------</td>
-                                                                <td>-------</td                                                               
+                                                                <td>Televisión<td>
+                                                                <td>3</td                                                               
                                                             </tr>
                                                         </tbody>
                                                     </table>
@@ -110,8 +118,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <button class="btn btn-success" type="submit" class="btn btn-default">Registrar</button>
-                            </form><br> 
+                                <button class="btn btn-success" type="submit" class="btn btn-default">Terminar registro</button> 
+                            <br> 
                         </div>
                         <div id="DE_gral" class="tab-pane fade">
                             <form id="my-pgral-form" action="" method="POST">
@@ -133,7 +141,8 @@
                                     <label for="dateF">Fecha:</label>
                                     <input type="date" class="form-control" id="dateT">
                                 </div>
-                                <br>
+                                <button class="btn btn-primary" type="submit" class="btn btn-default">Registrar datos</button>
+                                </form><br>
                                 <div class="panel-group">
                                     <div class="panel panel-default">
                                         <div class="panel-heading">
@@ -149,7 +158,7 @@
                                                         <option value="0">Selecciona--</option>
                                                     </select>
                                                     <label id="cnt">Cantidad:</label>
-                                                    <input type="number" class="form-control" id="cntN"><br>
+                                                    <input type="number" class="form-control" id="cntN">
                                                     <button class="btn btn-primary" type="submit" class="btn btn-default">Agregar</button>
                                                 </form>
                                             </div><br>
@@ -163,8 +172,8 @@
                                                     </thead>
                                                     <tbody>
                                                         <tr>
-                                                            <td>-------</td>
-                                                            <td>-------</td                                                               
+                                                            <td>Capacitores</td>
+                                                            <td>2</td                                                               
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -172,8 +181,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <button class="btn btn-success" type="submit" class="btn btn-default">Registrar</button>
-                            </form> 
+                                <button class="btn btn-success" type="submit" class="btn btn-default">Terminar registro</button> 
                         </div>
                     </div>
                     <br>
@@ -189,6 +197,9 @@
                     <div class="well">
                         <img src="Imagenes\de2.jpg" class="img-responsive" alt="Image2">
                     </div>
+                </div>
+                <div class="container center" id="bttn">
+                   <button id="btnReport" class="btn btn-primary" type="submit" class="btn btn-default">Generar reporte</button>   
                 </div>
             </div>
         </div>

@@ -2,24 +2,24 @@
     Created on : 13/06/2020, 04:24:07 PM
     Author     : karen
 */
-#headerE{
+/*#headerE{
     background-color: #ffffff;
     border-radius: 15px;
     border-style: groove;
     border-color:#66cc66;
-}
+}*/
 #title{
     font-family: 'Oswald', sans-serif;
     font-weight: bold;
     font-size: 50px;
-    color:#66cc66;
+    color:#000000;
 }
 #eForm{
     font-family: 'Oswald', sans-serif;
     background-color: #ffffff;
-    border-style: groove;
+    /*border-style: groove;
     border-radius: 15px;
-    border-color:#66cc66;
+    border-color:#66cc66;*/
     
 }
 #hForm{

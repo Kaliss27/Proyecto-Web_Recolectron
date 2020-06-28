@@ -93,9 +93,6 @@
                 <strong>Evento registrado</strong> 
             </div>
         </div>
-        <div class="container">
-                <br><br><br>
-        </div>
         <script src="Scripts/eventos.js"></script>
         <!--FOOTER todas las paginas-->
         <footer class="container-fluid text-center">
