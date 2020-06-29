@@ -12,7 +12,7 @@ import java.util.ArrayList;
  *
  * @author Alvaro
  */
-public class Donaciones {
+public class DonacionesRe {
     
     public ArrayList<Catalogo_Origen> obtenerOrigen(){
         Donaciones_Rec dr = new Donaciones_Rec();

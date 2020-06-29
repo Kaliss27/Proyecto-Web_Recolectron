@@ -8,6 +8,10 @@
         <servlet-name>RegVisitas</servlet-name>
         <servlet-class>Servlets.RegVisitas</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DonEm</servlet-name>
+        <servlet-class>Servlets.DonEm</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>DonRec</servlet-name>
         <url-pattern>/DonRec</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>RegVisitas</servlet-name>
         <url-pattern>/RegVisitas</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DonEm</servlet-name>
+        <url-pattern>/DonEm</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

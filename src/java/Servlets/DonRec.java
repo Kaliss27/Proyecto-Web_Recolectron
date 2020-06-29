@@ -57,7 +57,7 @@ public class DonRec extends HttpServlet {
      private void agregar(HttpServletRequest request, HttpServletResponse response) {
 
         try {
-            Controlador.Donaciones donr = new Controlador.Donaciones();
+            Controlador.DonacionesRe donr = new Controlador.DonacionesRe();
             ArrayList<Catalogo_Origen> catalogo_ori = donr.obtenerOrigen();
             request.setAttribute("listaOrigen", catalogo_ori);
             ArrayList<Categorias_RE> catalogo_cat = donr.obtenerCategoria();
@@ -82,7 +82,7 @@ public class DonRec extends HttpServlet {
             }else{
                 Gson gson = new Gson();
                 Registro_Recepcion_Donaciones datos = gson.fromJson(objectJson, Registro_Recepcion_Donaciones.class);
-                Controlador.Donaciones donacion = new Controlador.Donaciones();
+                Controlador.DonacionesRe donacion = new Controlador.DonacionesRe();
                 donacion.insertar(datos);  
                 
             }
@@ -104,7 +104,7 @@ public class DonRec extends HttpServlet {
             }else{
                 Gson gson = new Gson();
                 Recepcion_RE datos = gson.fromJson(objectJson, Recepcion_RE.class);
-                Controlador.Donaciones donacion = new Controlador.Donaciones();
+                Controlador.DonacionesRe donacion = new Controlador.DonacionesRe();
                 donacion.registar_recepcion(datos);  
                 
             }
