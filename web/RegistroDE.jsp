@@ -4,6 +4,7 @@
     Author     : karen
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -18,7 +19,7 @@
         <script src="Scripts/visitas.js" type="text/javascript"></script>
         <script src="Scripts/Demitidas.js" type="text/javascript"></script>
         <script src="Scripts/Drecibidas.js"></script>
-        
+        <script src="Scripts/eventos.js" type="text/javascript"></script>
         <link rel="icon" type="image/png" href="Imagenes/logo_recoUV.jpg" sizes="16x16">
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
     </head>
@@ -145,7 +146,7 @@
                                     <label for="dateF">Fecha:</label>
                                     <input type="date" class="form-control" id="dateT">
                                 </div>
-                                <button class="btn btn-primary" type="submit" class="btn btn-default">Registrar datos</button>
+                                <input id="regdatos" class="btn btn-primary" type="submit" class="btn btn-default" value="Registrar Datos">
                                 </form><br>
                                 <div class="panel-group">
                                     <div class="panel panel-default">

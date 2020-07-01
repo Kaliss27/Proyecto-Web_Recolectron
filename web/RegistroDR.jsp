@@ -18,6 +18,7 @@
         <script src="Scripts/bootstrap.min.js" type="text/javascript"></script>
         <script src="Scripts/visitas.js" type="text/javascript"></script>
         <script src="Scripts/Demitidas.js" type="text/javascript"></script>
+        <script src="Scripts/eventos.js" type="text/javascript"></script>
         <link rel="icon" type="image/png" href="Imagenes/logo_recoUV.jpg" sizes="16x16">
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
     </head>
@@ -104,7 +105,7 @@
                             <input type="date" class="form-control" id="fechaRgs">
                         </div>
                         <div class="form-group">
-                        <input id="regdatos" class="btn btn-success" type="submit" class="btn btn-default" value="Registrar Datos">
+                        <input id="regdatos" class="btn btn-primary" type="submit" class="btn btn-default" value="Registrar Datos">
                         </div>
                     </form>
                         <div class="panel-group">

@@ -12,6 +12,7 @@
         <script src="Scripts/visitas.js" type="text/javascript"></script>
         <script src="Scripts/Drecibidas.js" type="text/javascript"></script>
         <script src="Scripts/Demitidas.js" type="text/javascript"></script>
+        <script src="Scripts/eventos.js" type="text/javascript"></script>
         <link rel="icon" type="image/png" href="Imagenes/logo_recoUV.jpg" sizes="16x16">
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
     </head>

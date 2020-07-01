@@ -1,10 +1,10 @@
 
 package Servlets;
 
-import Modelo.Catalogo_PE_Deps;
+import Modelo.Eventos;
+import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Alvaro
  */
-public class DonEm extends HttpServlet {
+public class EventosReco extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -29,24 +29,46 @@ public class DonEm extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-         String accion = request.getParameter("ACCION");
+        String accion = request.getParameter("ACCION");
         switch (accion) {
             case "AGREGAR":
                 agregar(request, response);
                 break;
-  
+            case "Guardar":
+                guardar(request, response); 
+                break;    
             default:
                 break;
         }
     }
     
-    private void agregar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+     private void agregar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        Controlador.Visitas vis = new Controlador.Visitas();
-        ArrayList<Catalogo_PE_Deps> catalogo_pe = vis.obtenerPE();
-        request.setAttribute("listaPE", catalogo_pe);
-        RequestDispatcher rd = request.getRequestDispatcher("./RegistroDE.jsp");
+       
+        RequestDispatcher rd = request.getRequestDispatcher("./Eventos.jsp");
         rd.forward(request, response);
+    }
+     
+      private void guardar(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        try {
+            String objectJson = request.getParameter("DATOS");
+            System.out.println(objectJson);
+            if(objectJson==null){
+                
+            }else{
+                Gson gson = new Gson();
+                Eventos evento = gson.fromJson(objectJson, Eventos.class);
+                Controlador.Eventos_Reco eventos = new Controlador.Eventos_Reco();
+                eventos.insertar(evento);  
+                
+            }
+            
+        } catch (JsonSyntaxException e) {
+            System.out.print(e);
+
+        }
+        
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

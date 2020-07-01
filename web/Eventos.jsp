@@ -15,6 +15,9 @@
         <link href="CSS/eventosS.css" rel="stylesheet" type="text/css"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="Scripts/bootstrap.min.js" type="text/javascript"></script>
+        <script src="Scripts/visitas.js" type="text/javascript"></script>
+        <script src="Scripts/Demitidas.js" type="text/javascript"></script>
+        <script src="Scripts/Drecibidas.js"></script>
         <link rel="icon" type="image/png" href="Imagenes/logo_recoUV.jpg" sizes="16x16">
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
     </head>
@@ -74,7 +77,7 @@
         </div><br>
         <div class="container" id="eForm">
             <center><label id="hForm">Registro de Eventos</label></center>
-            <form id="eventF">
+            <form method="POST" id="eventF">
                 <div class="form-group">
                     <label>Titulo del Evento:</label>
                     <input type="text" class="form-control" id="tEvento"><br>
@@ -84,11 +87,11 @@
                         <label for="dateRgs">Fecha:</label>
                         <input type="date" class="form-control" id="fechaRgs">
                         <label for="dateRgs">Hora:</label>
-                        <input type="time" class="form-control" id="appt" name="appt">
+                        <input type="time" class="form-control" id="appt" name="appt2">
                     </div>
                 </div>
-                <button id="btnE" class="btn btn-success" type="submit" class="btn btn-default">Registrar Recepción</button>
-            </form><br>
+                <input id="btnE" class="btn btn-success" type="submit" class="btn btn-default" value="Registrar Evento">
+            </form><br><br><br>
             <div class="alert alert-success">
                 <strong>Evento registrado</strong> 
             </div>

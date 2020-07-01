@@ -12,6 +12,10 @@
         <servlet-name>DonEm</servlet-name>
         <servlet-class>Servlets.DonEm</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>EventosReco</servlet-name>
+        <servlet-class>Servlets.EventosReco</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>DonRec</servlet-name>
         <url-pattern>/DonRec</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>DonEm</servlet-name>
         <url-pattern>/DonEm</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EventosReco</servlet-name>
+        <url-pattern>/EventosReco</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
