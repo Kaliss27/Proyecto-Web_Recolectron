@@ -6,21 +6,24 @@
 /*.row > .col-sm-3{
     background-color: #66cc66;
 }*/
-#dUser,#imps{
+#dUser,#imps,#menu{
     text-align:center;
     background-color: #66cc66;
 }
-#gicon{
+#gicon,#giconS,#giconCG{
     text-align: center;
-    font-size:100px;
     color:#ffffff;
 }
-
+#gicon,#giconS{
+    font-size:100px;
+}
+#giconCG{
+    font-size:50px;
+}
 .col-sm-4{
     background-color: #66cc66;;
 }
-#giconS{
-    text-align: center;
-    font-size:100px;
-    color:#ffffff;
+
+.col-sm-8{
+    background-color: #66cc66;
 }

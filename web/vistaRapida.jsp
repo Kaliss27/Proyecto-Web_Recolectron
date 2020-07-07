@@ -73,11 +73,121 @@
                         <label id="giconS" class="glyphicon glyphicon-globe"></label>
                     </div>
                     <br>
+                    <div id="menu">
+                        <div class="form-inline">
+                            <label>Manejo del reco</label><br>
+                            <label id="giconCG" class="glyphicon glyphicon-edit"></label>
+                        </div>
+                        <a data-toggle="collapse" id="auser" href="#collapse1">Acceso Usuarios</a><br>
+                        <a data-toggle="collapse" id="carticulos" href="#collapse5">Categorias de Articulos</a><br>
+                        <a data-toggle="collapse" id ="cgeneral" href="#collapse2">Control General</a><br>
+                        <a data-toggle="collapse" id ="rdonaciones" href="#collapse3">Recepción de donaciones</a><br>
+                        <a data-toggle="collapse" id ="rvistas" href="#collapse14">Registro de visitas</a><br>
+                        
+                    </div>
+                    <br>
                 </div>
-                <div class="col-sm-4 form-inline" id="one">
-                </div>
-            </div><br><br>
-        </div>
+                <div class="col-sm-8 form-inline" id="one">
+                    <br>
+                    <div class="panel-group">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <div id="collapse1" class="panel-collapse collapse">
+                                    <ul class="nav nav-tabs">
+                                        <li class="active"><a data-toggle="tab" href="#home">Usuarios</a></li>
+                                        <li><a data-toggle="tab" href="#menu1">Permisos de usuarios</a></li>
+                                    </ul>
+                                    <div class="tab-content">
+                                        <div id="home" class="tab-pane fade in active">
+                                            <div id="tabla-alumnos">
+                                                <table class='table table-hover table-condensed table-bordered'>
+                                                    <tr>
+                                                        <th>ID</th>
+                                                        <th>Nombre Completo</th>
+                                                        <th>Tipo de usuario</th>
+                                                        <th>Usuario</th>
+                                                        <th>Editar</th>
+                                                        <th>Eliminar</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td>
+                                                            <button class='btn btn-warning glyphicon glyphicon-pencil' data-toggle='modal' data-target='#modalEdicion'></button>
+                                                        </td>
+                                                        <td>
+                                                            <button class='btn btn-danger  glyphicon glyphicon-remove'></button>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            <div id="usuariosr">
+                                                <form action="#">
+                                                    <label>Nombre(s):</label>
+                                                    <input type="text" class="form-control"><br>
+                                                    <label>Apellido Paterno:</label>
+                                                    <input type="text" class="form-control"><br>
+                                                    <label>Apellido Materno:</label>
+                                                    <input type="text" class="form-control"><br>
+                                                    <label for="typUser">Tipo de Usuario:</label>
+                                                    <select class="form-control" id="selecttU" name="TUser">
+                                                        <!--<c:forEach items="${requestScope.listaPE}" var="usert">
+                                                        <option value=${pe.id}>${pe.dependencia}</option>
+                                                        </c:forEach>!-->
+                                                    </select>
+                                                    <label>Usuario:</label>
+                                                    <input type="text" class="form-control"><br>
+                                                    <label>Contraseña:</label>
+                                                    <input type="text" class="form-control"><br>
+                                                    <input class="btn btn-success" type="submit" class="btn btn-default" id="btnRV" value="Registrar">
+                                                </form> 
+                                            </div>
+                                        </div>
+                                        <div id="menu1" class="tab-pane fade">
+                                            <div id="tabla-tuser">
+                                                <table class='table table-hover table-condensed table-bordered'>
+                                                    <tr>
+                                                        <th>ID</th>
+                                                        <th>Tipo de Usuario</th>
+                                                        <th>Editar</th>
+                                                        <th>Eliminar</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td>
+                                                            <button class='btn btn-warning glyphicon glyphicon-pencil' data-toggle='modal' data-target='#modalEdicion'></button>
+                                                        </td>
+                                                        <td>
+                                                            <button class='btn btn-danger  glyphicon glyphicon-remove'></button>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            <div id="usuariosr">
+                                                <form action="#">
+                                                    <label>Tipo de permiso:</label>
+                                                    <input type="text" class="form-control"><br>
+                                                    <input class="btn btn-success" type="submit" class="btn btn-default" id="btnRV" value="Registrar">
+                                                </form> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="collapse2" class="panel-collapse collapse">
+                                        <div class="panel-body">Panel Body</div>
+                                        <div class="panel-footer">Panel Footer</div>
+                                    </div>                    
+                                </div>
+                            </div>
+                        </div>
+                    </div><br>
+                </div><br><br>
+            </div>
+        </div>                                                
         <!--Footer todas las paginas-->
         <footer class="container-fluid text-center">
             <p>Recolectrón. Universidad Veracruzana</p>
