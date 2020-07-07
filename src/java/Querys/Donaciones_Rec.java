@@ -65,13 +65,11 @@ public class Donaciones_Rec {
     boolean r = false;
         try {
             cn.getConnection().setAutoCommit(false);
-            String consulta = "insert into recepcion_re (FK_Recepcion, FK_RE, Cantidad,Peso_x_Unidad)\n" +
-                "values (?,?,?,?);";
+            String consulta = "call donaciones_recibidas(?,?,?);";
             ps = cn.getConnection().prepareStatement(consulta);
-            ps.setInt(1, rre.getFk_recepcion());
-            ps.setInt(2, rre.getFk_re());
-            ps.setInt(3, rre.getCantidad());
-            ps.setFloat(4, rre.getPesoxunidad());
+            ps.setInt(1, rre.getFk_re());
+            ps.setInt(2, rre.getCantidad());
+            ps.setFloat(3, rre.getPesoxunidad());
 
             if (ps.executeUpdate() == 1) {
                 r = true;

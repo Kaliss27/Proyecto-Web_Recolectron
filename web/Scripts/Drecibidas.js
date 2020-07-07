@@ -110,7 +110,6 @@ var DonRec = (function () {
                 });
                 $("#btnAdd").on('click', function () {
                     var Recepcion = {
-                                "fk_recepcion": "1",
                                 "fk_re": $('#selectRE').val(),
                                 "cantidad": $('#cntN').val(),
                                 "pesoxunidad": $('#PxUi').val()

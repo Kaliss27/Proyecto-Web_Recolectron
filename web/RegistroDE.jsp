@@ -189,7 +189,7 @@
                                 <button class="btn btn-success" type="submit" class="btn btn-default">Terminar registro</button> 
                         </div>
                     </div>
-                    <br>
+                    <br><br><br>
                     <div class="alert alert-info">
                         <strong>!Donación emitida registrada!</strong> 
                     </div>
