@@ -1,6 +1,7 @@
 $(document).ready(function(){
   $("#auser").click(function(){
-    $("#collapse1").attr("id", "collapse2");
+    $("#contenido").attr("id",$("#auser").attr("id"));
+    
   });
 });
 

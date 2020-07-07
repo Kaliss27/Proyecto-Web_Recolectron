@@ -78,116 +78,290 @@
                             <label>Manejo del reco</label><br>
                             <label id="giconCG" class="glyphicon glyphicon-edit"></label>
                         </div>
-                        <a data-toggle="collapse" id="auser" href="#collapse1">Acceso Usuarios</a><br>
-                        <a data-toggle="collapse" id="carticulos" href="#collapse5">Categorias de Articulos</a><br>
-                        <a data-toggle="collapse" id ="cgeneral" href="#collapse2">Control General</a><br>
-                        <a data-toggle="collapse" id ="rdonaciones" href="#collapse3">Recepción de donaciones</a><br>
-                        <a data-toggle="collapse" id ="rvistas" href="#collapse14">Registro de visitas</a><br>
-                        
+                        <div id="c1"><a data-toggle="collapse" id="auser" href="#collapse1">Acceso Usuarios</a></div>
+                        <div id="c2"><a data-toggle="collapse" id="carticulos" href="#collapse2">Categorias de Articulos</a></div>
+                        <div id="c3"><a data-toggle="collapse" id ="cgeneral" href="#collapse3">Control General</a></div>
+                        <div id="c4"><a data-toggle="collapse" id ="rdonaciones" href="#collapse4">Recepción de donaciones</a></div>
+                        <div id="c5"><a data-toggle="collapse" id ="rvistas" href="#collapse5">Registro de visitas</a></div>
                     </div>
-                    <br>
+                    <br><br><br>
                 </div>
                 <div class="col-sm-8 form-inline" id="one">
-                    <br>
-                    <div class="panel-group">
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                <div id="collapse1" class="panel-collapse collapse">
-                                    <ul class="nav nav-tabs">
-                                        <li class="active"><a data-toggle="tab" href="#home">Usuarios</a></li>
-                                        <li><a data-toggle="tab" href="#menu1">Permisos de usuarios</a></li>
-                                    </ul>
-                                    <div class="tab-content">
-                                        <div id="home" class="tab-pane fade in active">
-                                            <div id="tabla-alumnos">
-                                                <table class='table table-hover table-condensed table-bordered'>
-                                                    <tr>
-                                                        <th>ID</th>
-                                                        <th>Nombre Completo</th>
-                                                        <th>Tipo de usuario</th>
-                                                        <th>Usuario</th>
-                                                        <th>Editar</th>
-                                                        <th>Eliminar</th>
-                                                    </tr>
-                                                    <tr>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td>
-                                                            <button class='btn btn-warning glyphicon glyphicon-pencil' data-toggle='modal' data-target='#modalEdicion'></button>
-                                                        </td>
-                                                        <td>
-                                                            <button class='btn btn-danger  glyphicon glyphicon-remove'></button>
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </div>
-                                            <div id="usuariosr">
-                                                <form action="#">
-                                                    <label>Nombre(s):</label>
-                                                    <input type="text" class="form-control"><br>
-                                                    <label>Apellido Paterno:</label>
-                                                    <input type="text" class="form-control"><br>
-                                                    <label>Apellido Materno:</label>
-                                                    <input type="text" class="form-control"><br>
-                                                    <label for="typUser">Tipo de Usuario:</label>
-                                                    <select class="form-control" id="selecttU" name="TUser">
-                                                        <!--<c:forEach items="${requestScope.listaPE}" var="usert">
-                                                        <option value=${pe.id}>${pe.dependencia}</option>
-                                                        </c:forEach>!-->
-                                                    </select>
-                                                    <label>Usuario:</label>
-                                                    <input type="text" class="form-control"><br>
-                                                    <label>Contraseña:</label>
-                                                    <input type="text" class="form-control"><br>
-                                                    <input class="btn btn-success" type="submit" class="btn btn-default" id="btnRV" value="Registrar">
-                                                </form> 
-                                            </div>
-                                        </div>
-                                        <div id="menu1" class="tab-pane fade">
-                                            <div id="tabla-tuser">
-                                                <table class='table table-hover table-condensed table-bordered'>
-                                                    <tr>
-                                                        <th>ID</th>
-                                                        <th>Tipo de Usuario</th>
-                                                        <th>Editar</th>
-                                                        <th>Eliminar</th>
-                                                    </tr>
-                                                    <tr>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td>
-                                                            <button class='btn btn-warning glyphicon glyphicon-pencil' data-toggle='modal' data-target='#modalEdicion'></button>
-                                                        </td>
-                                                        <td>
-                                                            <button class='btn btn-danger  glyphicon glyphicon-remove'></button>
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </div>
-                                            <div id="usuariosr">
-                                                <form action="#">
-                                                    <label>Tipo de permiso:</label>
-                                                    <input type="text" class="form-control"><br>
-                                                    <input class="btn btn-success" type="submit" class="btn btn-default" id="btnRV" value="Registrar">
-                                                </form> 
-                                            </div>
-                                        </div>
+                    <div id="contenido">
+                        <label>CONTROL RECOLECTRON</label><br>
+                        
+                </div>
+                <div id="collapse1" class="panel-collapse collapse">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">Acceso Usuario</div>
+                        <div class="panel-body">
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a data-toggle="tab" href="#users">Usuarios</a></li>
+                                <li><a data-toggle="tab" href="#puser">Permisos de usuarios</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div id="users" class="tab-pane fade in active">
+                                    <div id="tabla-users">
+                                        <table class='table table-hover table-condensed table-bordered'>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Nombre Completo</th>
+                                                <th>Tipo de usuario</th>
+                                                <th>Usuario</th>
+                                                <th>Editar</th>
+                                                <th>Eliminar</th>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>
+                                                    <button class='btn btn-warning glyphicon glyphicon-pencil' data-toggle='modal' data-target='#modalEdicion'></button>
+                                                </td>
+                                                <td>
+                                                    <button class='btn btn-danger  glyphicon glyphicon-remove'></button>
+                                                </td>
+                                            </tr>
+                                        </table>
                                     </div>
-                                    <div id="collapse2" class="panel-collapse collapse">
-                                        <div class="panel-body">Panel Body</div>
-                                        <div class="panel-footer">Panel Footer</div>
-                                    </div>                    
+                                    <div id="usuariosr">
+                                        <form action="#">
+                                            <label>Nombre(s):</label>
+                                            <input type="text" class="form-control"><br>
+                                            <label>Apellido Paterno:</label>
+                                            <input type="text" class="form-control"><br>
+                                            <label>Apellido Materno:</label>
+                                            <input type="text" class="form-control"><br>
+                                            <label for="typUser">Tipo de Usuario:</label>
+                                            <select class="form-control" id="selecttU" name="TUser">
+                                                <!--<c:forEach items="${requestScope.listaPE}" var="usert">
+                                                <option value=${pe.id}>${pe.dependencia}</option>
+                                                </c:forEach>!-->
+                                            </select>
+                                            <label>Usuario:</label
+                                            <input type="text" class="form-control"><br>
+                                            <label>Contraseña:</label>
+                                            <input type="text" class="form-control"><br>
+                                            <input class="btn btn-success" type="submit" class="btn btn-default" id="btnRdu" value="Registrar">
+                                        </form> 
+                                    </div>
+                                </div>
+                                <div id="puser" class="tab-pane fade">
+                                    <div id="tabla-tuser">
+                                        <table class='table table-hover table-condensed table-bordered'>
+                                            <tr>
+                                                <th>ID</th
+                                                <th>Tipo de Usuario</th>
+                                                <th>Editar</th>
+                                                <th>Eliminar</th>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>
+                                                    <button class='btn btn-warning glyphicon glyphicon-pencil' data-toggle='modal' data-target='#modalEdicion'></button>
+                                                </td>
+                                                <td>
+                                                    <button class='btn btn-danger  glyphicon glyphicon-remove'></button>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div id="usuariosr">
+                                        <form action="#">
+                                            <label>Tipo de permiso:</label>
+                                            <input type="text" class="form-control"><br>
+                                            <input class="btn btn-success" type="submit" class="btn btn-default" id="btnRU" value="Registrar">
+                                        </form> 
+                                    </div>
+                                </div>                                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="collapse2" class="panel-collapse collapse">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">Categorias de Articulos</div>
+                        <div class="panel-body">
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a data-toggle="tab" href="#catRe">Categorias de Residuos Electronicos</a></li>
+                                <li><a data-toggle="tab" href="#EQdanino">Elementos Quimicos Dañinos</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div id="catRe" class="tab-pane fade in active">
+                                    <div id="tabla-catre">
+                                        <table class='table table-hover table-condensed table-bordered'>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Categoría</th>
+                                                <th>Editar</th>
+                                                <th>Eliminar</th>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td>
+                                                    <button class='btn btn-warning glyphicon glyphicon-pencil' data-toggle='modal' data-target='#modalEdicion'></button>
+                                                </td>
+                                                <td>
+                                                    <button class='btn btn-danger  glyphicon glyphicon-remove'></button>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div id="categoriasr">
+                                        <form action="#">
+                                            <label>Categoría:</label>
+                                            <input type="text" class="form-control"><br>
+                                            <input class="btn btn-success" type="submit" class="btn btn-default" id="btnCat" value="Registrar">
+                                        </form> 
+                                    </div>
+                                </div>
+                                <div id="EQdanino" class="tab-pane fade">
+                                    <div id="tabla-eq">
+                                        <table class='table table-hover table-condensed table-bordered'>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Elemento Quimico</th>
+                                                <th>Daños</th>
+                                                <th>Editar</th>
+                                                <th>Eliminar</th>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>
+                                                    <button class='btn btn-warning glyphicon glyphicon-pencil' data-toggle='modal' data-target='#modalEdicion'></button>
+                                                </td>
+                                                <td>
+                                                    <button class='btn btn-danger  glyphicon glyphicon-remove'></button>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div id="feqdanino">
+                                        <form action="#">
+                                            <label>Elemento quimico:</label>
+                                            <input type="text" class="form-control"><br>
+                                            <label>Daños:</label><br>
+                                            <textarea class="form-control" id="txtD" name="desc" rows="4" cols="50"></textarea><br>
+                                            <input class="btn btn-success" type="submit" class="btn btn-default" id="btnFEQ" value="Registrar">
+                                        </form> 
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div><br>
-                </div><br><br>
+                    </div>
+                </div>
+                <div id="collapse3" class="panel-collapse collapse">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">Control General</div>
+                        <div class="panel-body">
+                            <div id="tabla-cgral">
+                                <table class='table table-hover table-condensed table-bordered'>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Estado</th>
+                                        <th>Editar</th>
+                                        <th>Eliminar</th>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td>
+                                            <button class='btn btn-warning glyphicon glyphicon-pencil' data-toggle='modal' data-target='#modalEdicion'></button>
+                                        </td>
+                                        <td>
+                                            <button class='btn btn-danger  glyphicon glyphicon-remove'></button>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div id="categoriasr" class="form-inline">
+                                <form action="#">
+                                    <label>Estado:</label>
+                                    <input type="text" class="form-control"><br>
+                                    <input class="btn btn-success" type="submit" class="btn btn-default" id="btnRst" value="Registrar">
+                                </form> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="collapse4" class="panel-collapse collapse">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">Recepción de donaciones</div>
+                        <div class="panel-body">
+                            <div id="tabla-rd">
+                                <table class='table table-hover table-condensed table-bordered'>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Origen:</th>
+                                        <th>Editar</th>
+                                        <th>Eliminar</th>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td>
+                                            <button class='btn btn-warning glyphicon glyphicon-pencil' data-toggle='modal' data-target='#modalEdicion'></button>
+                                        </td>
+                                        <td>
+                                            <button class='btn btn-danger  glyphicon glyphicon-remove'></button>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div id="categoriasr" class="form-inline">
+                                <form action="#">
+                                    <label>Origen:</label>
+                                    <input type="text" class="form-control"><br>
+                                    <input class="btn btn-success" type="submit" class="btn btn-default" id="btnRorg" value="Registrar">
+                                </form> 
+                            </div>
+                        </div>
+                    </div>
+                </div>    
+                <div id="collapse5" class="panel-collapse collapse">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">Registro de visitas</div>
+                        <div class="panel-body">
+                            <div id="tabla-visit">
+                                <table class='table table-hover table-condensed table-bordered'>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Tipo de Visita</th>
+                                        <th>Editar</th>
+                                        <th>Eliminar</th>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td>
+                                            <button class='btn btn-warning glyphicon glyphicon-pencil' data-toggle='modal' data-target='#modalEdicion'></button>
+                                        </td>
+                                        <td>
+                                            <button class='btn btn-danger  glyphicon glyphicon-remove'></button>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div id="categoriasr" class="form-inline">
+                                <form action="#">
+                                    <label>Tipo de visita:</label>
+                                    <input type="text" class="form-control"><br>
+                                    <input class="btn btn-success" type="submit" class="btn btn-default" id="btnRV" value="Registrar">
+                                </form> 
+                            </div>
+                        </div>
+                    </div>            
+                </div>
             </div>
-        </div>                                                
+        </div>                        
+        <script src="Scripts/vistaRapida.js" type="text/javascript"></script>
         <!--Footer todas las paginas-->
         <footer class="container-fluid text-center">
             <p>Recolectrón. Universidad Veracruzana</p>
