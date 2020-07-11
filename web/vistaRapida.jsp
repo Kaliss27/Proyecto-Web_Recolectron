@@ -18,6 +18,7 @@
         <script src="Scripts/bootstrap.min.js" type="text/javascript"></script>
         <link rel="icon" type="image/png" href="Imagenes/logo_recoUV.jpg" sizes="16x16">
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+        <script src="Scripts/vistaRapida.js" type="text/javascript"></script>
     </head>
     <body>
         <nav class="navbar navbar-default navbar-static-top">
@@ -70,7 +71,16 @@
                     <br>
                     <div id="imps">
                         <label>Impacto Sustentable</label><br>
-                        <label id="giconS" class="glyphicon glyphicon-globe"></label>
+                        <button type="button" class="btn btn-default" id='btn-imps' onclick='dPanelImps();'>
+                            <label id="giconS" class="glyphicon glyphicon-globe"></label>
+                        </button>
+                    </div>
+                    <br>
+                    <div id="valInv">
+                        <label>Valor del inventario</label><br>
+                        <button type="button" class="btn btn-default" id='btn-vinv' onclick='dPanelVinv();'>
+                            <label id="giconVinv" class="glyphicon glyphicon-usd"></label>
+                        </button>
                     </div>
                     <br>
                     <div id="menu">
@@ -78,18 +88,21 @@
                             <label>Manejo del reco</label><br>
                             <label id="giconCG" class="glyphicon glyphicon-edit"></label>
                         </div>
-                        <div id="c1"><a data-toggle="collapse" id="auser" href="#collapse1">Acceso Usuarios</a></div>
-                        <div id="c2"><a data-toggle="collapse" id="carticulos" href="#collapse2">Categorias de Articulos</a></div>
-                        <div id="c3"><a data-toggle="collapse" id ="cgeneral" href="#collapse3">Control General</a></div>
-                        <div id="c4"><a data-toggle="collapse" id ="rdonaciones" href="#collapse4">Recepción de donaciones</a></div>
-                        <div id="c5"><a data-toggle="collapse" id ="rvistas" href="#collapse5">Registro de visitas</a></div>
+                        <div class='btn-group'>
+                            <button type="button" class="btn btn-default btn-block" onclick='dPanelUser();'id="auser">Acceso Usuarios</button>
+                            <button type="button" class="btn btn-default btn-block" onclick='dPanelCArt();' id="carticulos">Categorias de Articulos</button>
+                            <button type="button" class="btn btn-default btn-block" onclick='dPanelCGral();' id ="cgeneral" >Control General</button>
+                            <button type="button" class="btn btn-default btn-block" onclick='dPanelRD();' id ="rdonaciones">Recepción de donaciones</button>
+                            <button type="button" class="btn btn-default btn-block" onclick='dPanelRV();' id ="rvistas">Registro de visitas</button>
+                        </div>
                     </div>
                     <br><br><br>
                 </div>
                 <div class="col-sm-8 form-inline" id="one">
                     <div id="contenido">
                         <label>CONTROL RECOLECTRON</label><br>
-                        
+                        <div id="cpanel">
+                        </div>
                 </div>
                 <div id="collapse1" class="panel-collapse collapse">
                     <div class="panel panel-success">
@@ -142,7 +155,7 @@
                                             <label>Usuario:</label
                                             <input type="text" class="form-control"><br>
                                             <label>Contraseña:</label>
-                                            <input type="text" class="form-control"><br>
+                                            <input type="text" class="form-control"><br><br>
                                             <input class="btn btn-success" type="submit" class="btn btn-default" id="btnRdu" value="Registrar">
                                         </form> 
                                     </div>
@@ -318,7 +331,7 @@
                             <div id="categoriasr" class="form-inline">
                                 <form action="#">
                                     <label>Origen:</label>
-                                    <input type="text" class="form-control"><br>
+                                    <input type="text" class="form-control"><br><br>
                                     <input class="btn btn-success" type="submit" class="btn btn-default" id="btnRorg" value="Registrar">
                                 </form> 
                             </div>
@@ -359,9 +372,23 @@
                         </div>
                     </div>            
                 </div>
+                 <div id="collapse6" class="panel-collapse collapse">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">Impacto sustentable</div>
+                            <div class="panel-body">     
+                            </div>
+                    </div>            
+                </div>
+                <div id="collapse7" class="panel-collapse collapse">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">Valor del Inventario</div>
+                            <div class="panel-body">     
+                            </div>
+                    </div>            
+                </div>                                
             </div>
-        </div>                        
-        <script src="Scripts/vistaRapida.js" type="text/javascript"></script>
+        </div>
+        </div>
         <!--Footer todas las paginas-->
         <footer class="container-fluid text-center">
             <p>Recolectrón. Universidad Veracruzana</p>

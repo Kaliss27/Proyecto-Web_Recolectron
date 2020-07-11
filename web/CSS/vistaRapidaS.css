@@ -6,16 +6,20 @@
 /*.row > .col-sm-3{
     background-color: #66cc66;
 }*/
-#dUser,#imps,#menu{
+#dUser,#imps,#menu,#valInv{
     text-align:center;
     background-color: #66cc66;
 }
-#gicon,#giconS,#giconCG{
+#btn-imps,#btn-vinv{
+    background-color: #66cc66;
+    border:none;
+}
+#gicon,#giconS,#giconCG,#giconVinv{
     text-align: center;
     color:#ffffff;
 }
-#gicon,#giconS{
-    font-size:100px;
+#gicon,#giconS,#giconVinv{
+    font-size:75px;
 }
 #giconCG{
     font-size:50px;
@@ -27,9 +31,11 @@
 .col-sm-8{
     background-color: #66cc66;
 }
-#c1,#c2,#c3,#c4,#c5{
-    color:#000000;
-}
-#c2,#c4{
-    background-color: #ffffff;
+#usuariosr>label{
+  display: inline-block;
+  width: 100px;
+} 
+#usuariosr>input{
+    height: 1px;
+    width: 25px;
 }
