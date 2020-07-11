@@ -67,11 +67,11 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="nameC">Nombre(s):</label>
-                                    <input type="text" class="form-control" id="pwd" placeholder="Ingresa tu nombre">
+                                    <input type="text" class="form-control" id="nom" name="nombre" placeholder="Ingresa tu nombre">
                                     <label for="lastname1C">Apellido Paterno:</label>
-                                    <input type="text" class="form-control" id="pwd" placeholder="Ingresa tu apellido paterno">
+                                    <input type="text" class="form-control" id="apat" name="apaterno" placeholder="Ingresa tu apellido paterno">
                                     <label for="lastname2C">Apellido Materno:</label>
-                                    <input type="text" class="form-control" id="pwd" placeholder="Ingresa tu apellido materno">
+                                    <input type="text" class="form-control" id="amat" name="amaterno" placeholder="Ingresa tu apellido materno">
                                 </div>
                                 <div class="form-inline">
                                     <label for="txtPE">Selecciona tu Programa Educativo:</label>
@@ -82,7 +82,7 @@
                                 </select>
                                     <label for="dateRgs">Fecha:</label>
                                     <input type="date" class="form-control" id="fechaRgs">
-                                    <button class="btn btn-primary" type="submit" class="btn btn-default">Registrar datos</button>
+                                    <input id="regdatosest" class="btn btn-primary" type="submit" class="btn btn-default" value="Registrar datos">
                                 </div>
                             </form><br>
                                 <div class="panel-group">
@@ -101,7 +101,7 @@
                                                     </select>
                                                     <label id="cnt">Cantidad:</label>
                                                     <input type="number" class="form-control" id="cntN">
-                                                    <button class="btn btn-primary" type="submit" class="btn btn-default">Agregar</button>
+                                                    <input class="btn btn-primary" type="submit" class="btn btn-default" value="Agregar">
                                                 </form><br>
                                                 <div class="table-responsive">          
                                                     <table class="table">
@@ -113,8 +113,7 @@
                                                         </thead>
                                                         <tbody>
                                                             <tr>
-                                                                <td>Televisión<td>
-                                                                <td>3</td                                                               
+                                                                                                                             
                                                             </tr>
                                                         </tbody>
                                                     </table>
@@ -123,7 +122,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <button class="btn btn-success" type="submit" class="btn btn-default">Terminar registro</button> 
+                            <input id="btnDEE" class="btn btn-success" type="submit" class="btn btn-default" value="Terminar registro">
                             <br> 
                         </div>
                         <div id="DE_gral" class="tab-pane fade">
@@ -164,7 +163,7 @@
                                                     </select>
                                                     <label id="cnt">Cantidad:</label>
                                                     <input type="number" class="form-control" id="cntN">
-                                                    <button class="btn btn-primary" type="submit" class="btn btn-default">Agregar</button>
+                                                    <input class="btn btn-primary" type="submit" class="btn btn-default" value="Agregar">
                                                 </form>
                                             </div><br>
                                             <div class="table-responsive">          
@@ -177,8 +176,7 @@
                                                     </thead>
                                                     <tbody>
                                                         <tr>
-                                                            <td>Capacitores</td>
-                                                            <td>2</td                                                               
+                                                                                                                          
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -186,7 +184,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <button class="btn btn-success" type="submit" class="btn btn-default">Terminar registro</button> 
+                                <input id="btnDEP" class="btn btn-success" type="submit" class="btn btn-default" value="Terminar registro">
                         </div>
                     </div>
                     <br><br><br>

@@ -2,6 +2,10 @@
 package Servlets;
 
 import Modelo.Catalogo_PE_Deps;
+import Modelo.Registro_Emision_Donaciones_Estudiantes;
+import Modelo.Registro_Emision_Donaciones_PG;
+import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -34,7 +38,13 @@ public class DonEm extends HttpServlet {
             case "AGREGAR":
                 agregar(request, response);
                 break;
-  
+            case "Guardar Datos Estudiante":
+                guardar_estudiante(request, response);
+                break;
+            case "Guardar Datos Publico":
+                guardar_publico(request, response);
+                break;    
+             
             default:
                 break;
         }
@@ -47,6 +57,48 @@ public class DonEm extends HttpServlet {
         request.setAttribute("listaPE", catalogo_pe);
         RequestDispatcher rd = request.getRequestDispatcher("./RegistroDE.jsp");
         rd.forward(request, response);
+    }
+    
+     private void guardar_estudiante(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        try {
+            String objectJson = request.getParameter("DATOS_ESTUDIANTE");
+            System.out.println(objectJson);
+            if(objectJson==null){
+                
+            }else{
+                Gson gson = new Gson();
+                Registro_Emision_Donaciones_Estudiantes datos_estudiante = gson.fromJson(objectJson, Registro_Emision_Donaciones_Estudiantes.class);
+                Controlador.DonacionesEm donacion_estudiante = new Controlador.DonacionesEm();
+                 donacion_estudiante.insertar_estudiante(datos_estudiante);
+            }
+            
+        } catch (JsonSyntaxException e) {
+            System.out.print(e);
+
+        }
+        
+        
+    }
+     
+     private void guardar_publico(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        try {
+            String objectJson = request.getParameter("DATOS_PUBLICOG");
+            System.out.println(objectJson);
+            if(objectJson==null){
+                
+            }else{
+                Gson gson = new Gson();
+                Registro_Emision_Donaciones_PG datos_publico = gson.fromJson(objectJson, Registro_Emision_Donaciones_PG.class);
+                Controlador.DonacionesEm donacion_publico = new Controlador.DonacionesEm();
+                 donacion_publico.insertar_publico(datos_publico);
+            }
+            
+        } catch (JsonSyntaxException e) {
+            System.out.print(e);
+
+        }
+        
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
