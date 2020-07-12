@@ -131,7 +131,7 @@
                                                 <td></td>
                                                 <td></td>
                                                 <td>
-                                                    <button class='btn btn-warning glyphicon glyphicon-pencil' data-toggle='modal' data-target='#modalEdicion'></button>
+                                                    <button class='btn btn-warning glyphicon glyphicon-pencil' data-toggle='modal' data-target='#modalEUsuario'></button>
                                                 </td>
                                                 <td>
                                                     <button class='btn btn-danger  glyphicon glyphicon-remove'></button>
@@ -141,31 +141,54 @@
                                     </div>
                                     <div id="usuariosr">
                                         <form action="#">
-                                            <label>Nombre(s):</label>
-                                            <input type="text" class="form-control"><br>
-                                            <label>Apellido Paterno:</label>
-                                            <input type="text" class="form-control"><br>
-                                            <label>Apellido Materno:</label>
-                                            <input type="text" class="form-control"><br>
+                                            <label>Nombre(s):</label><input type="text" class="form-control"><br>
+                                            <label>Apellido Paterno:</label><input type="text" class="form-control"><br>
+                                            <label>Apellido Materno:</label><input type="text" class="form-control"><br>
                                             <label for="typUser">Tipo de Usuario:</label>
                                             <select class="form-control" id="selecttU" name="TUser">
                                                 <!--<c:forEach items="${requestScope.listaPE}" var="usert">
                                                 <option value=${pe.id}>${pe.dependencia}</option>
                                                 </c:forEach>!-->
                                             </select>
-                                            <label>Usuario:</label
-                                            <input type="text" class="form-control"><br>
-                                            <label>Contraseña:</label>
-                                            <input type="text" class="form-control"><br><br>
+                                            <label>Usuario:</label><input type="text" class="form-control"><br>
+                                            <label>Contraseña:</label><input type="text" class="form-control"><br><br>
                                             <input class="btn btn-success" type="submit" class="btn btn-default" id="btnRdu" value="Registrar">
                                         </form> 
                                     </div>
+                                    <!-- Modal para edición de usuarios -->
+                                    <div class="modal fade" id="modalEUsuario" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                    <h4 class="modal-title" id="myModalLabel">Editar datos del usuario</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <label>Nombre(s):</label><input type="text" class="form-control"><br>
+                                                    <label>Apellido Paterno:</label><input type="text" class="form-control"><br>
+                                                    <label>Apellido Materno:</label><input type="text" class="form-control"><br>
+                                                    <label for="typUser">Tipo de Usuario:</label>
+                                                    <select class="form-control" id="selecttU" name="TUser">
+                                                    <!--<c:forEach items="${requestScope.listaPE}" var="usert">
+                                                    <option value=${pe.id}>${pe.dependencia}</option>
+                                                    </c:forEach>!-->
+                                                    </select>
+                                                    <label>Usuario:</label><input type="text" class="form-control"><br>
+                                                    <label>Contraseña:</label><input type="text" class="form-control"><br>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                                    <button type="button" class="btn btn-primary btn-warning">Editar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>            
                                 </div>
                                 <div id="puser" class="tab-pane fade">
                                     <div id="tabla-tuser">
                                         <table class='table table-hover table-condensed table-bordered'>
                                             <tr>
-                                                <th>ID</th
+                                                <th>ID</th>
                                                 <th>Tipo de Usuario</th>
                                                 <th>Editar</th>
                                                 <th>Eliminar</th>
@@ -173,10 +196,8 @@
                                             <tr>
                                                 <td></td>
                                                 <td></td>
-                                                <td></td>
-                                                <td></td>
                                                 <td>
-                                                    <button class='btn btn-warning glyphicon glyphicon-pencil' data-toggle='modal' data-target='#modalEdicion'></button>
+                                                    <button class='btn btn-warning glyphicon glyphicon-pencil' data-toggle='modal' data-target='#modalETipoPermiso'></button>
                                                 </td>
                                                 <td>
                                                     <button class='btn btn-danger  glyphicon glyphicon-remove'></button>
@@ -186,10 +207,27 @@
                                     </div>
                                     <div id="usuariosr">
                                         <form action="#">
-                                            <label>Tipo de permiso:</label>
-                                            <input type="text" class="form-control"><br>
+                                            <label>Tipo de permiso:</label><input type="text" class="form-control"><br>
                                             <input class="btn btn-success" type="submit" class="btn btn-default" id="btnRU" value="Registrar">
                                         </form> 
+                                    </div>
+                                    <!-- Modal para edición de usuarios -->
+                                    <div class="modal fade" id="modalETipoPermiso" tabindex="-1" role="dialog" aria-labelledby="myModalLabe2">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                    <h4 class="modal-title" id="myModalLabel">Editar Tipo de Usuario</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <label>Tipo de permiso:</label><input type="text" class="form-control"><br>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                                    <button type="button" class="btn btn-primary btn-warning">Editar</button>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>                                                
                             </div>
@@ -218,7 +256,7 @@
                                                 <td></td>
                                                 <td></td>
                                                 <td>
-                                                    <button class='btn btn-warning glyphicon glyphicon-pencil' data-toggle='modal' data-target='#modalEdicion'></button>
+                                                    <button class='btn btn-warning glyphicon glyphicon-pencil' data-toggle='modal' data-target='#modalECategoria'></button>
                                                 </td>
                                                 <td>
                                                     <button class='btn btn-danger  glyphicon glyphicon-remove'></button>
@@ -228,11 +266,28 @@
                                     </div>
                                     <div id="categoriasr">
                                         <form action="#">
-                                            <label>Categoría:</label>
-                                            <input type="text" class="form-control"><br>
+                                            <label>Categoría:</label><input type="text" class="form-control"><br>
                                             <input class="btn btn-success" type="submit" class="btn btn-default" id="btnCat" value="Registrar">
                                         </form> 
                                     </div>
+                                    <!-- Modal para edición de categorias -->
+                                    <div class="modal fade" id="modalECategoria" tabindex="-1" role="dialog" aria-labelledby="myModalLabe3">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                    <h4 class="modal-title" id="myModalLabel">Editar datos de una categoria</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <label>Categoría:</label><input type="text" class="form-control"><br>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                                    <button type="button" class="btn btn-primary btn-warning">Editar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> 
                                 </div>
                                 <div id="EQdanino" class="tab-pane fade">
                                     <div id="tabla-eq">
@@ -249,7 +304,7 @@
                                                 <td></td>
                                                 <td></td>
                                                 <td>
-                                                    <button class='btn btn-warning glyphicon glyphicon-pencil' data-toggle='modal' data-target='#modalEdicion'></button>
+                                                    <button class='btn btn-warning glyphicon glyphicon-pencil' data-toggle='modal' data-target='#modalEeq'></button>
                                                 </td>
                                                 <td>
                                                     <button class='btn btn-danger  glyphicon glyphicon-remove'></button>
@@ -259,12 +314,31 @@
                                     </div>
                                     <div id="feqdanino">
                                         <form action="#">
-                                            <label>Elemento quimico:</label>
-                                            <input type="text" class="form-control"><br>
+                                            <label>Elemento quimico:</label><input type="text" class="form-control"><br>
                                             <label>Daños:</label><br>
                                             <textarea class="form-control" id="txtD" name="desc" rows="4" cols="50"></textarea><br>
                                             <input class="btn btn-success" type="submit" class="btn btn-default" id="btnFEQ" value="Registrar">
                                         </form> 
+                                    </div>
+                                    <!-- Modal para edición de EQ -->
+                                    <div class="modal fade" id="modalEeq" tabindex="-1" role="dialog" aria-labelledby="myModalLabe4">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                    <h4 class="modal-title" id="myModalLabel">Editar datos del elemento quimico</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <label>Elemento quimico:</label><input type="text" class="form-control"><br>
+                                                    <label>Daños:</label><br>
+                                                    <textarea class="form-control" id="txtD" name="desc" rows="4" cols="50"></textarea><br>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                                    <button type="button" class="btn btn-primary btn-warning">Editar</button>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -287,7 +361,7 @@
                                         <td></td>
                                         <td></td>
                                         <td>
-                                            <button class='btn btn-warning glyphicon glyphicon-pencil' data-toggle='modal' data-target='#modalEdicion'></button>
+                                            <button class='btn btn-warning glyphicon glyphicon-pencil' data-toggle='modal' data-target='#modalEstado'></button>
                                         </td>
                                         <td>
                                             <button class='btn btn-danger  glyphicon glyphicon-remove'></button>
@@ -297,10 +371,27 @@
                             </div>
                             <div id="categoriasr" class="form-inline">
                                 <form action="#">
-                                    <label>Estado:</label>
-                                    <input type="text" class="form-control"><br>
+                                    <label>Estado:</label><input type="text" class="form-control"><br>
                                     <input class="btn btn-success" type="submit" class="btn btn-default" id="btnRst" value="Registrar">
                                 </form> 
+                            </div>
+                        </div>
+                        <!-- Modal para edición de Estados -->
+                        <div class="modal fade" id="modalEstado" tabindex="-1" role="dialog" aria-labelledby="myModalLabe5">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="myModalLabel">Editar datos del estado</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <label>Estado:</label><input type="text" class="form-control"><br>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                        <button type="button" class="btn btn-primary btn-warning">Editar</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -321,7 +412,7 @@
                                         <td></td>
                                         <td></td>
                                         <td>
-                                            <button class='btn btn-warning glyphicon glyphicon-pencil' data-toggle='modal' data-target='#modalEdicion'></button>
+                                            <button class='btn btn-warning glyphicon glyphicon-pencil' data-toggle='modal' data-target='#modalEOrigen'></button>
                                         </td>
                                         <td>
                                             <button class='btn btn-danger  glyphicon glyphicon-remove'></button>
@@ -331,10 +422,27 @@
                             </div>
                             <div id="categoriasr" class="form-inline">
                                 <form action="#">
-                                    <label>Origen:</label>
-                                    <input type="text" class="form-control"><br><br>
+                                    <label>Origen:</label><input type="text" class="form-control"><br>
                                     <input class="btn btn-success" type="submit" class="btn btn-default" id="btnRorg" value="Registrar">
                                 </form> 
+                            </div>
+                        </div>
+                        <!-- Modal para edición de Origen -->
+                        <div class="modal fade" id="modalEOrigen" tabindex="-1" role="dialog" aria-labelledby="myModalLabe6">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="myModalLabel">Editar datos de origen</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <label>Origen:</label><input type="text" class="form-control"><br>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                        <button type="button" class="btn btn-primary btn-warning">Editar</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -355,7 +463,7 @@
                                         <td></td>
                                         <td></td>
                                         <td>
-                                            <button class='btn btn-warning glyphicon glyphicon-pencil' data-toggle='modal' data-target='#modalEdicion'></button>
+                                            <button class='btn btn-warning glyphicon glyphicon-pencil' data-toggle='modal' data-target='#modalEVisita'></button>
                                         </td>
                                         <td>
                                             <button class='btn btn-danger  glyphicon glyphicon-remove'></button>
@@ -365,10 +473,27 @@
                             </div>
                             <div id="categoriasr" class="form-inline">
                                 <form action="#">
-                                    <label>Tipo de visita:</label>
-                                    <input type="text" class="form-control"><br>
+                                    <label>Tipo de visita:</label><input type="text" class="form-control"><br>
                                     <input class="btn btn-success" type="submit" class="btn btn-default" id="btnRV" value="Registrar">
                                 </form> 
+                            </div>
+                        </div>
+                        <!-- Modal para edición de Tipo de Visita -->
+                        <div class="modal fade" id="modalEVisita" tabindex="-1" role="dialog" aria-labelledby="myModalLabe7">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="myModalLabel">Editar datos del tipo de visita</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <label>Tipo de visita:</label><input type="text" class="form-control"><br>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                        <button type="button" class="btn btn-primary btn-warning">Editar</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>            

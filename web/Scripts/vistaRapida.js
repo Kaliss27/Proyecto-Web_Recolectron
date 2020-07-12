@@ -1,4 +1,4 @@
-/*function dPanelUser(){
+function dPanelUser(){
     document.getElementById("cpanel").innerHTML = document.getElementById("collapse1").innerHTML;
 };
 
@@ -24,7 +24,7 @@ function dPanelImps(){
 
 function dPanelVinv(){
     document.getElementById("cpanel").innerHTML = document.getElementById("collapse7").innerHTML;
-};*/
+};
 var VistaRapida = (function () {
 
     return {
