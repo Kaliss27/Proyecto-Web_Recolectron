@@ -6,19 +6,19 @@
 /*.row > .col-sm-3{
     background-color: #66cc66;
 }*/
-#dUser,#imps,#menu,#valInv,#educ{
+#dUser,#imps,#menu,#valInv,#educ,#alc{
     text-align:center;
     background-color: #66cc66;
 }
-#btn-imps,#btn-vinv,#btn-edu{
+#btn-imps,#btn-vinv,#btn-edu,#btn-Alc,#dUser>button{
     background-color: #66cc66;
     border:none;
 }
-#gicon,#giconS,#giconCG,#giconVinv,#giconEdc{
+#gicon,#giconS,#giconCG,#giconVinv,#giconEdc,#giconAlc{
     text-align: center;
     color:#ffffff;
 }
-#gicon,#giconS,#giconVinv,#giconEdc{
+#gicon,#giconS,#giconVinv,#giconEdc,#giconAlc{
     font-size:50px;
 }
 #giconCG{

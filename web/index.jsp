@@ -36,8 +36,19 @@
                         <li><a href="#" id="form_donem">Donaciones Emitidas</a></li>
                         <li><a href="#" id="form_event">Eventos Reco</a></li>
                     </ul>
-                    <ul class="nav navbar-nav navbar-right">
+                    <ul id="nb-sp" class="nav navbar-nav navbar-right">
                         <li><a href="EQReco.jsp"><span class="glyphicon glyphicon-log-in"></span>Equipo RECO</a></li>
+                    </ul>
+                    <ul id="nb-cp" class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Equipo RECO
+                            <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li class="active"><a href="#">Vista Rápida</a></li>
+                                <li><a href="#" id="form_inventario">Inventario</a></li>
+                                <li><a href="actividades.jsp">Actividades</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             </div>

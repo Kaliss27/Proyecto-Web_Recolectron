@@ -7,6 +7,9 @@ body{
     background-color: #ccf2ff;/*#B0E0E6;*/
 }
 /*Base para la barra de menú de todas las páginas*/
+#nb-cp{
+    display:none;
+}
 .navbar-default {
   background-color: #66cc66;
   border-color: #ffffff;

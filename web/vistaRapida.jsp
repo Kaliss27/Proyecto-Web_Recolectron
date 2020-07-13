@@ -1,4 +1,4 @@
-<%-- 
+<%-- Vista Rapida para Usuario Administrador
     Document   : vistaRapida
     Created on : 4/06/2020, 09:57:32 PM
     Author     : karen
@@ -69,6 +69,7 @@
                             SimpleDateFormat ft =new SimpleDateFormat ("E dd.MM.yyyy");
                             out.print( "<label align=\"center\">" + ft.format(dNow) + "</label>");
                         %>
+                        <button type="button" class="btn btn-default btn-block" id="logout">Salir</button>
                     </div>
                     <br>
                     <div id="imps">
