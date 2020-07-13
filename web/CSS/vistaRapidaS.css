@@ -6,23 +6,23 @@
 /*.row > .col-sm-3{
     background-color: #66cc66;
 }*/
-#dUser,#imps,#menu,#valInv{
+#dUser,#imps,#menu,#valInv,#educ{
     text-align:center;
     background-color: #66cc66;
 }
-#btn-imps,#btn-vinv{
+#btn-imps,#btn-vinv,#btn-edu{
     background-color: #66cc66;
     border:none;
 }
-#gicon,#giconS,#giconCG,#giconVinv{
+#gicon,#giconS,#giconCG,#giconVinv,#giconEdc{
     text-align: center;
     color:#ffffff;
 }
-#gicon,#giconS,#giconVinv{
-    font-size:75px;
+#gicon,#giconS,#giconVinv,#giconEdc{
+    font-size:50px;
 }
 #giconCG{
-    font-size:50px;
+    font-size:30px;
 }
 .col-sm-4{
     background-color: #66cc66;;

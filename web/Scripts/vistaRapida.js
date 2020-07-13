@@ -25,6 +25,10 @@ function dPanelImps(){
 function dPanelVinv(){
     document.getElementById("cpanel").innerHTML = document.getElementById("collapse7").innerHTML;
 };
+
+function dPanelEdu(){
+    document.getElementById("cpanel").innerHTML = document.getElementById("collapse8").innerHTML;
+};
 var VistaRapida = (function () {
 
     return {

@@ -56,6 +56,7 @@
         </nav>
         <div class="container">
             <div class="row">
+                <!--Contenedores de secciones para Vista Rapida-->
                 <div class="col-sm-3 sidenav">
                     <div id="dUser">
                         <label>Bienvenido -Nombre Personal</label><br>
@@ -82,6 +83,12 @@
                         <button type="button" class="btn btn-default" id='btn-vinv' onclick='dPanelVinv();'>
                             <label id="giconVinv" class="glyphicon glyphicon-usd"></label>
                         </button>
+                    </div><br>
+                    <div id="educ">
+                        <label>Academico</label><br>
+                        <button type="button" class="btn btn-default" id='btn-edu' onclick='dPanelEdu();'>
+                            <label id="giconEdc" class="glyphicon glyphicon-education"></label>
+                        </button>
                     </div>
                     <br>
                     <div id="menu">
@@ -99,97 +106,262 @@
                     </div>
                     <br><br><br>
                 </div>
+                <!--Area de visualización de opciones -->    
                 <div class="col-sm-8 form-inline" id="one">
                     <div id="contenido">
-                        <label>CONTROL RECOLECTRON</label><br>
+                        <h2>CONTROL RECOLECTRON</h2>
                         <div id="cpanel">
                         </div>
-                </div>
-                <div id="collapse1" class="panel-collapse collapse">
-                    <div class="panel panel-success">
-                        <div class="panel-heading">Acceso Usuario</div>
-                        <div class="panel-body">
-                            <ul class="nav nav-tabs">
-                                <li class="active"><a data-toggle="tab" href="#users">Usuarios</a></li>
-                                <li><a data-toggle="tab" href="#puser">Permisos de usuarios</a></li>
-                            </ul>
-                            <div class="tab-content">
-                                <div id="users" class="tab-pane fade in active">
-                                    <div id="tabla-users">
-                                        <table class='table table-hover table-condensed table-bordered'>
-                                            <tr>
-                                                <th>ID</th>
-                                                <th>Nombre Completo</th>
-                                                <th>Tipo de usuario</th>
-                                                <th>Usuario</th>
-                                                <th>Editar</th>
-                                                <th>Eliminar</th>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>
-                                                    <button class='btn btn-warning glyphicon glyphicon-pencil' data-toggle='modal' data-target='#modalEUsuario'></button>
-                                                </td>
-                                                <td>
-                                                    <button class='btn btn-danger  glyphicon glyphicon-remove'></button>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                    <div id="usuariosr">
-                                        <form action="#">
-                                            <label>Nombre(s):</label><input type="text" class="form-control"><br>
-                                            <label>Apellido Paterno:</label><input type="text" class="form-control"><br>
-                                            <label>Apellido Materno:</label><input type="text" class="form-control"><br>
-                                            <label for="typUser">Tipo de Usuario:</label>
-                                            <select class="form-control" id="selecttU" name="TUser">
-                                                <!--<c:forEach items="${requestScope.listaPE}" var="usert">
-                                                <option value=${pe.id}>${pe.dependencia}</option>
-                                                </c:forEach>!-->
-                                            </select>
-                                            <label>Usuario:</label><input type="text" class="form-control"><br>
-                                            <label>Contraseña:</label><input type="text" class="form-control"><br><br>
-                                            <input class="btn btn-success" type="submit" class="btn btn-default" id="btnRdu" value="Registrar">
-                                        </form> 
-                                    </div>
-                                    <!-- Modal para edición de usuarios -->
-                                    <div class="modal fade" id="modalEUsuario" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                    <h4 class="modal-title" id="myModalLabel">Editar datos del usuario</h4>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <label>Nombre(s):</label><input type="text" class="form-control"><br>
-                                                    <label>Apellido Paterno:</label><input type="text" class="form-control"><br>
-                                                    <label>Apellido Materno:</label><input type="text" class="form-control"><br>
-                                                    <label for="typUser">Tipo de Usuario:</label>
-                                                    <select class="form-control" id="selecttU" name="TUser">
+                    </div>
+                    <div id="collapse1" class="panel-collapse collapse">
+                        <div class="panel panel-success">
+                            <div class="panel-heading">Acceso Usuario</div>
+                                <div class="panel-body">
+                                    <ul class="nav nav-tabs">
+                                        <li class="active"><a data-toggle="tab" href="#users">Usuarios</a></li>
+                                        <li><a data-toggle="tab" href="#puser">Permisos de usuarios</a></li>
+                                    </ul>
+                                <div class="tab-content">
+                                    <div id="users" class="tab-pane fade in active">
+                                        <div id="tabla-users">
+                                            <table class='table table-hover table-condensed table-bordered'>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>Nombre Completo</th>
+                                                    <th>Tipo de usuario</th>
+                                                    <th>Usuario</th>
+                                                    <th>Editar</th>
+                                                    <th>Eliminar</th>
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td>
+                                                        <button class='btn btn-warning glyphicon glyphicon-pencil' data-toggle='modal' data-target='#modalEUsuario'></button>
+                                                    </td>
+                                                    <td>
+                                                        <button class='btn btn-danger  glyphicon glyphicon-remove'></button>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        <div id="usuariosr">
+                                            <form action="#">
+                                                <label>Nombre(s):</label><input type="text" class="form-control"><br>
+                                                <label>Apellido Paterno:</label><input type="text" class="form-control"><br>
+                                                <label>Apellido Materno:</label><input type="text" class="form-control"><br>
+                                                <label for="typUser">Tipo de Usuario:</label>
+                                                <select class="form-control" id="selecttU" name="TUser">
                                                     <!--<c:forEach items="${requestScope.listaPE}" var="usert">
-                                                    <option value=${pe.id}>${pe.dependencia}</option>
+                                                        <option value=${pe.id}>${pe.dependencia}</option>
                                                     </c:forEach>!-->
-                                                    </select>
-                                                    <label>Usuario:</label><input type="text" class="form-control"><br>
-                                                    <label>Contraseña:</label><input type="text" class="form-control"><br>
+                                                </select>
+                                                <label>Usuario:</label><input type="text" class="form-control"><br>
+                                                <label>Contraseña:</label><input type="text" class="form-control"><br><br>
+                                                <input class="btn btn-success" type="submit" class="btn btn-default" id="btnRdu" value="Registrar">
+                                            </form> 
+                                        </div>
+                                        <!-- Modal para edición de usuarios -->
+                                        <div class="modal fade" id="modalEUsuario" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                        <h4 class="modal-title" id="myModalLabel">Editar datos del usuario</h4>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <label>Nombre(s):</label><input type="text" class="form-control"><br>
+                                                        <label>Apellido Paterno:</label><input type="text" class="form-control"><br>
+                                                        <label>Apellido Materno:</label><input type="text" class="form-control"><br>
+                                                        <label for="typUser">Tipo de Usuario:</label>
+                                                        <select class="form-control" id="selecttU" name="TUser">
+                                                        <!--<c:forEach items="${requestScope.listaPE}" var="usert">
+                                                            <option value=${pe.id}>${pe.dependencia}</option>
+                                                        </c:forEach>!-->
+                                                        </select>
+                                                        <label>Usuario:</label><input type="text" class="form-control"><br>
+                                                        <label>Contraseña:</label><input type="text" class="form-control"><br>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                                        <button type="button" class="btn btn-primary btn-warning">Editar</button>
+                                                    </div>
                                                 </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                                                    <button type="button" class="btn btn-primary btn-warning">Editar</button>
+                                            </div>
+                                        </div>            
+                                    </div>
+                                    <div id="puser" class="tab-pane fade">
+                                        <div id="tabla-tuser">
+                                            <table class='table table-hover table-condensed table-bordered'>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>Tipo de Usuario</th>
+                                                    <th>Editar</th>
+                                                    <th>Eliminar</th>
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td>
+                                                        <button class='btn btn-warning glyphicon glyphicon-pencil' data-toggle='modal' data-target='#modalETipoPermiso'></button>
+                                                    </td>
+                                                    <td>
+                                                        <button class='btn btn-danger  glyphicon glyphicon-remove'></button>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        <div id="usuariosr">
+                                            <form action="#">
+                                                <label>Tipo de permiso:</label><input type="text" class="form-control"><br><br>
+                                                <input class="btn btn-success" type="submit" class="btn btn-default" id="btnRU" value="Registrar">
+                                            </form> 
+                                        </div>
+                                        <!-- Modal para edición de usuarios -->
+                                        <div class="modal fade" id="modalETipoPermiso" tabindex="-1" role="dialog" aria-labelledby="myModalLabe2">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                        <h4 class="modal-title" id="myModalLabel">Editar Tipo de Usuario</h4>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <label>Tipo de permiso:</label><input type="text" class="form-control"><br>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                                        <button type="button" class="btn btn-primary btn-warning">Editar</button>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>            
+                                    </div>                                                
                                 </div>
-                                <div id="puser" class="tab-pane fade">
-                                    <div id="tabla-tuser">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="collapse2" class="panel-collapse collapse">
+                        <div class="panel panel-success">
+                            <div class="panel-heading">Categorias de Articulos</div>
+                            <div class="panel-body">
+                                <ul class="nav nav-tabs">
+                                    <li class="active"><a data-toggle="tab" href="#catRe">Categorias de Residuos Electronicos</a></li>
+                                    <li><a data-toggle="tab" href="#EQdanino">Elementos Quimicos Dañinos</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div id="catRe" class="tab-pane fade in active">
+                                        <div id="tabla-catre">
+                                            <table class='table table-hover table-condensed table-bordered'>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>Categoría</th>
+                                                    <th>Editar</th>
+                                                    <th>Eliminar</th>
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td>
+                                                        <button class='btn btn-warning glyphicon glyphicon-pencil' data-toggle='modal' data-target='#modalECategoria'></button>
+                                                    </td>
+                                                    <td>
+                                                        <button class='btn btn-danger  glyphicon glyphicon-remove'></button>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        <div id="categoriasr">
+                                            <form action="#">
+                                                <label>Categoría:</label><input type="text" class="form-control"><br><br>
+                                                <input class="btn btn-success" type="submit" class="btn btn-default" id="btnCat" value="Registrar">
+                                            </form> 
+                                        </div>
+                                        <!-- Modal para edición de categorias -->
+                                        <div class="modal fade" id="modalECategoria" tabindex="-1" role="dialog" aria-labelledby="myModalLabe3">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                        <h4 class="modal-title" id="myModalLabel">Editar datos de una categoria</h4>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <label>Categoría:</label><input type="text" class="form-control"><br>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                                        <button type="button" class="btn btn-primary btn-warning">Editar</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                    <div id="EQdanino" class="tab-pane fade">
+                                        <div id="tabla-eq">
+                                            <table class='table table-hover table-condensed table-bordered'>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>Elemento Quimico</th>
+                                                    <th>Daños</th>
+                                                    <th>Editar</th>
+                                                    <th>Eliminar</th>
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td>
+                                                        <button class='btn btn-warning glyphicon glyphicon-pencil' data-toggle='modal' data-target='#modalEeq'></button>
+                                                    </td>
+                                                    <td>
+                                                        <button class='btn btn-danger  glyphicon glyphicon-remove'></button>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        <div id="feqdanino">
+                                            <form action="#">
+                                                <label>Elemento quimico:</label><input type="text" class="form-control"><br>
+                                                <label>Daños:</label><br>
+                                                <textarea class="form-control" id="txtD" name="desc" rows="4" cols="50"></textarea><br><br>
+                                                <input class="btn btn-success" type="submit" class="btn btn-default" id="btnFEQ" value="Registrar">
+                                            </form> 
+                                        </div>
+                                        <!-- Modal para edición de EQ -->
+                                        <div class="modal fade" id="modalEeq" tabindex="-1" role="dialog" aria-labelledby="myModalLabe4">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                        <h4 class="modal-title" id="myModalLabel">Editar datos del elemento quimico</h4>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <label>Elemento quimico:</label><input type="text" class="form-control"><br>
+                                                        <label>Daños:</label><br>
+                                                        <textarea class="form-control" id="txtD" name="desc" rows="4" cols="50"></textarea><br>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                                        <button type="button" class="btn btn-primary btn-warning">Editar</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="collapse3" class="panel-collapse collapse">
+                        <div class="panel panel-success">
+                            <div class="panel-heading">Control General</div>
+                                <div class="panel-body">
+                                    <div id="tabla-cgral">
                                         <table class='table table-hover table-condensed table-bordered'>
                                             <tr>
                                                 <th>ID</th>
-                                                <th>Tipo de Usuario</th>
+                                                <th>Estado</th>
                                                 <th>Editar</th>
                                                 <th>Eliminar</th>
                                             </tr>
@@ -197,7 +369,7 @@
                                                 <td></td>
                                                 <td></td>
                                                 <td>
-                                                    <button class='btn btn-warning glyphicon glyphicon-pencil' data-toggle='modal' data-target='#modalETipoPermiso'></button>
+                                                    <button class='btn btn-warning glyphicon glyphicon-pencil' data-toggle='modal' data-target='#modalEstado'></button>
                                                 </td>
                                                 <td>
                                                     <button class='btn btn-danger  glyphicon glyphicon-remove'></button>
@@ -205,50 +377,42 @@
                                             </tr>
                                         </table>
                                     </div>
-                                    <div id="usuariosr">
+                                    <div id="categoriasr" class="form-inline">
                                         <form action="#">
-                                            <label>Tipo de permiso:</label><input type="text" class="form-control"><br>
-                                            <input class="btn btn-success" type="submit" class="btn btn-default" id="btnRU" value="Registrar">
+                                            <label>Estado:</label><input type="text" class="form-control"><br><br>
+                                            <input class="btn btn-success" type="submit" class="btn btn-default" id="btnRst" value="Registrar">
                                         </form> 
                                     </div>
-                                    <!-- Modal para edición de usuarios -->
-                                    <div class="modal fade" id="modalETipoPermiso" tabindex="-1" role="dialog" aria-labelledby="myModalLabe2">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                    <h4 class="modal-title" id="myModalLabel">Editar Tipo de Usuario</h4>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <label>Tipo de permiso:</label><input type="text" class="form-control"><br>
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                                                    <button type="button" class="btn btn-primary btn-warning">Editar</button>
-                                                </div>
+                                </div>
+                                <!-- Modal para edición de Estados -->
+                                <div class="modal fade" id="modalEstado" tabindex="-1" role="dialog" aria-labelledby="myModalLabe5">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                <h4 class="modal-title" id="myModalLabel">Editar datos del estado</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <label>Estado:</label><input type="text" class="form-control"><br>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                                <button type="button" class="btn btn-primary btn-warning">Editar</button>
                                             </div>
                                         </div>
                                     </div>
-                                </div>                                                
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div id="collapse2" class="panel-collapse collapse">
-                    <div class="panel panel-success">
-                        <div class="panel-heading">Categorias de Articulos</div>
-                        <div class="panel-body">
-                            <ul class="nav nav-tabs">
-                                <li class="active"><a data-toggle="tab" href="#catRe">Categorias de Residuos Electronicos</a></li>
-                                <li><a data-toggle="tab" href="#EQdanino">Elementos Quimicos Dañinos</a></li>
-                            </ul>
-                            <div class="tab-content">
-                                <div id="catRe" class="tab-pane fade in active">
-                                    <div id="tabla-catre">
-                                        <table class='table table-hover table-condensed table-bordered'>
+                        <div id="collapse4" class="panel-collapse collapse">
+                            <div class="panel panel-success">
+                                <div class="panel-heading">Recepción de donaciones</div>
+                                    <div class="panel-body">
+                                        <div id="tabla-rd">
+                                            <table class='table table-hover table-condensed table-bordered'>
                                             <tr>
                                                 <th>ID</th>
-                                                <th>Categoría</th>
+                                                <th>Origen:</th>
                                                 <th>Editar</th>
                                                 <th>Eliminar</th>
                                             </tr>
@@ -256,7 +420,7 @@
                                                 <td></td>
                                                 <td></td>
                                                 <td>
-                                                    <button class='btn btn-warning glyphicon glyphicon-pencil' data-toggle='modal' data-target='#modalECategoria'></button>
+                                                    <button class='btn btn-warning glyphicon glyphicon-pencil' data-toggle='modal' data-target='#modalEOrigen'></button>
                                                 </td>
                                                 <td>
                                                     <button class='btn btn-danger  glyphicon glyphicon-remove'></button>
@@ -264,22 +428,74 @@
                                             </tr>
                                         </table>
                                     </div>
-                                    <div id="categoriasr">
+                                    <div id="categoriasr" class="form-inline">
                                         <form action="#">
-                                            <label>Categoría:</label><input type="text" class="form-control"><br>
-                                            <input class="btn btn-success" type="submit" class="btn btn-default" id="btnCat" value="Registrar">
+                                            <label>Origen:</label><input type="text" class="form-control"><br><br>
+                                            <input class="btn btn-success" type="submit" class="btn btn-default" id="btnRorg" value="Registrar">
                                         </form> 
                                     </div>
-                                    <!-- Modal para edición de categorias -->
-                                    <div class="modal fade" id="modalECategoria" tabindex="-1" role="dialog" aria-labelledby="myModalLabe3">
+                                </div>
+                                <!-- Modal para edición de Origen -->
+                                <div class="modal fade" id="modalEOrigen" tabindex="-1" role="dialog" aria-labelledby="myModalLabe6">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                <h4 class="modal-title" id="myModalLabel">Editar datos de origen</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <label>Origen:</label><input type="text" class="form-control"><br>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                                <button type="button" class="btn btn-primary btn-warning">Editar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>    
+                        <div id="collapse5" class="panel-collapse collapse">
+                            <div class="panel panel-success">
+                                <div class="panel-heading">Registro de visitas</div>
+                                    <div class="panel-body">
+                                        <div id="tabla-visit">
+                                            <table class='table table-hover table-condensed table-bordered'>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>Tipo de Visita</th>
+                                                    <th>Editar</th>
+                                                    <th>Eliminar</th>
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td>
+                                                        <button class='btn btn-warning glyphicon glyphicon-pencil' data-toggle='modal' data-target='#modalEVisita'></button>
+                                                    </td>
+                                                    <td>
+                                                        <button class='btn btn-danger  glyphicon glyphicon-remove'></button>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        <div id="categoriasr" class="form-inline">
+                                            <form action="#">
+                                                <label>Tipo de visita:</label><input type="text" class="form-control"><br><br>
+                                                <input class="btn btn-success" type="submit" class="btn btn-default" id="btnRV" value="Registrar">
+                                            </form> 
+                                        </div>
+                                    </div>
+                                    <!-- Modal para edición de Tipo de Visita -->
+                                    <div class="modal fade" id="modalEVisita" tabindex="-1" role="dialog" aria-labelledby="myModalLabe7">
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                    <h4 class="modal-title" id="myModalLabel">Editar datos de una categoria</h4>
+                                                    <h4 class="modal-title" id="myModalLabel">Editar datos del tipo de visita</h4>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <label>Categoría:</label><input type="text" class="form-control"><br>
+                                                    <label>Tipo de visita:</label><input type="text" class="form-control"><br>
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
@@ -287,234 +503,58 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div> 
-                                </div>
-                                <div id="EQdanino" class="tab-pane fade">
-                                    <div id="tabla-eq">
-                                        <table class='table table-hover table-condensed table-bordered'>
-                                            <tr>
-                                                <th>ID</th>
-                                                <th>Elemento Quimico</th>
-                                                <th>Daños</th>
-                                                <th>Editar</th>
-                                                <th>Eliminar</th>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>
-                                                    <button class='btn btn-warning glyphicon glyphicon-pencil' data-toggle='modal' data-target='#modalEeq'></button>
-                                                </td>
-                                                <td>
-                                                    <button class='btn btn-danger  glyphicon glyphicon-remove'></button>
-                                                </td>
-                                            </tr>
-                                        </table>
                                     </div>
-                                    <div id="feqdanino">
-                                        <form action="#">
-                                            <label>Elemento quimico:</label><input type="text" class="form-control"><br>
-                                            <label>Daños:</label><br>
-                                            <textarea class="form-control" id="txtD" name="desc" rows="4" cols="50"></textarea><br>
-                                            <input class="btn btn-success" type="submit" class="btn btn-default" id="btnFEQ" value="Registrar">
-                                        </form> 
-                                    </div>
-                                    <!-- Modal para edición de EQ -->
-                                    <div class="modal fade" id="modalEeq" tabindex="-1" role="dialog" aria-labelledby="myModalLabe4">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                    <h4 class="modal-title" id="myModalLabel">Editar datos del elemento quimico</h4>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <label>Elemento quimico:</label><input type="text" class="form-control"><br>
-                                                    <label>Daños:</label><br>
-                                                    <textarea class="form-control" id="txtD" name="desc" rows="4" cols="50"></textarea><br>
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                                                    <button type="button" class="btn btn-primary btn-warning">Editar</button>
-                                                </div>
-                                            </div>
+                                </div>            
+                            </div>
+                            <div id="collapse6" class="panel-collapse collapse">
+                                <div class="panel panel-success">
+                                    <div class="panel-heading">Impacto sustentable</div>
+                                        <div class="panel-body">    
+                                        </div>
+                                </div>            
+                            </div>
+                            <div id="collapse7" class="panel-collapse collapse">
+                                <div class="panel panel-success">
+                                    <div class="panel-heading">Valor del Inventario</div>
+                                    <div class="panel-body">
+                                        <div>
+                                            <label>Se cuenta con un valor estimado de :$ </label>
                                         </div>
                                     </div>
-                                </div>
+                                </div>            
+                            </div>
+                            <div id="collapse8" class="panel-collapse collapse">
+                                <div class="panel panel-success">
+                                    <div class="panel-heading">Aspectos Academicos</div>
+                                    <div class="panel-body">
+                                        <div id="asisAQC" class="form-group">
+                                            <h4>Asistencia Alumnos de Arquitectura Computacional</h4>
+                                            <label>Periodo a consultar</label>
+                                            <form class="form-inline">
+                                                <label>Del</label>
+                                                <input type="date" class="form-control">
+                                                <label>al</label>
+                                                <input type="date" class="form-control">
+                                                <button class="btn btn-info">Consultar Asistencia</button>
+                                            </form>
+                                        </div><br><br>
+                                        <div id="asiSS" class="form-group">
+                                            <h4>Asistencia Alumnos de Servicio Social</h4>
+                                            <label>Periodo a consultar</label>
+                                            <form class="form-inline">
+                                                <label>Del</label>
+                                                <input type="date" class="form-control">
+                                                <label>al</label>
+                                                <input type="date" class="form-control">
+                                                <button class="btn btn-info">Consultar Asistencia</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>            
                             </div>
                         </div>
                     </div>
                 </div>
-                <div id="collapse3" class="panel-collapse collapse">
-                    <div class="panel panel-success">
-                        <div class="panel-heading">Control General</div>
-                        <div class="panel-body">
-                            <div id="tabla-cgral">
-                                <table class='table table-hover table-condensed table-bordered'>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Estado</th>
-                                        <th>Editar</th>
-                                        <th>Eliminar</th>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td>
-                                            <button class='btn btn-warning glyphicon glyphicon-pencil' data-toggle='modal' data-target='#modalEstado'></button>
-                                        </td>
-                                        <td>
-                                            <button class='btn btn-danger  glyphicon glyphicon-remove'></button>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
-                            <div id="categoriasr" class="form-inline">
-                                <form action="#">
-                                    <label>Estado:</label><input type="text" class="form-control"><br>
-                                    <input class="btn btn-success" type="submit" class="btn btn-default" id="btnRst" value="Registrar">
-                                </form> 
-                            </div>
-                        </div>
-                        <!-- Modal para edición de Estados -->
-                        <div class="modal fade" id="modalEstado" tabindex="-1" role="dialog" aria-labelledby="myModalLabe5">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                        <h4 class="modal-title" id="myModalLabel">Editar datos del estado</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <label>Estado:</label><input type="text" class="form-control"><br>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                                        <button type="button" class="btn btn-primary btn-warning">Editar</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="collapse4" class="panel-collapse collapse">
-                    <div class="panel panel-success">
-                        <div class="panel-heading">Recepción de donaciones</div>
-                        <div class="panel-body">
-                            <div id="tabla-rd">
-                                <table class='table table-hover table-condensed table-bordered'>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Origen:</th>
-                                        <th>Editar</th>
-                                        <th>Eliminar</th>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td>
-                                            <button class='btn btn-warning glyphicon glyphicon-pencil' data-toggle='modal' data-target='#modalEOrigen'></button>
-                                        </td>
-                                        <td>
-                                            <button class='btn btn-danger  glyphicon glyphicon-remove'></button>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
-                            <div id="categoriasr" class="form-inline">
-                                <form action="#">
-                                    <label>Origen:</label><input type="text" class="form-control"><br>
-                                    <input class="btn btn-success" type="submit" class="btn btn-default" id="btnRorg" value="Registrar">
-                                </form> 
-                            </div>
-                        </div>
-                        <!-- Modal para edición de Origen -->
-                        <div class="modal fade" id="modalEOrigen" tabindex="-1" role="dialog" aria-labelledby="myModalLabe6">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                        <h4 class="modal-title" id="myModalLabel">Editar datos de origen</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <label>Origen:</label><input type="text" class="form-control"><br>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                                        <button type="button" class="btn btn-primary btn-warning">Editar</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>    
-                <div id="collapse5" class="panel-collapse collapse">
-                    <div class="panel panel-success">
-                        <div class="panel-heading">Registro de visitas</div>
-                        <div class="panel-body">
-                            <div id="tabla-visit">
-                                <table class='table table-hover table-condensed table-bordered'>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Tipo de Visita</th>
-                                        <th>Editar</th>
-                                        <th>Eliminar</th>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td>
-                                            <button class='btn btn-warning glyphicon glyphicon-pencil' data-toggle='modal' data-target='#modalEVisita'></button>
-                                        </td>
-                                        <td>
-                                            <button class='btn btn-danger  glyphicon glyphicon-remove'></button>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
-                            <div id="categoriasr" class="form-inline">
-                                <form action="#">
-                                    <label>Tipo de visita:</label><input type="text" class="form-control"><br>
-                                    <input class="btn btn-success" type="submit" class="btn btn-default" id="btnRV" value="Registrar">
-                                </form> 
-                            </div>
-                        </div>
-                        <!-- Modal para edición de Tipo de Visita -->
-                        <div class="modal fade" id="modalEVisita" tabindex="-1" role="dialog" aria-labelledby="myModalLabe7">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                        <h4 class="modal-title" id="myModalLabel">Editar datos del tipo de visita</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <label>Tipo de visita:</label><input type="text" class="form-control"><br>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                                        <button type="button" class="btn btn-primary btn-warning">Editar</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>            
-                </div>
-                 <div id="collapse6" class="panel-collapse collapse">
-                    <div class="panel panel-success">
-                        <div class="panel-heading">Impacto sustentable</div>
-                            <div class="panel-body">     
-                            </div>
-                    </div>            
-                </div>
-                <div id="collapse7" class="panel-collapse collapse">
-                    <div class="panel panel-success">
-                        <div class="panel-heading">Valor del Inventario</div>
-                            <div class="panel-body">     
-                            </div>
-                    </div>            
-                </div>                                
-            </div>
-        </div>
-        </div>
         <!--Footer todas las paginas-->
         <footer class="container-fluid text-center">
             <p>Recolectrón. Universidad Veracruzana</p>
