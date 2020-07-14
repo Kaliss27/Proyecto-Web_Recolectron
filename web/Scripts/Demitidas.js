@@ -1,3 +1,4 @@
+var datos=new Array();
 $(document).ready(function () {
     $("#form_donem").on('click', function () {
         DonEm.agregar();
@@ -41,8 +42,13 @@ var DonEm = (function () {
                         alert('Debe llenar todos los campos');
                         return false;
                     } else {
+                        datos.forEach(element => DonEm.guardadatos_estudiante(element,"Registrar_Donacion_Estudiante"));
+                        DonEm.agregar();
+                        $(".alert").show();
+                        alert("!Donación emitida registrada!");
+                        datos.splice(0,datos.length);
 
-                        return false;
+                        return true;
                     }
                 });
 
@@ -149,6 +155,26 @@ var DonEm = (function () {
                         alert("Datos Guardados");
                         return false;
                     }
+                });
+                $("#addArticulo1").on('click', function () {
+                    var DonacionAlumno = {
+                                "fk_componente": $('#selectArt').val(),
+                                "cantidad": $('#cntN1').val()
+                            };
+                           datos.push(DonacionAlumno);
+                           console.log(datos);
+                    $("#tbarticulos1 tbody").append('<tr><td>' + $('select[name="Articulos"] option:selected').text() + '</td>' + '<td>' + $("#cntN1").val() + '</td>' + '<</tr>');
+                    $("#cntN1").val("");
+                    return false;
+                });
+                $("#btnDelArticulo1").on('click', function () {
+                    var trs = $("#tbarticulos1 tr").length;
+                    if (trs > 1)
+                    {
+                        $("#tbarticulos1 tr:last").remove();
+                    }
+                    datos.pop();
+                    return false;
                 });
 
             });

@@ -94,19 +94,20 @@
                                         </div>
                                         <div id="collapse1" class="panel-collapse collapse">
                                             <div class="panel-body form-inline">
-                                                <form>
+                                                <form method="POST">
                                                     <label id="art">Articulo:</label>
-                                                    <select class="form-control" id="selectArt" name="PEs">
+                                                    <select class="form-control" id="selectArt" name="Articulos">
                                                         <c:forEach items="${requestScope.listaArticulo}" var="art">
                                                             <option value=${art.id}>${art.articulo}</option>
                                                         </c:forEach>
                                                     </select>
                                                     <label id="cnt">Cantidad:</label>
-                                                    <input type="number" class="form-control" id="cntN">
-                                                    <input class="btn btn-primary" type="submit" class="btn btn-default" value="Agregar">
+                                                    <input type="number" class="form-control" id="cntN1">
+                                                    <input id="addArticulo1" class="btn btn-primary" type="submit" class="btn btn-default" value="Agregar">
+                                                    <input id="btnDelArticulo1" class="btn btn-primary" type="submit" class="btn btn-default" value="Borrar">
                                                 </form><br>
                                                 <div class="table-responsive">          
-                                                    <table class="table">
+                                                    <table class="table" id="tbarticulos1">
                                                         <thead>
                                                             <tr>
                                                                 <th>Articulo</th>
@@ -114,9 +115,6 @@
                                                             </tr>
                                                         </thead>
                                                         <tbody>
-                                                            <tr>
-                                                                                                                             
-                                                            </tr>
                                                         </tbody>
                                                     </table>
                                                 </div>
@@ -167,7 +165,7 @@
                                                     </select>
                                                     <label id="cnt">Cantidad:</label>
                                                     <input type="number" class="form-control" id="cntN">
-                                                    <input class="btn btn-primary" type="submit" class="btn btn-default" value="Agregar">
+                                                    <input id="addArticulo2" class="btn btn-primary" type="submit" class="btn btn-default" value="Agregar">
                                                 </form>
                                             </div><br>
                                             <div class="table-responsive">          

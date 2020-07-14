@@ -2,6 +2,7 @@
 package Controlador;
 
 import Modelo.Catalogo_Articulos;
+import Modelo.RegistroDe_Componentes;
 import Modelo.Registro_Emision_Donaciones_Estudiantes;
 import Modelo.Registro_Emision_Donaciones_PG;
 import Querys.Donaciones_Emi;
@@ -26,6 +27,11 @@ public class DonacionesEm {
     public ArrayList<Catalogo_Articulos>obtenerArticulo(){
         Donaciones_Emi arti = new Donaciones_Emi();
         return arti.getArticulo();
+    }
+    
+    public void registar_donacion_Estudiante(RegistroDe_Componentes rce){
+        Donaciones_Emi dee = new Donaciones_Emi();
+        dee.registrar_donacion_estudiante(rce);
     }
     
 }
