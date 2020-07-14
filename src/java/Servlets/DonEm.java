@@ -1,6 +1,7 @@
 
 package Servlets;
 
+import Modelo.Catalogo_Articulos;
 import Modelo.Catalogo_PE_Deps;
 import Modelo.Registro_Emision_Donaciones_Estudiantes;
 import Modelo.Registro_Emision_Donaciones_PG;
@@ -55,6 +56,9 @@ public class DonEm extends HttpServlet {
         Controlador.Visitas vis = new Controlador.Visitas();
         ArrayList<Catalogo_PE_Deps> catalogo_pe = vis.obtenerPE();
         request.setAttribute("listaPE", catalogo_pe);
+        Controlador.DonacionesEm art = new Controlador.DonacionesEm();
+        ArrayList<Catalogo_Articulos> catalogo_articulo = art.obtenerArticulo();
+        request.setAttribute("listaArticulo", catalogo_articulo);
         RequestDispatcher rd = request.getRequestDispatcher("./RegistroDE.jsp");
         rd.forward(request, response);
     }

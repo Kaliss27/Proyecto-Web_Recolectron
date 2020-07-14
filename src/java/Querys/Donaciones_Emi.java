@@ -2,12 +2,14 @@
 package Querys;
 
 import Config.Conexion;
+import Modelo.Catalogo_Articulos;
 import Modelo.Registro_Emision_Donaciones_Estudiantes;
 import Modelo.Registro_Emision_Donaciones_PG;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  *
@@ -92,6 +94,39 @@ public class Donaciones_Emi {
             }
         }
         return r;
+    }
+    
+     public ArrayList<Catalogo_Articulos> getArticulo() {
+        ArrayList<Catalogo_Articulos> articulos = new ArrayList<>();
+        try {
+            String consulta = "SELECT * FROM recobd_v3.articulos;";
+            ps = cn.getConnection().prepareStatement(consulta);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                Catalogo_Articulos articulo = new Catalogo_Articulos();
+                articulo.setId(rs.getInt("IdArticulo"));
+                articulo.setArticulo(rs.getString("Articulo"));
+                articulos.add(articulo);
+               
+            }
+        } catch (SQLException e) {
+            System.err.println("Error" + e);
+        } finally {
+            try {
+                if (cn.getConnection() != null) {
+                    cn.getConnection().close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+                if (rs != null) {
+                    rs.close();
+                }
+            } catch (SQLException e) {
+                System.err.println("Error " + e);
+            }
+        }
+        return articulos;
     }
     
 }

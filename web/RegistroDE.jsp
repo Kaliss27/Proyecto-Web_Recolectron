@@ -97,7 +97,9 @@
                                                 <form>
                                                     <label id="art">Articulo:</label>
                                                     <select class="form-control" id="selectArt" name="PEs">
-                                                        <option value="0">Selecciona--</option>
+                                                        <c:forEach items="${requestScope.listaArticulo}" var="art">
+                                                            <option value=${art.id}>${art.articulo}</option>
+                                                        </c:forEach>
                                                     </select>
                                                     <label id="cnt">Cantidad:</label>
                                                     <input type="number" class="form-control" id="cntN">
@@ -159,7 +161,9 @@
                                                 <form>
                                                     <label id="art">Articulo:</label>
                                                     <select class="form-control" id="selectArt" name="PEs">
-                                                        <option value="0">Selecciona--</option>
+                                                         <c:forEach items="${requestScope.listaArticulo}" var="art">
+                                                            <option value=${art.id}>${art.articulo}</option>
+                                                        </c:forEach>
                                                     </select>
                                                     <label id="cnt">Cantidad:</label>
                                                     <input type="number" class="form-control" id="cntN">
