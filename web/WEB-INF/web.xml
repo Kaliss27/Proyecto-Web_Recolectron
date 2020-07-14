@@ -24,6 +24,10 @@
         <servlet-name>Acceso_Users</servlet-name>
         <servlet-class>Servlets.Acceso_Users</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>User_Login</servlet-name>
+        <servlet-class>Servlets.User_Login</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>DonRec</servlet-name>
         <url-pattern>/DonRec</url-pattern>
@@ -47,6 +51,10 @@
     <servlet-mapping>
         <servlet-name>Acceso_Users</servlet-name>
         <url-pattern>/Acceso_Users</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>User_Login</servlet-name>
+        <url-pattern>/User_Login</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

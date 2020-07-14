@@ -50,14 +50,14 @@
                 <!--Espacio destinado para el formulario-->
                 <div class="col-lg-8 text left">
                     <center><label id="lhlogin">ACCESO</label></center>
-                    <form id="my-form">
+                    <form action="User_Login" method="POST" id="my-form">
                         <div class="form-group">
                             <label for="uname">Nombre de Usuario:</label>
-                            <input type="text" class="form-control" placeholder="Ingresa tu nombre de usuario" name="uname" required><br>
+                            <input type="text" class="form-control" id="usu" placeholder="Ingresa tu nombre de usuario" name="uname" required><br>
                             <label for="psw">Contraseña:</label>
-                            <input type="password" class="form-control" placeholder="Ingresa tu contraseña" name="psw" required>
+                            <input type="password" class="form-control" id="pass" placeholder="Ingresa tu contraseña" name="psw" required>
                             <br><br>
-                            <input id="login" class="btn btn-success" type="submit" class="btn btn-default">
+                            <input id="login" name="ACCION" class="btn btn-success" type="submit" class="btn btn-default" value="Entrar">
                         </div>
                     </form>
                     <br><br>
