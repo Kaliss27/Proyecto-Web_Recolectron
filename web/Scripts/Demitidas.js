@@ -1,4 +1,5 @@
 var datos=new Array();
+var datospg = new Array();
 $(document).ready(function () {
     $("#form_donem").on('click', function () {
         DonEm.agregar();
@@ -75,6 +76,11 @@ var DonEm = (function () {
                         alert('Debe llenar todos los campos');
                         return false;
                     } else {
+                        datospg.forEach(element => DonEm.guardadatos_pg(element,"Registrar_Donacion_PublicoGral"));
+                        DonEm.agregar();
+                        $(".alert").show();
+                        alert("!Donación emitida registrada!");
+                        datospg.splice(0,datos.length);
 
                         return false;
                     }
@@ -174,6 +180,27 @@ var DonEm = (function () {
                         $("#tbarticulos1 tr:last").remove();
                     }
                     datos.pop();
+                    return false;
+                });
+                
+                $("#addArticulo2").on('click', function () {
+                    var DonacionPublicoG = {
+                                "fk_articulo": $('#selectArt2').val(),
+                                "cantidad": $('#cntN2').val()
+                            };
+                           datospg.push(DonacionPublicoG);
+                           console.log(datos);
+                    $("#tbarticulos2 tbody").append('<tr><td>' + $('select[name="Articulo"] option:selected').text() + '</td>' + '<td>' + $("#cntN2").val() + '</td>' + '<</tr>');
+                    $("#cntN2").val("");
+                    return false;
+                });
+                $("#btnDelArticulo2").on('click', function () {
+                    var trs = $("#tbarticulos2 tr").length;
+                    if (trs > 1)
+                    {
+                        $("#tbarticulos2 tr:last").remove();
+                    }
+                    datospg.pop();
                     return false;
                 });
 

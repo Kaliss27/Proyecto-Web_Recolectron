@@ -4,12 +4,12 @@ package Servlets;
 import Modelo.Catalogo_Articulos;
 import Modelo.Catalogo_PE_Deps;
 import Modelo.RegistroDe_Componentes;
+import Modelo.RegistroDe_PublicoGral;
 import Modelo.Registro_Emision_Donaciones_Estudiantes;
 import Modelo.Registro_Emision_Donaciones_PG;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -48,6 +48,9 @@ public class DonEm extends HttpServlet {
                 break;    
             case "Registrar_Donacion_Estudiante":
                 registrar_donacion_estudiante(request, response);
+                break;
+            case "Registrar_Donacion_PublicoGral":
+                registrar_donacion_publicogral(request, response);
                 break;
             default:
                 break;
@@ -119,6 +122,28 @@ public class DonEm extends HttpServlet {
                 RegistroDe_Componentes donacion_estudiante = gson.fromJson(objectJson, RegistroDe_Componentes.class);
                 Controlador.DonacionesEm donacion = new Controlador.DonacionesEm();
                 donacion.registar_donacion_Estudiante(donacion_estudiante);  
+                
+            }
+            
+        } catch (JsonSyntaxException e) {
+            System.out.print(e);
+
+        }
+        
+        
+    }
+    
+   private void registrar_donacion_publicogral(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        try {
+            String objectJson = request.getParameter("DATOS_PUBLICOG");
+            System.out.println(objectJson);
+            if(objectJson==null){
+                
+            }else{
+                Gson gson = new Gson();
+                RegistroDe_PublicoGral donacion_publico = gson.fromJson(objectJson, RegistroDe_PublicoGral.class);
+                Controlador.DonacionesEm donacion = new Controlador.DonacionesEm();
+                donacion.registar_donacion_PublicoG(donacion_publico);  
                 
             }
             

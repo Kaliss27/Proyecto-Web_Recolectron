@@ -158,18 +158,19 @@
                                             <div class="panel-body form-inline">
                                                 <form>
                                                     <label id="art">Articulo:</label>
-                                                    <select class="form-control" id="selectArt" name="PEs">
+                                                    <select class="form-control" id="selectArt2" name="Articulo">
                                                          <c:forEach items="${requestScope.listaArticulo}" var="art">
                                                             <option value=${art.id}>${art.articulo}</option>
                                                         </c:forEach>
                                                     </select>
                                                     <label id="cnt">Cantidad:</label>
-                                                    <input type="number" class="form-control" id="cntN">
+                                                    <input type="number" class="form-control" id="cntN2">
                                                     <input id="addArticulo2" class="btn btn-primary" type="submit" class="btn btn-default" value="Agregar">
+                                                    <input id="btnDelArticulo2" class="btn btn-primary" type="submit" class="btn btn-default" value="Borrar">
                                                 </form>
                                             </div><br>
                                             <div class="table-responsive">          
-                                                <table class="table">
+                                                <table id="tbarticulos2" class="table">
                                                     <thead>
                                                         <tr>
                                                             <th>Articulo</th>
@@ -177,9 +178,6 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        <tr>
-                                                                                                                          
-                                                        </tr>
                                                     </tbody>
                                                 </table>
                                             </div>

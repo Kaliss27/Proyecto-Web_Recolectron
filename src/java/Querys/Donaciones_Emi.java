@@ -4,6 +4,7 @@ package Querys;
 import Config.Conexion;
 import Modelo.Catalogo_Articulos;
 import Modelo.RegistroDe_Componentes;
+import Modelo.RegistroDe_PublicoGral;
 import Modelo.Registro_Emision_Donaciones_Estudiantes;
 import Modelo.Registro_Emision_Donaciones_PG;
 import java.sql.Connection;
@@ -138,6 +139,39 @@ public class Donaciones_Emi {
             ps = cn.getConnection().prepareStatement(consulta);
             ps.setInt(1,rce.getFk_componente());
             ps.setInt(2,rce.getCantidad());
+
+            if (ps.executeUpdate() == 1) {
+                r = true;
+                 cn.getConnection().commit();
+            }else{
+                System.out.println("no se guardo");
+            }
+        } catch (SQLException e) {
+            System.out.println("Error" + e);
+        } finally {
+            try {
+                if (cn.getConnection() != null) {
+                    cn.getConnection().close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+
+            } catch (SQLException e) {
+                System.err.println("Error " + e);
+            }
+        }
+        return r;
+    }
+    
+    public boolean registrar_donacion_publicogral(RegistroDe_PublicoGral rpg) {
+    boolean r = false;
+        try {
+            cn.getConnection().setAutoCommit(false);
+            String consulta = "call donaciones_emitidas_PublicoGral(?,?);";
+            ps = cn.getConnection().prepareStatement(consulta);
+            ps.setInt(1,rpg.getFk_articulo());
+            ps.setInt(2,rpg.getCantidad());
 
             if (ps.executeUpdate() == 1) {
                 r = true;
