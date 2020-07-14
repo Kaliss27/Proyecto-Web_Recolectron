@@ -20,6 +20,10 @@
         <servlet-name>Inventario</servlet-name>
         <servlet-class>Servlets.Inventario</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Acceso_Users</servlet-name>
+        <servlet-class>Servlets.Acceso_Users</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>DonRec</servlet-name>
         <url-pattern>/DonRec</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>Inventario</servlet-name>
         <url-pattern>/Inventario</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Acceso_Users</servlet-name>
+        <url-pattern>/Acceso_Users</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

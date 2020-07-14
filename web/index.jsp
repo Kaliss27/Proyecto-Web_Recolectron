@@ -7,7 +7,7 @@
         <title>RECOLECTRÓN</title>
         <link href="CSS/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <link href="CSS/estiloReco.css" rel="stylesheet" type="text/css"/>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="Scripts/jquery-3.5.1.js" type="text/javascript"></script>
         <script src="Scripts/bootstrap.min.js" type="text/javascript"></script>
         <script src="Scripts/visitas.js" type="text/javascript"></script>
         <script src="Scripts/Drecibidas.js" type="text/javascript"></script>
