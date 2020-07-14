@@ -2,7 +2,7 @@
     Created on : 13/06/2020, 01:19:01 AM
     Author     : karen
 */
-.col-lg-9{
+.col-sm-9{
     background-color: #ffffff;
     border-radius: 15px;
     font-family: 'Oswald', sans-serif;
@@ -10,6 +10,23 @@
     /*border-style: groove;
     border-radius: 15px;
     border-color:#66cc66;*/
+}
+#c-ap{
+    /*display: none;*/
+    text-align:center;
+    background-color: #66cc66;
+}
+#content2{
+    display: none;
+}
+#btn-form,#btn-consult{
+    background-color: #66cc66;
+    border:none;
+}
+#giconForm,#giconsult{
+    font-size:50px;
+    text-align: center;
+    color:#ffffff;
 }
 #headerRV{
     font-size: 25px;
@@ -30,9 +47,3 @@
     padding: 10px;
     
 }
-.alert{
-    display:none;
-}
-/*#bttn{
-    display:none;
-}*/

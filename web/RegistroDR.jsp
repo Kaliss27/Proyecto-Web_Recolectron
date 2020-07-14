@@ -45,13 +45,25 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="EQReco.jsp"><span class="glyphicon glyphicon-log-in"></span>Equipo RECO</a></li>
                     </ul>
+                    <!--Dropdown: Mostrar cuando se tengan privilegios-->
+                    <ul id="nb-cp" class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Equipo RECO
+                            <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li class="active"><a href="#">Vista Rápida</a></li>
+                                <li><a href="#" id="form_inventario">Inventario</a></li>
+                                <li><a href="actividades.jsp">Actividades</a></li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </nav>
         <!--Carussel Imagenes de donaciones-->
         <div class="container" id="contenido">
             <div class="row content">
-                <div class="col-lg-3 sidenav">
+                <div class="col-sm-3 sidenav">
                     <div id="myCarousel" class="carousel slide" data-ride="carousel">
                         <ol class="carousel-indicators">
                             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -74,12 +86,20 @@
                             <span class="sr-only">Next</span>
                         </a>
                     </div><br>
-                    <div class="container" id="bttn">
-                       <button id="btnReport" class="btn btn-primary" type="submit" class="btn btn-default">Generar reporte</button>   
+                    <!--Funciones agregadas para acceso autorizado-->
+                    <div id="c-ap">
+                        <label>Consultas</label><br>
+                        <button type="button" class="btn btn-default" id='btn-consult' onclick='pConsultas();'>
+                            <label id="giconsult" class="glyphicon glyphicon-search"></label>
+                        </button><br>
+                        <label>Formulario de registro</label><br>
+                        <button type="button" class="btn btn-default" id='btn-form' onclick='pForm();'>
+                            <label id="giconForm" class="glyphicon glyphicon-list-alt"></label>
+                        </button>
                     </div>
                 </div>
                 <!--Formulario Donaciones Recibidas-->
-                <div class="col-lg-9">
+                <div id="content1" class="col-sm-9">
                     <center><label id="headerRV">¡Registra tu donación al recolectrón!</label></center>
                     <form method="POST" id="my-form1">
                         <div class="form-group">
@@ -169,9 +189,51 @@
                         </div>
                         <input id="btnDR" class="btn btn-success" type="submit" class="btn btn-default" value="Registrar Recepción">
                    <br><br>
-                    <div class="alert alert-success">
-                        <strong>!Donación registrada!</strong> 
+                </div>
+                <!--Función agregada, consulta por fecha a la tabla-->
+                <div id="content2" class="col-sm-9">
+                    <h4>Consultar Donaciones recibidas</h4>                                          
+                    <form class="form-inline">
+                        <label>Fecha:</label>
+                        <input type="date" class="form-control">
+                        <button class="btn btn-info">Buscar</button>
+                        <br><br>
+                    </form>
+                    <div id="tabla-DR">
+                        <table class='table table-hover table-condensed table-bordered'>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Fecha</th>
+                                <th>Editar</th>
+                                <th>Eliminar</th>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <button class='btn btn-warning glyphicon glyphicon-pencil' data-toggle='modal' data-target='#modalEVisita'></button>
+                                </td>
+                                <td>
+                                    <button class='btn btn-danger  glyphicon glyphicon-remove'></button>
+                                </td>
+                             </tr>
+                        </table>
                     </div>
+                    <h4>Consultar Donaciones recibidas</h4>                                          
+                    <form class="form-inline">
+                        <label>ID Donación registrada:</label>
+                        <input type="date" class="form-control">
+                        <label>Fecha:</label>
+                        <input type="date" class="form-control">
+                        <label>Generar Acuse</label>
+                        <button class="btn btn-info">Buscar</button>
+                        <br><br>
+                    </form>
+                    <h4>Consultar todas las visitas</h4>                                          
+                    <button class="btn btn-info">Consultar Visitas</button>
+                    <br><br> 
                 </div>
             </div>
         </div>
