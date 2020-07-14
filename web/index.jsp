@@ -39,6 +39,7 @@
                     <ul id="nb-sp" class="nav navbar-nav navbar-right">
                         <li><a href="EQReco.jsp"><span class="glyphicon glyphicon-log-in"></span>Equipo RECO</a></li>
                     </ul>
+                    <!--Dropdown: Mostrar cuando se tengan privilegios-->
                     <ul id="nb-cp" class="nav navbar-nav navbar-right">
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Equipo RECO

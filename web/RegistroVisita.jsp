@@ -45,17 +45,28 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="EQReco.jsp"><span class="glyphicon glyphicon-log-in"></span>Equipo RECO</a></li>
                     </ul>
+                    <!--Dropdown: Mostrar cuando se tengan privilegios-->
+                    <ul id="nb-cp" class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Equipo RECO
+                            <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li class="active"><a href="#">Vista Rápida</a></li>
+                                <li><a href="#" id="form_inventario">Inventario</a></li>
+                                <li><a href="actividades.jsp">Actividades</a></li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </nav>
         <!--Código para el formulario de visitas-->
         <div class="container">
             <div class="row content">
-                <div class="col-lg-10">
+                <div id="content1" class="col-lg-10">
                     <div id="headerE" >
                         <center><label id="title">¡Registra tu visita al recolectrón!</label></center>
                     </div><br>
-                    
                     <form method="POST" id="my-form">
                             <div class="form-group">
                                 <label for="matricula">Mátricula UV:</label>
@@ -93,18 +104,25 @@
                             </div>
                             <input class="btn btn-success" type="submit" class="btn btn-default" id="btnRV" value="Registrar visita">
                         </form><br>
-                        <div class="alert alert-info">
-                            <strong>Visita registrada!</strong> 
-                        </div>
                 </div>
                 <!--Area de imagenes de visitas-->
-                <div class="col-lg-2 text-right">
+                <div  class="col-lg-2 text-right">
                     <div class="well">
                          <img src="Imagenes\visita1.jpg" class="img-responsive" alt="Image1">
                     </div>
                     <div class="well">
                         <img src="Imagenes\visita2.jpg" class="img-responsive" alt="Image2">
                     </div>
+                    <div id="c-ap" class="well">
+                    <label>Consultas</label><br>
+                    <button type="button" class="btn btn-default" id='btn-consult' onclick='pConsultas();'>
+                        <label id="giconsult" class="glyphicon glyphicon-search"></label>
+                    </button>
+                    <label>Formulario</label><br>
+                    <button type="button" class="btn btn-default" id='btn-form' onclick='pForm();'>
+                        <label id="giconForm" class="glyphicon glyphicon-list-alt"></label>
+                    </button>
+                </div>
                 </div>
             </div>
         </div>
