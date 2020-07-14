@@ -101,6 +101,5 @@
         <footer class="container-fluid text-center">
             <p>Recolectrón. Universidad Veracruzana</p>
         </footer><br><br>
-        <script src="Scripts/EQLogin.js"></script>
     </body>
 </html>

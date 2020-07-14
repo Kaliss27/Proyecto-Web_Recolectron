@@ -32,6 +32,21 @@ function dPanelEdu(){
     document.getElementById("cpanel").innerHTML = document.getElementById("collapse8").innerHTML;
 };
 
+$(document).ready(function(){
+    $("#logout").on("click",function(){
+        
+        logout();
+        
+    });
+});
+
+
+function logout() {
+    $.get("Logout", {
+        ACCION: "CERRAR SESION"
+    });
+}
+
 ////$("#auser").on('click', function () {
 ////        VistaRapida.modulo_usuarios();
 ////    });

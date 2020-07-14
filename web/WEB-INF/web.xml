@@ -28,6 +28,10 @@
         <servlet-name>User_Login</servlet-name>
         <servlet-class>Servlets.User_Login</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Logout</servlet-name>
+        <servlet-class>Servlets.Logout</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>DonRec</servlet-name>
         <url-pattern>/DonRec</url-pattern>
@@ -55,6 +59,10 @@
     <servlet-mapping>
         <servlet-name>User_Login</servlet-name>
         <url-pattern>/User_Login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Logout</servlet-name>
+        <url-pattern>/Logout</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -60,7 +60,7 @@
                 <!--Contenedores de secciones para Vista Rapida-->
                 <div class="col-sm-3 sidenav">
                     <div id="dUser">
-                        <label>Bienvenido -Nombre Personal</label><br>
+                        <label>Bienvenido -${nom}-</label><br>
                         <label id="gicon" class="glyphicon glyphicon-user"></label><br>
                         <label>Usuario:</label>
                         <label id="tuser">Administrador</label><br>
@@ -70,7 +70,7 @@
                             SimpleDateFormat ft =new SimpleDateFormat ("E dd.MM.yyyy");
                             out.print( "<label align=\"center\">" + ft.format(dNow) + "</label>");
                         %>
-                        <button type="button" class="btn btn-default btn-block" id="logout">Salir</button>
+                        <a href="Logout?ACCION=Logout"><button type="submit" class="btn btn-default btn-block" id="logout">Salir</button></a>
                     </div>
                     <br>
                     <div id="imps">

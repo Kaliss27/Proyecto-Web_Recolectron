@@ -69,6 +69,8 @@ public class Users {
                 r = r + 1;
                 user.setUsuario(rs.getString("NombreUsuario"));
                 user.setPassword(rs.getString("Contrasenia"));
+                user.setTipo_usuario(rs.getInt("Tipo_Usuario"));
+                user.setNombre(rs.getString("Nombre").concat(" "+rs.getString("APaterno")));
 
             }
             if (r == 1) {
