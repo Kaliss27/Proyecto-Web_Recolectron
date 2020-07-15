@@ -42,7 +42,7 @@
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Equipo RECO
                             <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="vistaRapida_1.jsp">Vista Rápida</a></li>
+                                <li><a href="#">Vista Rápida</a></li>
                                 <li><a href="inventarioReco.jsp">Inventario</a></li>
                                 <li class="active"><a href="#">Actividades</a></li>
                             </ul>
@@ -100,7 +100,7 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title" id="myModalLabel">Editar datos del estado</h4>
+                            <h4 class="modal-title" id="myModalLabel">Editar Actividad</h4>
                         </div>
                         <div class="modal-body">
                             <div class="form-group">

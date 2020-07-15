@@ -192,7 +192,7 @@
                 </div>
                 <!--Función agregada, consulta por fecha a la tabla-->
                 <div id="content2" class="col-sm-9">
-                    <h4>Consultar Donaciones recibidas</h4>                                          
+                    <center><label id="headerRV">Consultar las donaciones recibidas</label></center>                                          
                     <form class="form-inline">
                         <label>Fecha:</label>
                         <input type="date" class="form-control">

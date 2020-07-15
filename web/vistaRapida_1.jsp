@@ -48,8 +48,8 @@
                             <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li class="active"><a href="#">Vista Rápida</a></li>
-                                <li><a href="#" id="form_inventario">Inventario</a></li>
-                                <li><a href="actividades.jsp">Actividades</a></li>
+                                <li><a href="inventarioReco_1.jsp">Inventario</a></li>
+                                <li><a href="actividades_1.jsp">Actividades</a></li>
                             </ul>
                         </li>
                     </ul>

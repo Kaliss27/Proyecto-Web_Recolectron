@@ -51,8 +51,8 @@
         </nav>
         <!--Código para el formulario de donaciones emitidas-->
         <div class="container">
-            <div class="row content">
-                <div class="col-lg-10">
+            <div class="row">
+                <div id="content1" class="col-sm-10">
                     <center><label id="headerRDE">¡Donación Emitida por el Recolectrón!</label></center>
                     <ul class="nav nav-tabs">
                         <li class="active"><a data-toggle="tab" href="#DE_estudiantes">Estudiantes</a></li>
@@ -188,21 +188,82 @@
                         </div>
                     </div>
                     <br><br><br>
-                    <div class="alert alert-info">
-                        <strong>!Donación emitida registrada!</strong> 
+                </div>
+                <div id="content2" class="col-sm-10">
+                    <center><label id="headerRDE">Consultas de donaciones Emitidas</label></center><br>
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a data-toggle="tab" href="#DE_estudiantes1">Estudiantes</a></li>
+                        <li><a data-toggle="tab" href="#DE_gral2">Publico General</a></li>
+                    </ul>
+                    <br>
+                    <div class="tab-content">
+                        <div id="DE_estudiantes1" class="tab-pane fade in active">
+                            <form class="form-inline">
+                                <label>Fecha:</label>
+                                <input type="date" class="form-control">
+                                <button class="btn btn-info">Buscar</button>
+                                <br><br>
+                            </form>
+                            <div id="tabla-DR">
+                                <table class='table table-hover table-condensed table-bordered'>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Nombre</th>
+                                        <th>Fecha</th>
+                                        <th>Editar</th>
+                                        <th>Eliminar</th>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>
+                                            <button class='btn btn-warning glyphicon glyphicon-pencil' data-toggle='modal' data-target='#modalEVisita'></button>
+                                        </td>
+                                        <td>
+                                            <button class='btn btn-danger  glyphicon glyphicon-remove'></button>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <h4>Consultar Donaciones emitidas</h4>                                         
+                            <form class="form-inline">
+                                <label>ID Donación registrada:</label>
+                                <input type="date" class="form-control">
+                                <label>Fecha:</label>
+                                <input type="date" class="form-control"><br>
+                                <button class="btn btn-info">Generar Acuse</button>
+                                <br><br>
+                            </form>
+                            <h4>Consultar todas las donaciones emitidas</h4>                                          
+                            <button class="btn btn-info">Consultar Donaciones</button>
+                            <br><br>
+                        </div>
+                        <div id="DE_gral2" class="tab-pane fade">
+                            
+                        </div>
                     </div>
                 </div>
                 <!--Imagenes alusivas de donaciones emitidas-->
-                <div class="col-lg-2 text-right">
+                <div class="col-sm-2 text-right">
                     <div class="well">
                          <img src="Imagenes\de1.jpg" class="img-responsive" alt="Image1">
                     </div>
                     <div class="well">
                         <img src="Imagenes\de2.jpg" class="img-responsive" alt="Image2">
                     </div>
-                </div>
-                <div class="container center" id="bttn">
-                   <button id="btnReport" class="btn btn-primary" type="submit" class="btn btn-default">Generar reporte</button>   
+                    <br>
+                    <!--Funciones agregadas para acceso autorizado-->
+                    <div id="c-ap">
+                        <label>Consultas</label><br>
+                        <button type="button" class="btn btn-default" id='btn-consult' onclick='pConsultas();'>
+                            <label id="giconsult" class="glyphicon glyphicon-search"></label>
+                        </button><br>
+                        <label>Formulario de registro</label><br>
+                        <button type="button" class="btn btn-default" id='btn-form' onclick='pForm();'>
+                            <label id="giconForm" class="glyphicon glyphicon-list-alt"></label>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

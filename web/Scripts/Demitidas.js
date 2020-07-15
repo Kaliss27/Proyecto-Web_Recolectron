@@ -226,3 +226,12 @@ var DonEm = (function () {
 
     };
 }());
+
+function pForm(){
+    $("#content2").hide();
+    $("#content1").show();
+};
+function pConsultas(){
+    $("#content1").hide();
+    $("#content2").show();
+};
