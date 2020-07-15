@@ -17,7 +17,10 @@
         <link href="CSS/vistaRapidaS.css" rel="stylesheet" type="text/css"/>
         <script src="Scripts/jquery-3.5.1.js" type="text/javascript"></script>
         <script src="Scripts/bootstrap.min.js" type="text/javascript"></script>
-        <script src="Scripts/inventario_reco.js" type="text/javascript"></script>
+        <script src="Scripts/Drecibidas.js" type="text/javascript"></script>
+        <script src="Scripts/Demitidas.js" type="text/javascript"></script>
+        <script src="Scripts/eventos.js" type="text/javascript"></script>
+        <script src="Scripts/visitas.js" type="text/javascript"></script>
         <link rel="icon" type="image/png" href="Imagenes/logo_recoUV.jpg" sizes="16x16">
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
         <script src="Scripts/vistaRapida.js" type="text/javascript"></script>
@@ -35,7 +38,7 @@
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
-                        <li><a href="#" id="ini">Inicio</a></li>
+                        <li><a href="index.jsp">Inicio</a></li>
                         <li><a href="#" id="form_visita">Registra tu visita</a></li>
                         <li><a href="#" id="form_donrec">Donaciones Recibidas</a></li>
                         <li><a href="#" id="form_donem">Donaciones Emitidas</a></li>
@@ -47,7 +50,7 @@
                             <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li class="active"><a href="#">Vista Rápida</a></li>
-                                <li><a href="#" id="form_inventario">Inventario</a></li>
+                                <li><a href="inventarioReco.jsp">Inventario</a></li>
                                 <li><a href="actividades.jsp">Actividades</a></li>
                             </ul>
                         </li>

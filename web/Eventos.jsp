@@ -35,7 +35,7 @@
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
-                        <li><a href="#" id="ini">Inicio</a></li>
+                        <li><a href="index.jsp">Inicio</a></li>
                         <li><a href="#" id="form_visita">Registra tu visita</a></li>
                         <li><a href="#" id="form_donrec">Donaciones Recibidas</a></li>
                         <li><a href="#" id="form_donem">Donaciones Emitidas</a></li>
