@@ -17,10 +17,6 @@
         <servlet-class>Servlets.EventosReco</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>Inventario</servlet-name>
-        <servlet-class>Servlets.Inventario</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>Acceso_Users</servlet-name>
         <servlet-class>Servlets.Acceso_Users</servlet-class>
     </servlet>
@@ -31,6 +27,14 @@
     <servlet>
         <servlet-name>Logout</servlet-name>
         <servlet-class>Servlets.Logout</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Inventario_Admin</servlet-name>
+        <servlet-class>Servlets.Inventario_Admin</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Inventario_Contribuyente</servlet-name>
+        <servlet-class>Servlets.Inventario_Contribuyente</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>DonRec</servlet-name>
@@ -49,10 +53,6 @@
         <url-pattern>/EventosReco</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>Inventario</servlet-name>
-        <url-pattern>/Inventario</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
         <servlet-name>Acceso_Users</servlet-name>
         <url-pattern>/Acceso_Users</url-pattern>
     </servlet-mapping>
@@ -63,6 +63,14 @@
     <servlet-mapping>
         <servlet-name>Logout</servlet-name>
         <url-pattern>/Logout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Inventario_Admin</servlet-name>
+        <url-pattern>/Inventario_Admin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Inventario_Contribuyente</servlet-name>
+        <url-pattern>/Inventario_Contribuyente</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

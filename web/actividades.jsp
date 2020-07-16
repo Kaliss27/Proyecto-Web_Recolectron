@@ -19,6 +19,7 @@
         <script src="Scripts/Demitidas.js" type="text/javascript"></script>
         <script src="Scripts/eventos.js" type="text/javascript"></script>
         <script src="Scripts/visitas.js" type="text/javascript"></script>
+        <script src="Scripts/inventario_admin.js" type="text/javascript"></script>
         <link rel="icon" type="image/png" href="Imagenes/logo_recoUV.jpg" sizes="16x16">
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
     </head>
@@ -47,7 +48,7 @@
                             <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="vistaRapida.jsp">Vista Rápida</a></li>
-                                <li><a href="inventarioReco.jsp">Inventario</a></li>
+                                <li><a href="#" id="visInventario">Inventario</a></li>
                                 <li class="active"><a href="#">Actividades</a></li>
                             </ul>
                         </li>

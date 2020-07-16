@@ -4,6 +4,7 @@
     Author     : karen
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -19,6 +20,7 @@
         <script src="Scripts/Demitidas.js" type="text/javascript"></script>
         <script src="Scripts/eventos.js" type="text/javascript"></script>
         <script src="Scripts/visitas.js" type="text/javascript"></script>
+        <script src="Scripts/inventario_admin.js" type="text/javascript"></script>
         <link rel="icon" type="image/png" href="Imagenes/logo_recoUV.jpg" sizes="16x16">
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
     </head>
@@ -44,7 +46,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Equipo RECO
-                            <span class="caret"></span></a>
+                                <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="vistaRapida.jsp">Vista Rápida</a></li>
                                 <li class="active"><a href="#">Inventario</a></li>
@@ -72,19 +74,22 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>-------</td>
-                            <td>-------</td>
-                            <td>-------</td>
-                            <td>-------</td>
-                            <td>-------</td>
-                            <td>
-                                <button class='btn btn-warning glyphicon glyphicon-pencil' data-toggle='modal' data-target='#modalArtI'></button>
-                            </td>
-                            <td>
-                                <button class='btn btn-danger  glyphicon glyphicon-remove'></button>
-                            </td>
-                        </tr>
+                        <c:forEach items="${requestScope.listaInventario}" var="inv">
+                            <tr>
+                                <td>${inv.id}</td>
+                                <td>${inv.articulo}</td>
+                                <td>${inv.cant}</td>
+                                <td>${inv.estado}</td>
+                                <td>${inv.notas}</td>
+                                <td>
+                                    <button class='btn btn-warning glyphicon glyphicon-pencil' data-toggle='modal' data-target='#modalArtI'></button>
+                                </td>
+                                <td>
+                                    <button class='btn btn-danger  glyphicon glyphicon-remove'></button>
+                                </td>
+                            </tr>
+                        </c:forEach>
+
                     </tbody>
                 </table>
             </div>
@@ -98,32 +103,45 @@
                         </div>
                         <div class="modal-body">
                             <div class="form-group" >
-                                    <label id="Cat">Categoria:</label>
-                                    <select class="form-control" id="selectCat" name="Catres">
-                                        <option>----</option>  
-                                    </select>
-                                </div>             
-                                <div class="form-group">
-                                    <label id="REc">Residuo Electrónico:</label>
-                                    <select class="form-control" id="selectRE" name="PEs">
-                                        <option>--------------</option>
-                                    </select>
-                                </div>
-                                <div class="form-inline">
-                                    <label id="cnt">Cantidad:</label>
-                                    <input type="number" class="form-control" id="cntN">
-                                    <label id="pxu">Peso por Unidad:</label>
-                                    <input type="text" class="form-control" id="PxUi">
-                                    <label></label>
-                                    <label id="state">Estado:</label>
-                                    <select class="form-control" id="selectRE" name="Sts">
-                                        <option>--------------</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label>Notas</label><br>
-                                    <textarea class="form-control" id="txtNote" name="desc" rows="4" cols="20"></textarea><br>
-                                </div>
+                                <label id="Cat">Categoria:</label>
+                                <select class="form-control" id="selectCat" name="Catres">
+                                    <c:forEach items="${requestScope.listaCategorias}" var="cat">
+                                        <option value=${cat.id}>${cat.categoria}</option>
+                                    </c:forEach>  
+                                </select>
+                                <select class="form-control" id="formaux" name="fomtemp">
+                                    <c:forEach items="${requestScope.listaRE}" var="re">
+                                        <option value=${re.id}>${re.descripcion}</option>
+                                    </c:forEach>
+                                </select>
+                                <select class="form-control" id="formaux2" name="fomtemp2">
+                                    <c:forEach items="${requestScope.listaRE}" var="re">
+                                        <option value=${re.categoria}></option>
+                                    </c:forEach>
+                                </select>
+                            </div>             
+                            <div class="form-group">
+                                <label id="REc">Residuo Electrónico:</label>
+                                <select class="form-control" id="selectRE" name="PEs">
+                                </select>
+                            </div>
+                            <div class="form-inline">
+                                <label id="cnt">Cantidad:</label>
+                                <input type="number" class="form-control" id="cntN">
+                                <label id="pxu">Peso por Unidad:</label>
+                                <input type="text" class="form-control" id="PxUi">
+                                <label></label>
+                                <label id="state">Estado:</label>
+                                <select class="form-control" id="selectRE" name="Sts">
+                                    <c:forEach items="${requestScope.listaEstados}" var="status">
+                                        <option value=${status.id}>${status.estado}</option>
+                                    </c:forEach>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Notas</label><br>
+                                <textarea class="form-control" id="txtNote" name="desc" rows="4" cols="20"></textarea><br>
+                            </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
@@ -144,14 +162,25 @@
                             <form>
                                 <div class="form-group" >
                                     <label id="Cat">Categoria:</label>
-                                    <select class="form-control" id="selectCat" name="Catres">
-                                        <option>----</option>  
+                                    <select class="form-control" id="selectCat2" name="Catres">
+                                        <c:forEach items="${requestScope.listaCategorias}" var="cat">
+                                            <option value=${cat.id}>${cat.categoria}</option>
+                                        </c:forEach>  
+                                    </select>
+                                    <select class="form-control" id="formaux_1" name="fomtemp">
+                                        <c:forEach items="${requestScope.listaRE}" var="re">
+                                            <option value=${re.id}>${re.descripcion}</option>
+                                        </c:forEach>
+                                    </select>
+                                    <select class="form-control" id="formaux2_1" name="fomtemp2">
+                                        <c:forEach items="${requestScope.listaRE}" var="re">
+                                            <option value=${re.categoria}></option>
+                                        </c:forEach>
                                     </select>
                                 </div>             
                                 <div class="form-group">
                                     <label id="REc">Residuo Electrónico:</label>
-                                    <select class="form-control" id="selectRE" name="PEs">
-                                        <option>--------------</option>
+                                    <select class="form-control" id="selectRE2" name="PEs">
                                     </select>
                                 </div>
                                 <div class="form-inline">
@@ -162,7 +191,9 @@
                                     <label></label>
                                     <label id="state">Estado:</label>
                                     <select class="form-control" id="selectRE" name="Sts">
-                                        <option>--------------</option>
+                                        <c:forEach items="${requestScope.listaEstados}" var="status">
+                                            <option value=${status.id}>${status.estado}</option>
+                                        </c:forEach>
                                     </select>
                                 </div>
                                 <div class="form-group">
@@ -192,7 +223,9 @@
                                 <div class="form-inline">
                                     <label id="Cat">Categoria:</label>
                                     <select class="form-control" id="selectCat" name="Catres">
-                                        <option>----</option>  
+                                        <c:forEach items="${requestScope.listaCategorias}" var="cat">
+                                            <option value=${cat.id}>${cat.categoria}</option>
+                                        </c:forEach>   
                                     </select>
                                     <label id="cnt">Costo:</label>
                                     <input type="text" class="form-control" id="costPxU" placeholder="Costo promedio x unidad">

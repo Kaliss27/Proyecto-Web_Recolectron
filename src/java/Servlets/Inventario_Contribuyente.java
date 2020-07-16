@@ -1,8 +1,10 @@
 
 package Servlets;
 
+import Modelo.Vista_Inventario;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -13,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Alvaro
  */
-public class Inventario extends HttpServlet {
+public class Inventario_Contribuyente extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,16 +39,14 @@ public class Inventario extends HttpServlet {
         }
     }
     
-     private void agregar(HttpServletRequest request, HttpServletResponse response) {
+    private void agregar(HttpServletRequest request, HttpServletResponse response) {
 
         try {
-//            Controlador.Visitas vis = new Controlador.Visitas();
-//            ArrayList<Catalogo_PE_Deps> catalogo_pe = vis.obtenerPE();
-//            request.setAttribute("listaPE", catalogo_pe);
-//            ArrayList<Catalogo_Visitas> visitas = vis.obtenerVisitas();
-//            request.setAttribute("listavisits", visitas);
+            Controlador.Inventario_Principal inventario = new Controlador.Inventario_Principal();
+            ArrayList<Vista_Inventario> articulos = inventario.obtenerArticulos();
+            request.setAttribute("listaInventario", articulos);
 
-            RequestDispatcher rd = request.getRequestDispatcher("./inventarioReco.jsp");
+            RequestDispatcher rd = request.getRequestDispatcher("./inventarioReco_1.jsp");
             rd.forward(request, response);
         } catch (IOException | ServletException e) {
             System.out.print(e);

@@ -4,6 +4,7 @@
     Author     : karen
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -15,7 +16,7 @@
         <link href="CSS/inventarioStyle.css" rel="stylesheet" type="text/css"/>
         <script src="Scripts/jquery-3.5.1.js" type="text/javascript"></script>
         <script src="Scripts/bootstrap.min.js" type="text/javascript"></script>
-        <script src="Scripts/inventario_reco.js" type="text/javascript"></script>
+        <script src="Scripts/inventario_contribuyente.js" type="text/javascript"></script>
         <link rel="icon" type="image/png" href="Imagenes/logo_recoUV.jpg" sizes="16x16">
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
     </head>
@@ -70,18 +71,21 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>-------</td>
-                            <td>-------</td>
-                            <td>-------</td>
-                            <td>-------</td>
-                            <td>-------</td>
-                            <td>
+                             <c:forEach items="${requestScope.listaInventario}" var="inv">
+                                <tr>
+                               <td>${inv.id}</td>
+                               <td>${inv.articulo}</td>
+                               <td>${inv.cant}</td>
+                               <td>${inv.estado}</td>
+                               <td>${inv.notas}</td>
+                                <td>
                                 <button class='btn btn-warning glyphicon glyphicon-pencil' data-toggle='modal' data-target='#modalArtI'></button>
-                            </td>
-                            <td>
+                                </td>
+                                <td>
                                 <button class='btn btn-danger  glyphicon glyphicon-remove'></button>
                             </td>
-                        </tr>
+                            </tr>
+                            </c:forEach>
                     </tbody>
                 </table>
             </div>
@@ -97,13 +101,24 @@
                             <div class="form-group" >
                                     <label id="Cat">Categoria:</label>
                                     <select class="form-control" id="selectCat" name="Catres">
-                                        <option>----</option>  
-                                    </select>
+                                    <c:forEach items="${requestScope.listaCategorias}" var="cat">
+                                        <option value=${cat.id}>${cat.categoria}</option>
+                                    </c:forEach>  
+                                </select>
+                                <select class="form-control" id="formaux" name="fomtemp">
+                                    <c:forEach items="${requestScope.listaRE}" var="re">
+                                        <option value=${re.id}>${re.descripcion}</option>
+                                    </c:forEach>
+                                </select>
+                                <select class="form-control" id="formaux2" name="fomtemp2">
+                                    <c:forEach items="${requestScope.listaRE}" var="re">
+                                        <option value=${re.categoria}></option>
+                                    </c:forEach>
+                                </select>
                                 </div>             
                                 <div class="form-group">
                                     <label id="REc">Residuo Electrónico:</label>
                                     <select class="form-control" id="selectRE" name="PEs">
-                                        <option>--------------</option>
                                     </select>
                                 </div>
                                 <div class="form-inline">
