@@ -42,8 +42,8 @@
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Equipo RECO
                             <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Vista Rápida</a></li>
-                                <li><a href="inventarioReco.jsp">Inventario</a></li>
+                                <li><a href="vistaRapida_1.jsp">Vista Rápida</a></li>
+                                <li><a href="inventarioReco_1.jsp">Inventario</a></li>
                                 <li class="active"><a href="#">Actividades</a></li>
                             </ul>
                         </li>
