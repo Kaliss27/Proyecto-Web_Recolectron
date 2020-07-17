@@ -46,7 +46,7 @@
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Equipo RECO
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="linea">Equipo RECO
                                 <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="vistaRapida.jsp">Vista Rápida</a></li>

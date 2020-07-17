@@ -40,4 +40,9 @@ public class DonacionesEm {
         dee.registrar_donacion_publicogral(rpg);
     }
     
+    public void modificar_cantidad(int id,int cantidad){
+        Donaciones_Emi dee = new Donaciones_Emi();
+        dee.modificar_cantidad_inventario(id, cantidad);
+    }
+    
 }

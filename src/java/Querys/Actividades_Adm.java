@@ -2,6 +2,7 @@
 package Querys;
 
 import Config.Conexion;
+import Modelo.Registro_Actividades;
 import Modelo.Registro_Visitas;
 import Modelo.Vista_Actividades;
 import Modelo.Vista_Material;
@@ -33,7 +34,7 @@ public class Actividades_Adm {
             while (rs.next()) {
                 Vista_Actividades actividad = new Vista_Actividades();
                 actividad.setId(rs.getInt("ID_Actividad"));
-                actividad.setDescripcion(rs.getString("Descripción"));
+                actividad.setDescripcion(rs.getString("Descripcion"));
                 actividad.setFecha_hora_ini(rs.getString("Fecha_Hora_Inicio"));
                 actividad.setFecha_hora_fin(rs.getString("Fecha_Hora_Fin"));
                 actividad.setEstado(rs.getString("Estado"));
@@ -124,6 +125,110 @@ public class Actividades_Adm {
             }
         }
         return materiales_rev;
+    }
+    
+     public boolean editarActividad(Registro_Actividades ra) {
+    boolean r = false;
+        try {
+            cn.getConnection().setAutoCommit(false);
+            String consulta = "call editar_actividad(?,?,?,?,?);";
+            ps = cn.getConnection().prepareStatement(consulta);
+            ps.setInt(1,ra.getId());
+            ps.setString(2,ra.getDescripcion());
+            ps.setString(3,ra.getFecha_hora_ini().concat(" "+ra.getHora_ini()));
+            ps.setString(4,ra.getFecha_hora_fin().concat(" "+ra.getHora_fin()));
+            ps.setInt(5,ra.getMaterial());
+            
+            if (ps.executeUpdate() == 1) {
+                r = true;
+                 cn.getConnection().commit();
+            }else{
+                System.out.println("no se editó");
+            }
+        } catch (SQLException e) {
+            System.out.println("Error" + e);
+        } finally {
+            try {
+                if (cn.getConnection() != null) {
+                    cn.getConnection().close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+
+            } catch (SQLException e) {
+                System.err.println("Error " + e);
+            }
+        }
+        return r;
+    }
+     
+    public boolean add_actividad(Registro_Actividades ra) {
+    boolean r = false;
+        try {
+            cn.getConnection().setAutoCommit(false);
+            String consulta = "call actividades_material(?,?,?,?,?);";
+            ps = cn.getConnection().prepareStatement(consulta);
+            ps.setString(1,ra.getDescripcion());
+            ps.setString(2,ra.getFecha_hora_ini().concat(" "+ra.getHora_ini()));
+            ps.setString(3,ra.getFecha_hora_fin().concat(" "+ra.getHora_fin()));
+            ps.setInt(4,1);
+            ps.setFloat(5,ra.getMaterial());
+
+            if (ps.executeUpdate() == 1) {
+                r = true;
+                 cn.getConnection().commit();
+            }else{
+                System.out.println("no se guardo");
+            }
+        } catch (SQLException e) {
+            System.out.println("Error" + e);
+        } finally {
+            try {
+                if (cn.getConnection() != null) {
+                    cn.getConnection().close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+
+            } catch (SQLException e) {
+                System.err.println("Error " + e);
+            }
+        }
+        return r;
+    }
+    
+    public boolean eliminar_material(int id) {
+    boolean r = false;
+        try {
+            cn.getConnection().setAutoCommit(false);
+            String consulta = "DELETE FROM recepcion_re WHERE ID_RcRE = ?;";
+            ps = cn.getConnection().prepareStatement(consulta);
+            ps.setInt(1,id);
+
+            if (ps.executeUpdate() == 1) {
+                r = true;
+                 cn.getConnection().commit();
+            }else{
+                System.out.println("no se eliminó");
+            }
+        } catch (SQLException e) {
+            System.out.println("Error" + e);
+        } finally {
+            try {
+                if (cn.getConnection() != null) {
+                    cn.getConnection().close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+
+            } catch (SQLException e) {
+                System.err.println("Error " + e);
+            }
+        }
+        return r;
     }
 }
 

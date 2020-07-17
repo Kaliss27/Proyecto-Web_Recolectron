@@ -5,6 +5,8 @@ import Modelo.Registro_Actividades;
 import Modelo.Vista_Actividades;
 import Modelo.Vista_Material;
 import Modelo.Vista_Material_Revision;
+import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
 import java.io.IOException;
 import java.util.ArrayList;
 import javax.servlet.RequestDispatcher;
@@ -36,15 +38,15 @@ public class Actividades_Admin extends HttpServlet {
             case "AGREGAR":
                 agregar(request, response);
                 break;
-//            case "Editar Inventario":
-//                editar_inventario(request, response);
-//                break;
-//            case "Eliminar":
-//                eliminar(request, response);
-//                break;
-//            case "Registrar Residuo":
-//                registrar_re(request, response);
-//                break;
+            case "Editar Actividad":
+                editar_actividad(request, response);
+                break;
+            case "Eliminar Material":
+                eliminar_material(request, response);
+                break;
+            case "Registrar Actividad":
+                registrar_actividad(request, response);
+                break;
 //            case "Registrar Articulo":
 //                 registrar_art(request, response);
 //                break;   
@@ -74,6 +76,58 @@ public class Actividades_Admin extends HttpServlet {
         } catch (IOException | ServletException e) {
             System.out.print(e);
         }
+    }
+    
+    private void editar_actividad(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        try {
+            String objectJson = request.getParameter("DATOS");
+            System.out.println(objectJson);
+            if(objectJson==null){
+                
+            }else{
+                Gson gson = new Gson();
+                Registro_Actividades acti = gson.fromJson(objectJson, Registro_Actividades.class);
+                Controlador.Actividades_Principal actividad = new Controlador.Actividades_Principal();
+                actividad.editar_Acti(acti);  
+                
+            }
+            
+        } catch (JsonSyntaxException e) {
+            System.out.print(e);
+
+        }
+        
+        
+    }
+    
+     private void registrar_actividad(HttpServletRequest request, HttpServletResponse response) {
+        try {
+            String objectJson = request.getParameter("DATOS");
+            if(objectJson==null){
+                
+            }else{
+                Gson gson = new Gson();
+                Registro_Actividades residuo = gson.fromJson(objectJson, Registro_Actividades.class);
+                Controlador.Actividades_Principal actividad = new Controlador.Actividades_Principal();
+                actividad.registrar_actividad(residuo);  
+                
+            }
+            
+        } catch (JsonSyntaxException e) {
+            System.out.print(e);
+
+        }
+        
+        
+    }
+     private void eliminar_material(HttpServletRequest request, HttpServletResponse response){    
+        try{
+            String id = request.getParameter("id_eliminar");
+            Controlador.Actividades_Principal material = new Controlador.Actividades_Principal();
+            material.eliminar_material(Integer.valueOf(id));
+        }catch(NumberFormatException e){
+            System.out.print(e);
+        }     
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

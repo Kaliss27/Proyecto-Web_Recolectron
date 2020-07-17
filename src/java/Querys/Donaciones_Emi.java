@@ -108,6 +108,7 @@ public class Donaciones_Emi {
                 Catalogo_Articulos articulo = new Catalogo_Articulos();
                 articulo.setId(rs.getInt("IdArticulo"));
                 articulo.setArticulo(rs.getString("Articulo"));
+                articulo.setCantidad(rs.getInt("Cantidad"));
                 articulos.add(articulo);
                
             }
@@ -178,6 +179,39 @@ public class Donaciones_Emi {
                  cn.getConnection().commit();
             }else{
                 System.out.println("no se guardo");
+            }
+        } catch (SQLException e) {
+            System.out.println("Error" + e);
+        } finally {
+            try {
+                if (cn.getConnection() != null) {
+                    cn.getConnection().close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+
+            } catch (SQLException e) {
+                System.err.println("Error " + e);
+            }
+        }
+        return r;
+    }
+    
+     public boolean modificar_cantidad_inventario(int id,int cant) {
+    boolean r = false;
+        try {
+            cn.getConnection().setAutoCommit(false);
+            String consulta = "UPDATE inventario_re SET Cantidad =? WHERE ID_Articulo=?;";
+            ps = cn.getConnection().prepareStatement(consulta);
+            ps.setInt(1,cant);
+            ps.setInt(2,id);
+
+            if (ps.executeUpdate() == 1) {
+                r = true;
+                 cn.getConnection().commit();
+            }else{
+                System.out.println("no se modificó");
             }
         } catch (SQLException e) {
             System.out.println("Error" + e);

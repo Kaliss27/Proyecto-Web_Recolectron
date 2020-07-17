@@ -46,7 +46,7 @@
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Equipo RECO
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="linea">Equipo RECO
                                 <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="vistaRapida.jsp">Vista Rápida</a></li>
@@ -91,10 +91,10 @@
 
 
                                                 <td>
-                                                    <button class='btn btn-warning glyphicon glyphicon-pencil' data-toggle='modal' data-target='#modalAct'></button>
+                                                    <button class='btn btn-warning glyphicon glyphicon-pencil editar' data-toggle='modal' data-target='#modalAct'></button>
                                                 </td>
                                                 <td>
-                                                    <button class='btn btn-danger  glyphicon glyphicon-remove'></button>
+                                                    <button class='btn btn-danger  glyphicon glyphicon-remove borrar'></button>
                                                 </td>
                                             </tr>
 
@@ -113,15 +113,17 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title" id="myModalLabel">Editar datos del estado</h4>
+                            <h4 class="modal-title" id="myModalLabel">Editar datos de la actividad</h4>
                         </div>
                         <div class="modal-body">
                             <div class="form-group">
                                 <label>Descripción Actividad:</label><br>
                                 <textarea class="form-control" id="txtD" name="desc" rows="4" cols="50"></textarea><br>
                                 <label>Seleccione material usado en la actividad:</label>
-                                <select class="form-control" id="selectRE" name="PEs">
-                                    <option value="0">Selecciona--</option>
+                                <select class="form-control" id="selectRE2" name="PEs">
+                                    <c:forEach items="${requestScope.listaMateriales}" var="mat">
+                                            <option value=${mat.id}>${mat.material}</option>
+                                        </c:forEach> 
                                 </select>
                                 <div class="form-inline">
                                     <label for="dateIn">Fecha de Inicio:</label>
@@ -139,7 +141,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                            <button type="button" class="btn btn-primary btn-warning">Editar</button>
+                            <button type="button" class="btn btn-primary btn-warning" id="btnEditar">Editar</button>
                         </div>
                     </div>
                 </div>
@@ -156,7 +158,7 @@
                             <form method="POST">
                                 <div class="form-group">
                                     <label>Descripción Actividad:</label><br>
-                                    <textarea class="form-control" id="txtD" name="desc" rows="4" cols="50"></textarea><br>
+                                    <textarea class="form-control" id="txtD2" name="desc" rows="4" cols="50"></textarea><br>
                                     <label>Seleccione material usado en la actividad:</label>
                                     <select class="form-control" id="selectRE" name="PEs">
                                         <c:forEach items="${requestScope.listaMateriales}" var="mat">
@@ -165,18 +167,18 @@
                                     </select>
                                     <div class="form-inline">
                                         <label for="dateIn">Fecha de Inicio:</label>
-                                        <input type="date" class="form-control" id="fechaIn">
+                                        <input type="date" class="form-control" id="fechaIni">
                                         <label for="datehIn">Hora de inicio:</label>
-                                        <input type="time" class="form-control" id="hIn" name="appt">
+                                        <input type="time" class="form-control" id="hIni" name="appt">
                                     </div><br>
                                     <div class="form-inline">
                                         <label for="dateTer">Fecha de Termino:</label>
-                                        <input type="date" class="form-control" id="fechaRgs">
+                                        <input type="date" class="form-control" id="fechaRgs1">
                                         <label for="dateTer">Hora de Termino:</label>
-                                        <input type="time" class="form-control" id="hTer" name="appt">
+                                        <input type="time" class="form-control" id="hTerm" name="appt">
                                     </div>
                                 </div>
-                                <button class="btn btn-success" type="submit" class="btn btn-default">Registrar Actividad</button>
+                                <button class="btn btn-success" type="submit" class="btn btn-default" id="btnRegA">Registrar Actividad</button>
                             </form>
                         </div>
                     </div>
@@ -208,7 +210,7 @@
                                                 <td>${mat.catidad}</td>
                                                 <td>${mat.pesoxunidad}</td>
                                                 <td>
-                                                <button class='btn btn-danger  glyphicon glyphicon-remove'></button>
+                                                <button class='btn btn-danger  glyphicon glyphicon-remove clear'></button>
                                             </td>
                                         </tr>
                                          </c:forEach>

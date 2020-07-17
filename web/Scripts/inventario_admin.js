@@ -1,4 +1,4 @@
-var i;
+var id;
 $(document).ready(function () {
     $("#visInventario").on('click', function () {
         Inventario_Admin.agregar();
@@ -99,7 +99,7 @@ var Inventario_Admin = (function () {
             }).then(function () {
                 $(document.body).html(arguments[0]);
                 $(".editar").on("click",function(){
-                  id = $(this).parents("tr").attr("id");
+                  id = $(this).parents("tr").attr("id"); 
                 });
                 
                 $("#btnEdit").on("click",function(){
@@ -196,6 +196,10 @@ var Inventario_Admin = (function () {
  
                     };
                     
+                });
+                
+                $("#linea").on("click", function () {
+                    $(".dropdown-menu").show();
                 });
                 
 

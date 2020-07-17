@@ -100,7 +100,7 @@ public class DonEm extends HttpServlet {
                 Gson gson = new Gson();
                 Registro_Emision_Donaciones_PG datos_publico = gson.fromJson(objectJson, Registro_Emision_Donaciones_PG.class);
                 Controlador.DonacionesEm donacion_publico = new Controlador.DonacionesEm();
-                 donacion_publico.insertar_publico(datos_publico);
+                donacion_publico.insertar_publico(datos_publico);
             }
             
         } catch (JsonSyntaxException e) {
@@ -120,6 +120,17 @@ public class DonEm extends HttpServlet {
             }else{
                 Gson gson = new Gson();
                 RegistroDe_Componentes donacion_estudiante = gson.fromJson(objectJson, RegistroDe_Componentes.class);
+              
+                Controlador.DonacionesEm art = new Controlador.DonacionesEm();
+                ArrayList<Catalogo_Articulos> catalogo_articulo = art.obtenerArticulo();
+                for(int i=0;i<catalogo_articulo.size();i++){
+                    if(catalogo_articulo.get(i).getId() == donacion_estudiante.getFk_componente()){
+                        int cantidad = catalogo_articulo.get(i).getCantidad() - donacion_estudiante.getCantidad();
+                        Controlador.DonacionesEm don = new Controlador.DonacionesEm();
+                        don.modificar_cantidad(donacion_estudiante.getFk_componente(), cantidad);
+                    }
+                }
+                 
                 Controlador.DonacionesEm donacion = new Controlador.DonacionesEm();
                 donacion.registar_donacion_Estudiante(donacion_estudiante);  
                 
@@ -142,6 +153,16 @@ public class DonEm extends HttpServlet {
             }else{
                 Gson gson = new Gson();
                 RegistroDe_PublicoGral donacion_publico = gson.fromJson(objectJson, RegistroDe_PublicoGral.class);
+                
+                Controlador.DonacionesEm art = new Controlador.DonacionesEm();
+                ArrayList<Catalogo_Articulos> catalogo_articulo = art.obtenerArticulo();
+                for(int i=0;i<catalogo_articulo.size();i++){
+                    if(catalogo_articulo.get(i).getId() == donacion_publico.getFk_articulo()){
+                        int cantidad = catalogo_articulo.get(i).getCantidad() - donacion_publico.getCantidad();
+                        Controlador.DonacionesEm don = new Controlador.DonacionesEm();
+                        don.modificar_cantidad(donacion_publico.getFk_articulo(), cantidad);
+                    }
+                }
                 Controlador.DonacionesEm donacion = new Controlador.DonacionesEm();
                 donacion.registar_donacion_PublicoG(donacion_publico);  
                 
