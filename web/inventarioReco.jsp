@@ -51,7 +51,7 @@
                             <ul class="dropdown-menu">
                                 <li><a href="vistaRapida.jsp">Vista Rápida</a></li>
                                 <li class="active"><a href="#">Inventario</a></li>
-                                <li><a href="actividades.jsp">Actividades</a></li>
+                                <li><a href="#" id="visActividades">Actividades</a></li>
                             </ul>
                         </li>
                     </ul>

@@ -36,6 +36,10 @@
         <servlet-name>Inventario_Contribuyente</servlet-name>
         <servlet-class>Servlets.Inventario_Contribuyente</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Actividades_Admin</servlet-name>
+        <servlet-class>Servlets.Actividades_Admin</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>DonRec</servlet-name>
         <url-pattern>/DonRec</url-pattern>
@@ -71,6 +75,10 @@
     <servlet-mapping>
         <servlet-name>Inventario_Contribuyente</servlet-name>
         <url-pattern>/Inventario_Contribuyente</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Actividades_Admin</servlet-name>
+        <url-pattern>/Actividades_Admin</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

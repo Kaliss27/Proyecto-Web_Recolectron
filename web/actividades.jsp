@@ -4,6 +4,7 @@
     Author     : karen
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -46,7 +47,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Equipo RECO
-                            <span class="caret"></span></a>
+                                <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="vistaRapida.jsp">Vista Rápida</a></li>
                                 <li><a href="#" id="visInventario">Inventario</a></li>
@@ -81,18 +82,24 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>-------</td>
-                                            <td>-------</td>
-                                            <td>-------</td>
-                                            <td>-------</td>
-                                            <td>
-                                                <button class='btn btn-warning glyphicon glyphicon-pencil' data-toggle='modal' data-target='#modalAct'></button>
-                                            </td>
-                                            <td>
-                                                <button class='btn btn-danger  glyphicon glyphicon-remove'></button>
-                                            </td>
-                                        </tr>
+                                        <c:forEach items="${requestScope.listaActividades}" var="acti">
+                                            <tr id=${acti.id}>
+                                                <td>${acti.descripcion}</td>
+                                                <td>${acti.fecha_hora_ini}</td>
+                                                <td>${acti.fecha_hora_fin}</td>
+                                                <td>${acti.estado}</td>
+
+
+                                                <td>
+                                                    <button class='btn btn-warning glyphicon glyphicon-pencil' data-toggle='modal' data-target='#modalAct'></button>
+                                                </td>
+                                                <td>
+                                                    <button class='btn btn-danger  glyphicon glyphicon-remove'></button>
+                                                </td>
+                                            </tr>
+
+                                        </c:forEach>
+
                                     </tbody>
                                 </table>
                             </div>
@@ -131,48 +138,50 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                        <button type="button" class="btn btn-primary btn-warning">Editar</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                            <button type="button" class="btn btn-primary btn-warning">Editar</button>
                         </div>
                     </div>
                 </div>
             </div>
-                <div class="panel-group">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <label class="panel-title">
-                                <a data-toggle="collapse" href="#collapse2">REGISTRO DE ACTIVIDADES</a>
-                            </label>
-                        </div>
-                        <div id="collapse2" class="panel-collapse collapse">
-                            <div class="panel-body">
-                                <form method="POST">
-                                    <div class="form-group">
-                                        <label>Descripción Actividad:</label><br>
-                                        <textarea class="form-control" id="txtD" name="desc" rows="4" cols="50"></textarea><br>
-                                        <label>Seleccione material usado en la actividad:</label>
-                                        <select class="form-control" id="selectRE" name="PEs">
-                                           <option value="0">Selecciona--</option>
-                                        </select>
-                                        <div class="form-inline">
-                                           <label for="dateIn">Fecha de Inicio:</label>
-                                           <input type="date" class="form-control" id="fechaIn">
-                                           <label for="datehIn">Hora de inicio:</label>
-                                           <input type="time" class="form-control" id="hIn" name="appt">
-                                       </div><br>
-                                       <div class="form-inline">
-                                            <label for="dateTer">Fecha de Termino:</label>
-                                            <input type="date" class="form-control" id="fechaRgs">
-                                            <label for="dateTer">Hora de Termino:</label>
-                                            <input type="time" class="form-control" id="hTer" name="appt">
-                                       </div>
-                                     </div>
-                                     <button class="btn btn-success" type="submit" class="btn btn-default">Registrar Actividad</button>
-                                </form>
-                            </div>
+            <div class="panel-group">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <label class="panel-title">
+                            <a data-toggle="collapse" href="#collapse2">REGISTRO DE ACTIVIDADES</a>
+                        </label>
+                    </div>
+                    <div id="collapse2" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <form method="POST">
+                                <div class="form-group">
+                                    <label>Descripción Actividad:</label><br>
+                                    <textarea class="form-control" id="txtD" name="desc" rows="4" cols="50"></textarea><br>
+                                    <label>Seleccione material usado en la actividad:</label>
+                                    <select class="form-control" id="selectRE" name="PEs">
+                                        <c:forEach items="${requestScope.listaMateriales}" var="mat">
+                                            <option value=${mat.id}>${mat.material}</option>
+                                        </c:forEach> 
+                                    </select>
+                                    <div class="form-inline">
+                                        <label for="dateIn">Fecha de Inicio:</label>
+                                        <input type="date" class="form-control" id="fechaIn">
+                                        <label for="datehIn">Hora de inicio:</label>
+                                        <input type="time" class="form-control" id="hIn" name="appt">
+                                    </div><br>
+                                    <div class="form-inline">
+                                        <label for="dateTer">Fecha de Termino:</label>
+                                        <input type="date" class="form-control" id="fechaRgs">
+                                        <label for="dateTer">Hora de Termino:</label>
+                                        <input type="time" class="form-control" id="hTer" name="appt">
+                                    </div>
+                                </div>
+                                <button class="btn btn-success" type="submit" class="btn btn-default">Registrar Actividad</button>
+                            </form>
                         </div>
                     </div>
-                </div>   
+                </div>
+            </div>   
             <div class="panel-group">
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -193,14 +202,16 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>-------</td>
-                                            <td>-------</td>
-                                            <td>-------</td>
-                                            <td>
+                                       <c:forEach items="${requestScope.listaMaterialesRev}" var="mat">
+                                            <tr id=${mat.id}>
+                                                <td>${mat.material}</td>
+                                                <td>${mat.catidad}</td>
+                                                <td>${mat.pesoxunidad}</td>
+                                                <td>
                                                 <button class='btn btn-danger  glyphicon glyphicon-remove'></button>
                                             </td>
                                         </tr>
+                                         </c:forEach>
                                     </tbody>
                                 </table>
                             </div>
