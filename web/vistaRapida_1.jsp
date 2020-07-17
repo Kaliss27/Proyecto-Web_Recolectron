@@ -23,6 +23,7 @@
         <script src="Scripts/eventos.js" type="text/javascript"></script>
         <script src="Scripts/visitas.js" type="text/javascript"></script>
         <script src="Scripts/inventario_contribuyente.js" type="text/javascript"></script>
+        <script src="Scripts/actividades_contribuyente.js" type="text/javascript"></script>
         <link rel="icon" type="image/png" href="Imagenes/logo_recoUV.jpg" sizes="16x16">
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
         <script src="Scripts/vistaRapida_1.js" type="text/javascript"></script>
@@ -53,7 +54,7 @@
                             <ul class="dropdown-menu">
                                 <li class="active"><a href="#">Vista Rápida</a></li>
                                 <li><a href="#" id="visInventario1">Inventario</a></li>
-                                <li><a href="actividades_1.jsp">Actividades</a></li>
+                                <li><a href="#" id="visActividades1">Actividades</a></li>
 
                             </ul>
                         </li>

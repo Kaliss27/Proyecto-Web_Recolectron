@@ -19,6 +19,7 @@
         <script src="Scripts/Demitidas.js" type="text/javascript"></script>
         <script src="Scripts/eventos.js" type="text/javascript"></script>
         <script src="Scripts/visitas.js" type="text/javascript"></script>
+        <script src="Scripts/vista_login.js" type="text/javascript"></script>
         <link rel="icon" type="image/png" href="Imagenes/logo_recoUV.jpg" sizes="16x16">
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
     </head>
@@ -61,7 +62,7 @@
                             <label for="psw">Contraseña:</label>
                             <input type="password" class="form-control" id="pass" placeholder="Ingresa tu contraseña" name="psw" required>
                             <br><br>
-                            <input id="login" name="ACCION" class="btn btn-success" type="submit" class="btn btn-default" value="Entrar">
+                            <input id="login" class="btn btn-success" name="ACCION" type="submit" class="btn btn-default" value="Entrar">
                         </div>
                     </form>
                     <br><br>

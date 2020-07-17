@@ -40,6 +40,14 @@
         <servlet-name>Actividades_Admin</servlet-name>
         <servlet-class>Servlets.Actividades_Admin</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Actividades_Contribuyente</servlet-name>
+        <servlet-class>Servlets.Actividades_Contribuyente</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Vista_Rapida_Adm</servlet-name>
+        <servlet-class>Servlets.Vista_Rapida_Adm</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>DonRec</servlet-name>
         <url-pattern>/DonRec</url-pattern>
@@ -79,6 +87,14 @@
     <servlet-mapping>
         <servlet-name>Actividades_Admin</servlet-name>
         <url-pattern>/Actividades_Admin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Actividades_Contribuyente</servlet-name>
+        <url-pattern>/Actividades_Contribuyente</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Vista_Rapida_Adm</servlet-name>
+        <url-pattern>/Vista_Rapida_Adm</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

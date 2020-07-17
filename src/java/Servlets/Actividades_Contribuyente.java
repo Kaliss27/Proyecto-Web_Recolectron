@@ -1,11 +1,10 @@
 
 package Servlets;
 
-import Modelo.Categorias_RE;
-import Modelo.Estados;
-import Modelo.Inventario_RE;
-import Modelo.Residuos_Electronicos;
-import Modelo.Vista_Inventario;
+import Modelo.Registro_Actividades;
+import Modelo.Vista_Actividades;
+import Modelo.Vista_Material;
+import Modelo.Vista_Material_Revision;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 import java.io.IOException;
@@ -20,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Alvaro
  */
-public class Inventario_Contribuyente extends HttpServlet {
+public class Actividades_Contribuyente extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,54 +33,52 @@ public class Inventario_Contribuyente extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String accion = request.getParameter("ACCION");
+      String accion = request.getParameter("ACCION");
         switch (accion) {
             case "AGREGAR":
                 agregar(request, response);
                 break;
-            case "Editar Inventario":
-                editar_inventario(request, response);
+            case "Editar Actividad":
+                editar_actividad(request, response);
                 break;
-            case "Eliminar":
-                eliminar(request, response);
+            case "Eliminar Material":
+                eliminar_material(request, response);
                 break;
-            case "Registrar Residuo":
-                registrar_re(request, response);
+            case "Registrar Actividad":
+                registrar_actividad(request, response);
                 break;
-            case "Registrar Articulo":
-                 registrar_art(request, response);
-                break;   
+//            case "Registrar Articulo":
+//                 registrar_art(request, response);
+//                break;   
             default:
                 break;
         }
         
         
+        
+        
     }
     
-     private void agregar(HttpServletRequest request, HttpServletResponse response) {
+    private void agregar(HttpServletRequest request, HttpServletResponse response) {
 
         try {
-            Controlador.Inventario_Principal inventario = new Controlador.Inventario_Principal();
-            ArrayList<Vista_Inventario> articulos = inventario.obtenerArticulos();
-            request.setAttribute("listaInventario", articulos);
-            ArrayList<Estados> estados = inventario.obtenerEstados();
-            request.setAttribute("listaEstados", estados);
-            Controlador.DonacionesRe donr = new Controlador.DonacionesRe();
-            ArrayList<Categorias_RE> catalogo_cat = donr.obtenerCategoria();
-            request.setAttribute("listaCategorias", catalogo_cat);
-            ArrayList<Residuos_Electronicos> catalogo_re = donr.obtenerRE();
-            request.setAttribute("listaRE", catalogo_re);
+            Controlador.Actividades_Principal acti = new Controlador.Actividades_Principal();
+            ArrayList<Vista_Actividades> actividades = acti.obtenerActividad();
+            request.setAttribute("listaActividades", actividades);
+            ArrayList<Vista_Material> materiales = acti.obtenerMaterial();
+            request.setAttribute("listaMateriales", materiales);
+            ArrayList<Vista_Material_Revision> materiales_rev = acti.obtenerMaterial_Revision();
+            request.setAttribute("listaMaterialesRev", materiales_rev);
             
             
-
-            RequestDispatcher rd = request.getRequestDispatcher("./inventarioReco_1.jsp");
+            RequestDispatcher rd = request.getRequestDispatcher("./actividades_1.jsp");
             rd.forward(request, response);
         } catch (IOException | ServletException e) {
             System.out.print(e);
         }
     }
-     
-   private void editar_inventario(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    
+    private void editar_actividad(HttpServletRequest request, HttpServletResponse response) throws IOException {
         try {
             String objectJson = request.getParameter("DATOS");
             System.out.println(objectJson);
@@ -89,9 +86,9 @@ public class Inventario_Contribuyente extends HttpServlet {
                 
             }else{
                 Gson gson = new Gson();
-                Inventario_RE inventario = gson.fromJson(objectJson, Inventario_RE.class);
-                Controlador.Inventario_Principal donacion = new Controlador.Inventario_Principal();
-                donacion.editar_inv(inventario);  
+                Registro_Actividades acti = gson.fromJson(objectJson, Registro_Actividades.class);
+                Controlador.Actividades_Principal actividad = new Controlador.Actividades_Principal();
+                actividad.editar_Acti(acti);  
                 
             }
             
@@ -102,57 +99,35 @@ public class Inventario_Contribuyente extends HttpServlet {
         
         
     }
-   
-  private void eliminar(HttpServletRequest request, HttpServletResponse response){    
+    
+     private void registrar_actividad(HttpServletRequest request, HttpServletResponse response) {
+        try {
+            String objectJson = request.getParameter("DATOS");
+            if(objectJson==null){
+                
+            }else{
+                Gson gson = new Gson();
+                Registro_Actividades residuo = gson.fromJson(objectJson, Registro_Actividades.class);
+                Controlador.Actividades_Principal actividad = new Controlador.Actividades_Principal();
+                actividad.registrar_actividad(residuo);  
+                
+            }
+            
+        } catch (JsonSyntaxException e) {
+            System.out.print(e);
+
+        }
+        
+        
+    }
+     private void eliminar_material(HttpServletRequest request, HttpServletResponse response){    
         try{
             String id = request.getParameter("id_eliminar");
-            Controlador.Inventario_Principal inventario = new Controlador.Inventario_Principal();
-            inventario.eliminar(Integer.valueOf(id));
+            Controlador.Actividades_Principal material = new Controlador.Actividades_Principal();
+            material.eliminar_material(Integer.valueOf(id));
         }catch(NumberFormatException e){
             System.out.print(e);
         }     
-    }
-  
-  private void registrar_re(HttpServletRequest request, HttpServletResponse response) {
-        try {
-            String objectJson = request.getParameter("DATOS");
-            if(objectJson==null){
-                
-            }else{
-                Gson gson = new Gson();
-                Residuos_Electronicos residuo = gson.fromJson(objectJson, Residuos_Electronicos.class);
-                Controlador.Inventario_Principal inventario = new Controlador.Inventario_Principal();
-                inventario.registrar_residuo(residuo);  
-                
-            }
-            
-        } catch (JsonSyntaxException e) {
-            System.out.print(e);
-
-        }
-        
-        
-    }
-  
-  private void registrar_art(HttpServletRequest request, HttpServletResponse response) {
-        try {
-            String objectJson = request.getParameter("DATOS");
-            if(objectJson==null){
-                
-            }else{
-                Gson gson = new Gson();
-                Inventario_RE articulo = gson.fromJson(objectJson, Inventario_RE.class);
-                Controlador.Inventario_Principal inventario = new Controlador.Inventario_Principal();
-                inventario.registrar_articulo(articulo);  
-                
-            }
-            
-        } catch (JsonSyntaxException e) {
-            System.out.print(e);
-
-        }
-        
-        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

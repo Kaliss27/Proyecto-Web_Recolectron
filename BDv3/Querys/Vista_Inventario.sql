@@ -5,3 +5,4 @@ SELECT inventario_re.ID_Articulo,residuos_electronicos.Descripcion as Articulo,i
 FROM inventario_re
 JOIN residuos_electronicos ON inventario_re.Articulo = residuos_electronicos.ID_RE
 JOIN Estados ON inventario_re.FKI_Estado = ID_Estados
+WHERE inventario_re.FKI_Estado > 1;

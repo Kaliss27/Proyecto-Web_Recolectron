@@ -104,7 +104,7 @@
                             <label id="giconCG" class="glyphicon glyphicon-edit"></label>
                         </div>
                         <div class='btn-group'>
-                            <button type="button" class="btn btn-default btn-block" onclick='dPanelUser();'id="auser">Acceso Usuarios</button>
+                            <button type="button" class="btn btn-default btn-block" id="auser">Acceso Usuarios</button>
                             <button type="button" class="btn btn-default btn-block" onclick='dPanelCArt();' id="carticulos">Categorias de Articulos</button>
                             <button type="button" class="btn btn-default btn-block" onclick='dPanelCGral();' id ="cgeneral" >Control General</button>
                             <button type="button" class="btn btn-default btn-block" onclick='dPanelRD();' id ="rdonaciones">Recepción de donaciones</button>
@@ -161,9 +161,9 @@
                                                 <label>Apellido Materno:</label><input type="text" class="form-control"><br>
                                                 <label for="typUser">Tipo de Usuario:</label>
                                                 <select class="form-control" id="selecttU" name="TUser">
-                                                    <!--<c:forEach items="${requestScope.listaPE}" var="usert">
-                                                        <option value=${pe.id}>${pe.dependencia}</option>
-                                                    </c:forEach>!-->
+                                                    <c:forEach items="${requestScope.listaPermisos}" var="usert">
+                                                        <option value=${usert.id}>${usert.tipo}</option>
+                                                    </c:forEach>
                                                 </select>
                                                 <label>Usuario:</label><input type="text" class="form-control"><br>
                                                 <label>Contraseña:</label><input type="text" class="form-control"><br><br>

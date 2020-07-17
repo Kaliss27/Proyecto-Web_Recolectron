@@ -134,9 +134,10 @@ public class Inventario_Adm {
     boolean r = false;
         try {
             cn.getConnection().setAutoCommit(false);
-            String consulta = "DELETE FROM inventario_re WHERE ID_Articulo = ?;";
+            String consulta = "UPDATE inventario_re SET FKI_Estado=? WHERE ID_Articulo = ?;";
             ps = cn.getConnection().prepareStatement(consulta);
-            ps.setInt(1,id);
+            ps.setInt(1,1);
+            ps.setInt(2, id);
 
             if (ps.executeUpdate() == 1) {
                 r = true;

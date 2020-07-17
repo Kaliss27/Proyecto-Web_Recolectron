@@ -19,6 +19,7 @@
         <script src="Scripts/visitas.js" type="text/javascript"></script>
         <script src="Scripts/Demitidas.js" type="text/javascript"></script>
         <script src="Scripts/eventos.js" type="text/javascript"></script>
+        <script src="Scripts/vista_login.js" type="text/javascript"></script>
         <link rel="icon" type="image/png" href="Imagenes/logo_recoUV.jpg" sizes="16x16">
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
     </head>
@@ -43,7 +44,7 @@
                         <li><a href="#" id="form_event">Eventos Reco</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="EQReco.jsp"><span class="glyphicon glyphicon-log-in"></span>Equipo RECO</a></li>
+                        <li><a href="#" id="vistaLogin"><span class="glyphicon glyphicon-log-in"></span>Equipo RECO</a></li>
                     </ul>
                     <!--Dropdown: Mostrar cuando se tengan privilegios-->
                     <ul id="nb-cp" class="nav navbar-nav navbar-right">
