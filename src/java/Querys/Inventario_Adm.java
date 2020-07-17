@@ -3,7 +3,9 @@ package Querys;
 
 import Config.Conexion;
 import Modelo.Estados;
+import Modelo.Inventario_RE;
 import Modelo.Registro_Visitas;
+import Modelo.Residuos_Electronicos;
 import Modelo.Vista_Inventario;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -89,6 +91,147 @@ public class Inventario_Adm {
             }
         }
         return estados;
+    }
+    
+  public boolean editarInventario(Inventario_RE ire) {
+    boolean r = false;
+        try {
+            cn.getConnection().setAutoCommit(false);
+            String consulta = "call editar_inventario(?,?,?,?,?,?);";
+            ps = cn.getConnection().prepareStatement(consulta);
+            ps.setInt(1, ire.getId());
+            ps.setInt(2, ire.getFk_re());
+            ps.setInt(3, ire.getCantidad());
+            ps.setFloat(4, ire.getPeso_x_unidad());
+            ps.setInt(5, ire.getEstado());
+            ps.setString(6, ire.getNotas());
+
+            if (ps.executeUpdate() == 1) {
+                r = true;
+                 cn.getConnection().commit();
+            }else{
+                System.out.println("no se editó");
+            }
+        } catch (SQLException e) {
+            System.out.println("Error" + e);
+        } finally {
+            try {
+                if (cn.getConnection() != null) {
+                    cn.getConnection().close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+
+            } catch (SQLException e) {
+                System.err.println("Error " + e);
+            }
+        }
+        return r;
+    }
+  
+  public boolean eliminar_articulo(int id) {
+    boolean r = false;
+        try {
+            cn.getConnection().setAutoCommit(false);
+            String consulta = "DELETE FROM inventario_re WHERE ID_Articulo = ?;";
+            ps = cn.getConnection().prepareStatement(consulta);
+            ps.setInt(1,id);
+
+            if (ps.executeUpdate() == 1) {
+                r = true;
+                 cn.getConnection().commit();
+            }else{
+                System.out.println("no se eliminó");
+            }
+        } catch (SQLException e) {
+            System.out.println("Error" + e);
+        } finally {
+            try {
+                if (cn.getConnection() != null) {
+                    cn.getConnection().close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+
+            } catch (SQLException e) {
+                System.err.println("Error " + e);
+            }
+        }
+        return r;
+    }
+  
+  public boolean add_residuo(Residuos_Electronicos re) {
+    boolean r = false;
+        try {
+            cn.getConnection().setAutoCommit(false);
+            String consulta = "insert into residuos_electronicos (Descripcion, Categoria, Costo_Promedio_x_Unidad)\n" +
+                "values (?,?,?);";
+            ps = cn.getConnection().prepareStatement(consulta);
+            ps.setString(1, re.getDescripcion());
+            ps.setInt(2, re.getCategoria());
+            ps.setFloat(3, re.getCostoxunidad());
+
+            if (ps.executeUpdate() == 1) {
+                r = true;
+                 cn.getConnection().commit();
+            }else{
+                System.out.println("no se guardo");
+            }
+        } catch (SQLException e) {
+            System.out.println("Error" + e);
+        } finally {
+            try {
+                if (cn.getConnection() != null) {
+                    cn.getConnection().close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+
+            } catch (SQLException e) {
+                System.err.println("Error " + e);
+            }
+        }
+        return r;
+    }
+  
+   public boolean add_articulo(Inventario_RE ire) {
+    boolean r = false;
+        try {
+            cn.getConnection().setAutoCommit(false);
+            String consulta = "insert into inventario_re (Articulo, Cantidad, Peso_x_Unidad, FKI_Estado, Notas)\n" +
+                "values (?,?,?,?,?);";
+            ps = cn.getConnection().prepareStatement(consulta);
+            ps.setInt(1, ire.getFk_re());
+            ps.setInt(2, ire.getCantidad());
+            ps.setFloat(3, ire.getPeso_x_unidad());
+            ps.setInt(4, ire.getEstado());
+            ps.setString(5, ire.getNotas());
+            
+            if (ps.executeUpdate() == 1) {
+                r = true;
+                 cn.getConnection().commit();
+            }else{
+                System.out.println("no se guardo");
+            }
+        } catch (SQLException e) {
+            System.out.println("Error" + e);
+        } finally {
+            try {
+                if (cn.getConnection() != null) {
+                    cn.getConnection().close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+
+            } catch (SQLException e) {
+                System.err.println("Error " + e);
+            }
+        }
+        return r;
     }
      
 }

@@ -3,8 +3,11 @@ package Servlets;
 
 import Modelo.Categorias_RE;
 import Modelo.Estados;
+import Modelo.Inventario_RE;
 import Modelo.Residuos_Electronicos;
 import Modelo.Vista_Inventario;
+import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
 import java.io.IOException;
 import java.util.ArrayList;
 import javax.servlet.RequestDispatcher;
@@ -36,6 +39,18 @@ public class Inventario_Admin extends HttpServlet {
             case "AGREGAR":
                 agregar(request, response);
                 break;
+            case "Editar Inventario":
+                editar_inventario(request, response);
+                break;
+            case "Eliminar":
+                eliminar(request, response);
+                break;
+            case "Registrar Residuo":
+                registrar_re(request, response);
+                break;
+            case "Registrar Articulo":
+                 registrar_art(request, response);
+                break;   
             default:
                 break;
         }
@@ -64,6 +79,80 @@ public class Inventario_Admin extends HttpServlet {
         } catch (IOException | ServletException e) {
             System.out.print(e);
         }
+    }
+     
+   private void editar_inventario(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        try {
+            String objectJson = request.getParameter("DATOS");
+            System.out.println(objectJson);
+            if(objectJson==null){
+                
+            }else{
+                Gson gson = new Gson();
+                Inventario_RE inventario = gson.fromJson(objectJson, Inventario_RE.class);
+                Controlador.Inventario_Principal donacion = new Controlador.Inventario_Principal();
+                donacion.editar_inv(inventario);  
+                
+            }
+            
+        } catch (JsonSyntaxException e) {
+            System.out.print(e);
+
+        }
+        
+        
+    }
+   
+  private void eliminar(HttpServletRequest request, HttpServletResponse response){    
+        try{
+            String id = request.getParameter("id_eliminar");
+            Controlador.Inventario_Principal inventario = new Controlador.Inventario_Principal();
+            inventario.eliminar(Integer.valueOf(id));
+        }catch(NumberFormatException e){
+            System.out.print(e);
+        }     
+    }
+  
+  private void registrar_re(HttpServletRequest request, HttpServletResponse response) {
+        try {
+            String objectJson = request.getParameter("DATOS");
+            if(objectJson==null){
+                
+            }else{
+                Gson gson = new Gson();
+                Residuos_Electronicos residuo = gson.fromJson(objectJson, Residuos_Electronicos.class);
+                Controlador.Inventario_Principal inventario = new Controlador.Inventario_Principal();
+                inventario.registrar_residuo(residuo);  
+                
+            }
+            
+        } catch (JsonSyntaxException e) {
+            System.out.print(e);
+
+        }
+        
+        
+    }
+  
+  private void registrar_art(HttpServletRequest request, HttpServletResponse response) {
+        try {
+            String objectJson = request.getParameter("DATOS");
+            if(objectJson==null){
+                
+            }else{
+                Gson gson = new Gson();
+                Inventario_RE articulo = gson.fromJson(objectJson, Inventario_RE.class);
+                Controlador.Inventario_Principal inventario = new Controlador.Inventario_Principal();
+                inventario.registrar_articulo(articulo);  
+                
+            }
+            
+        } catch (JsonSyntaxException e) {
+            System.out.print(e);
+
+        }
+        
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
