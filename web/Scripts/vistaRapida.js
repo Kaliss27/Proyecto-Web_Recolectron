@@ -40,7 +40,7 @@ $(document).ready(function(){
     });
     $("#auser").unbind('click').bind('click', function () {
         VistaRapida_Adm.agregar();
-        dPanelUser();
+
     });
     
 });
