@@ -47,6 +47,9 @@ public class Actividades_Admin extends HttpServlet {
             case "Registrar Actividad":
                 registrar_actividad(request, response);
                 break;
+            case "Eliminar Actividad":
+                eliminar_activ(request, response);
+                break;
 //            case "Registrar Articulo":
 //                 registrar_art(request, response);
 //                break;   
@@ -125,6 +128,16 @@ public class Actividades_Admin extends HttpServlet {
             String id = request.getParameter("id_eliminar");
             Controlador.Actividades_Principal material = new Controlador.Actividades_Principal();
             material.eliminar_material(Integer.valueOf(id));
+        }catch(NumberFormatException e){
+            System.out.print(e);
+        }     
+    }
+     
+    private void eliminar_activ(HttpServletRequest request, HttpServletResponse response){    
+        try{
+            String id = request.getParameter("id_eliminar");
+            Controlador.Actividades_Principal material = new Controlador.Actividades_Principal();
+            material.eliminar_actividad(Integer.valueOf(id));
         }catch(NumberFormatException e){
             System.out.print(e);
         }     

@@ -43,4 +43,9 @@ public class Actividades_Principal {
         Actividades_Adm act = new Actividades_Adm();
         return act.eliminar_material(id);
     }
+    
+    public boolean eliminar_actividad(int id){
+        Actividades_Adm act = new Actividades_Adm();
+        return act.delete_actividad(id);
+    }
 }

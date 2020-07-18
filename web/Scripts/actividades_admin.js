@@ -67,14 +67,14 @@ var Actividades_Admin = (function () {
 
                 $(".borrar").on("click", function () {
                     id = $(this).parents("tr").attr("id");
-                    Actividades_Admin.eliminar(id);
-                    alert("¡¡Articulo Eliminado Correctamente!!");
+                    Actividades_Admin.eliminar_act(id);
+                    alert("¡¡Actividad Eliminada Correctamente!!");
                     Actividades_Admin.agregar();
                 });
                 
                 $(".clear").on("click", function () {
                     id = $(this).parents("tr").attr("id");
-                    Actividades_Admin.eliminar(id);
+                    Actividades_Admin.eliminar_mat(id);
                     alert("¡¡Material Eliminado Correctamente!!");
                     Actividades_Admin.agregar();
                 });
@@ -173,13 +173,18 @@ var Actividades_Admin = (function () {
             });
         },
 
-        eliminar: function (id) {
+        eliminar_mat: function (id) {
             $.get("Actividades_Admin", {
-                ACCION: "Eliminar",
+                ACCION: "Eliminar Material",
+                id_eliminar: id
+            });
+        },
+        eliminar_act: function (id) {
+            $.get("Actividades_Admin", {
+                ACCION: "Eliminar Actividad",
                 id_eliminar: id
             });
         }
-
 
     };
 }());

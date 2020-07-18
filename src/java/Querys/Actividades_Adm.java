@@ -203,9 +203,43 @@ public class Actividades_Adm {
     boolean r = false;
         try {
             cn.getConnection().setAutoCommit(false);
-            String consulta = "DELETE FROM recepcion_re WHERE ID_RcRE = ?;";
+            String consulta = "UPDATE inventario_sb SET Estado_FK = ? WHERE ID_inventarioSB = ?;";
             ps = cn.getConnection().prepareStatement(consulta);
-            ps.setInt(1,id);
+            ps.setInt(1,1);
+            ps.setInt(2, id);
+
+            if (ps.executeUpdate() == 1) {
+                r = true;
+                 cn.getConnection().commit();
+            }else{
+                System.out.println("no se eliminó");
+            }
+        } catch (SQLException e) {
+            System.out.println("Error" + e);
+        } finally {
+            try {
+                if (cn.getConnection() != null) {
+                    cn.getConnection().close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+
+            } catch (SQLException e) {
+                System.err.println("Error " + e);
+            }
+        }
+        return r;
+    }
+    
+    public boolean delete_actividad(int id) {
+    boolean r = false;
+        try {
+            cn.getConnection().setAutoCommit(false);
+            String consulta = "UPDATE registro_actividades SET FKA_Estado=? WHERE ID_Actividad = ?;";
+            ps = cn.getConnection().prepareStatement(consulta);
+            ps.setInt(1,1);
+            ps.setInt(2, id);
 
             if (ps.executeUpdate() == 1) {
                 r = true;
